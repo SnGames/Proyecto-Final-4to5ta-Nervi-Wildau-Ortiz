@@ -1,0 +1,28 @@
+header {
+    height: 10%;
+    padding-left: 10%;
+    padding-top: 1%;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+#logo {
+    width: 25%;
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+ul {
+    display: block;
+    list-style-type: disc;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    padding-inline-start: 40px;
+    unicode-bidi: isolate;
+}
