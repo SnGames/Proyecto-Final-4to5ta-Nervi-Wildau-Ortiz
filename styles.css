@@ -26,6 +26,8 @@ ul {
     padding-inline-start: 40px;
     unicode-bidi: isolate;
 }
+
+/*---------cosas de nervi INICIO-----*/
 .tarjeta {
     display: flex;
     flex-direction: column;
@@ -33,7 +35,8 @@ ul {
     text-align: center;    
     width: 250px;           
     border: 1px solid #ccc; 
-    padding: 16px;          
+    padding: 16px;    
+    margin: 16px;      
   }
   
   .tarjeta img {
@@ -52,10 +55,24 @@ ul {
     width: 10%;
 }
 
+.icono_boton{
+    transition: transform 0.5s ease;
+}
+.icono_boton:hover{
+    transform: scale(0.9);
+    cursor: pointer;
+}
+
 #tiempo{
             -webkit-mask-image: url('images/iconos/icono_tiempo.png');
             mask-image: url('images/iconos/icono_tiempo.png');
         }
+#titulo{
+            -webkit-mask-image: url('images/iconos/icono_titulo.png');
+            mask-image: url('images/iconos/icono_titulo.png');
+        }
+
+
         .icono-animado {
             width: 18px;
             height: 18px;
@@ -72,10 +89,10 @@ ul {
             transition: background-position 0.5s ease;
         }
 
-        .targeta_formal:hover .icono-animado {
+        .tarjeta_formal:hover .icono-animado {
             background-position: top left;
         }
-        .targeta_formal:hover .descripcion_icono {
+        .tarjeta_formal:hover .descripcion_icono {
             color: #d32f2f;
         }
 
@@ -86,6 +103,7 @@ ul {
         color: #5e5e5e;
         font-size: 14px;
         font-weight: 500;
+        transition: color 0.5s ease;
         }
         .texto_principal {
         font-size: 22px;
@@ -97,7 +115,7 @@ ul {
         color: #555555;
         line-height: 1.5;
         }
-        .targeta_formal {
+        .tarjeta_formal {
         background-color: #ffffff;
         border-radius: 12px;
         border: 1px solid rgb(168, 168, 168);
@@ -107,9 +125,12 @@ ul {
         display: flex;
         flex-direction: column;
         gap: 12px;
-        transition: transform 0.5s ease, box-shadow 0.5s ease;
+        margin: 20px;
+        transition: transform 0.5s ease, border 0.5s ease, box-shadow 0.5s ease;
         }
-        .targeta_formal:hover {
-        transform: scale(1.03);
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        .tarjeta_formal:hover {
+        transform: scale(1.05);
+        border: 1px solid rgb(165, 0, 0);
+        box-shadow: 0 4px 12px rgba(100, 0, 0, 0.25);
         }
+/*---------cosas de nervi FIN-----*/
