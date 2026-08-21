@@ -1,12 +1,25 @@
+/* wildau --- index */
 header {
     height: 10%;
-    padding-left: 10%;
-    padding-top: 1%;
+    padding: 1% 1%;
     background-color: rgba(0, 0, 0, 0.5);
+}
+header div {
+    display: flex;
+    align-items: center;
+    height: 150px;
 }
 
 #logo {
     width: 25%;
+    margin-left: auto;
+    margin-right: auto;
+}
+#logo_auto {
+    width: 10%;
+}
+#logo_compu {
+    width: 10%;
 }
 
 nav ul {
@@ -17,7 +30,6 @@ nav ul {
     justify-content: center;
     flex-wrap: wrap;
 }
-
 ul {
     display: block;
     list-style-type: disc;
