@@ -17,7 +17,7 @@ header div {
 }
 #logo_auto {
     /*width: 10%;*/
-    margin: auto;
+    margin-left: auto;
 }
 #logo_compu {
     /*width: 10%;*/
