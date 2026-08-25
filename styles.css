@@ -41,6 +41,7 @@ ul {
 }
 
 /*---------cosas de nervi INICIO-----*/
+/*tarjeta basica*/
 .tarjeta {
     display: flex;
     flex-direction: column;
@@ -58,16 +59,14 @@ ul {
     margin-bottom: 12px;    
   }
 
+  /*para centrar items*/
 .centrado {
     display: flex;
     justify-content: center; 
     width: 100%;
 }
 
-.logo_carreras {
-    width: 10%;
-}
-
+/*para que los botones de carreras sean con efecto de wooble o como se llame*/
 .icono_boton{
     transition: transform 0.5s ease;
 }
@@ -76,6 +75,7 @@ ul {
     cursor: pointer;
 }
 
+/*para las imagenes de los iconos de tarjetas que tienen transicion*/
 #tiempo{
             -webkit-mask-image: url('images/iconos/icono_tiempo.png');
             mask-image: url('images/iconos/icono_tiempo.png');
@@ -85,65 +85,124 @@ ul {
             mask-image: url('images/iconos/icono_titulo.png');
         }
 
+/*la transicion*/
+.icono-animado {
+    width: 18px;
+    height: 18px;
 
-        .icono-animado {
-            width: 18px;
-            height: 18px;
+    -webkit-mask-size: contain;
+    mask-size: contain;
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
 
-            -webkit-mask-size: contain;
-            mask-size: contain;
-            -webkit-mask-repeat: no-repeat;
-            mask-repeat: no-repeat;
+    background: linear-gradient(135deg, red 35%, black 65%);
+    background-size: 300% 300%;
+    background-position: bottom right;
 
-            background: linear-gradient(135deg, red 35%, black 65%);
-            background-size: 300% 300%;
-            background-position: bottom right;
+    transition: background-position 0.5s ease;
+}
 
-            transition: background-position 0.5s ease;
-        }
+/*tarjetas finas con transicion*/
 
-        .tarjeta_formal:hover .icono-animado {
-            background-position: top left;
-        }
-        .tarjeta_formal:hover .descripcion_icono {
-            color: #d32f2f;
-        }
+.tarjeta_formal:hover .icono-animado {
+    background-position: top left;
+}
+.tarjeta_formal:hover .descripcion_icono {
+    color: #d32f2f;
+}
 
-        .descripcion_icono {
-        display: flex;
-        align-items: center;
-        gap: 8px;
-        color: #5e5e5e;
-        font-size: 14px;
-        font-weight: 500;
-        transition: color 0.5s ease;
-        }
-        .texto_principal {
-        font-size: 22px;
-        font-weight: 700;
-        color: #1a1a1a;
-        }
-        .formal {
-        font-size: 17px;
-        color: #555555;
-        line-height: 1.5;
-        }
-        .tarjeta_formal {
-        background-color: #ffffff;
-        border-radius: 12px;
-        border: 1px solid rgb(168, 168, 168);
-        padding: 24px;
-        width: 280px;
-        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
-        display: flex;
-        flex-direction: column;
-        gap: 12px;
-        margin: 20px;
-        transition: transform 0.5s ease, border 0.5s ease, box-shadow 0.5s ease;
-        }
-        .tarjeta_formal:hover {
-        transform: scale(1.05);
-        border: 1px solid rgb(165, 0, 0);
-        box-shadow: 0 4px 12px rgba(100, 0, 0, 0.25);
-        }
+.descripcion_icono {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: #5e5e5e;
+    font-size: 14px;
+    font-weight: 500;
+    transition: color 0.5s ease;
+}
+.texto_principal {
+    font-size: 22px;
+    font-weight: 700;
+    color: #1a1a1a;
+}
+.formal {
+    font-size: 17px;
+    color: #555555;
+    line-height: 1.5;
+}
+.tarjeta_formal {
+    background-color: #ffffff;
+    border-radius: 12px;
+    border: 1px solid rgb(168, 168, 168);
+    padding: 24px;
+    width: 280px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin: 20px;
+    transition: transform 0.5s ease, border 0.5s ease, box-shadow 0.5s ease;
+}
+.tarjeta_formal:hover {
+    transform: scale(1.05);
+    border: 1px solid rgb(165, 0, 0);
+    box-shadow: 0 4px 12px rgba(100, 0, 0, 0.25);
+}
+
+/*para las cartas que se dan vuelta*/
+
+.card-container {
+    width: 350px;
+    height: 200px;
+    perspective: 1000px; 
+    margin: 30px;
+}
+
+
+.card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.8s ease;
+    transform-style: preserve-3d; 
+    cursor: pointer;
+}
+
+
+.card-container:hover .card-inner {
+    transform: rotateY(180deg);
+}
+
+
+.card-front, .card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden; /* Oculta la cara que queda atrás */
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+/* Cara de adelante */
+.card-front {
+    background: linear-gradient(to bottom right, #ff5a5a, #ff7e4b);
+    color: #ffffff;
+}
+
+/* Cara de atrás */
+.card-back {
+    background: linear-gradient(to bottom right, #ff8e32, #ff6b30);
+    color: #ffffff;
+    transform: rotateY(180deg);
+}
+
+.label_principal{
+    font-size: 26px;
+}
 /*---------cosas de nervi FIN-----*/
