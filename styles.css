@@ -199,15 +199,24 @@ ul {
     background: linear-gradient(to bottom right, #ff5a5a, #ff7e4b);
     color: #ffffff;
 }
-
+.card-back ul li{
+    font-size: 20px;
+}
 /* Cara de atrás */
 .card-back {
     background: linear-gradient(to bottom right, #ff8e32, #ff6b30);
     color: #ffffff;
     transform: rotateY(180deg);
 }
-
+.contenedor_img_txt {
+  display: flex;      
+  align-items: center; 
+  gap: 15px;           
+}
 .label_principal{
     font-size: 26px;
+}
+.label_secundario{
+    font-size: 20px;
 }
 /*---------cosas de nervi FIN-----*/
