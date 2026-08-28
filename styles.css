@@ -53,7 +53,7 @@ ul {
     unicode-bidi: isolate;
 }
 
-/*---------cosas de nervi INICIO-----*/
+/*--------------------------------------cosas de nervi INICIO-------------------------------------*/
 /*tarjeta basica*/
 .tarjeta {
     display: flex;
@@ -97,11 +97,29 @@ ul {
             -webkit-mask-image: url('images/iconos/icono_titulo.png');
             mask-image: url('images/iconos/icono_titulo.png');
         }
-
+#nube{
+            -webkit-mask-image: url('images/iconos/icono_nube.png');
+            mask-image: url('images/iconos/icono_nube.png');
+        }
+#app{
+            -webkit-mask-image: url('images/iconos/icono_aplicaciones.png');
+            mask-image: url('images/iconos/icono_aplicaciones.png');
+        }
+#reparacion{
+            -webkit-mask-image: url('images/iconos/icono_reparacion.png');
+            mask-image: url('images/iconos/icono_reparacion.png');
+        }
+#redes{
+            -webkit-mask-image: url('images/iconos/icono_redes.png');
+            mask-image: url('images/iconos/icono_redes.png');
+        }
 /*la transicion*/
-.icono-animado {
+.little_icon{
     width: 18px;
     height: 18px;
+}
+
+.icono-animado {
 
     -webkit-mask-size: contain;
     mask-size: contain;
@@ -155,7 +173,7 @@ ul {
     flex-direction: column;
     gap: 12px;
     margin: 20px;
-    transition: transform 0.5s ease, border 0.5s ease, box-shadow 0.5s ease;
+    transition: transform 0.5s ease-out, border 0.5s ease-out, box-shadow 0.5s ease-out;
 }
 .tarjeta_formal:hover {
     transform: scale(1.05);
@@ -217,15 +235,91 @@ ul {
     color: #ffffff;
     transform: rotateY(180deg);
 }
-.contenedor_img_txt {
-  display: flex;      
-  align-items: center; 
-  gap: 15px;           
-}
+
 .label_principal{
     font-size: 26px;
 }
 .label_secundario{
     font-size: 20px;
 }
-/*---------cosas de nervi FIN-----*/
+
+
+/* tarjetas movedizas*/
+
+
+.contenedor_movediza {
+    position: relative;
+    background-color: #dddcdc;
+    position: relative;
+    box-shadow: 0 4px 8px rgba(78, 78, 78, 0.322);
+    width: 350px;
+    height: 200px;
+    margin: 20px;
+    border: 1px solid #474747;
+    border-radius: 15px;
+    overflow: hidden; /* Corta todo lo que quede fuera del marco */
+    transition: background-color 0.5s ease-in-out,box-shadow 0.5s ease-in-out,border 0.5s ease-in-out ;
+  }
+  
+.contenedor_movediza:hover{
+    background-color: #a10000;
+    box-shadow: 0 4px 8px rgba(77, 0, 0, 0.534);
+    border: 1px solid #490000;
+}
+
+.contenedor_movediza:hover .icono-animado{
+    background-position: top left;
+}
+
+  /* Estilos comunes para ambas caras */
+  .movediza_base, .movediza_oculta {
+    position: absolute;
+    top: 10%;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
+  }
+  
+  /* Estado inicial: Cara Base */
+  .movediza_base {
+    font-size: 40px;
+    opacity: 1;
+    transform: translateX(0);
+  }
+  
+  /* Estado inicial: Cara Oculta (arranca a la derecha e invisible) */
+  .movediza_oculta {
+    opacity: 0;
+    font-size: 20px;
+    color: #ffffff;
+    transform: translateX(100%);
+  }
+  
+  /* Hover: Cara Base sale hacia la izquierda y se desvanece */
+  .contenedor_movediza:hover .movediza_base {
+    opacity: 0;
+    transform: translateX(-100%);
+  }
+  
+  /* Hover: Cara Oculta entra desde la derecha a su posición original */
+  .contenedor_movediza:hover .movediza_oculta {
+    opacity: 1;
+    transform: translateX(0);
+  }
+
+.icon_up_center {
+    width: 60px;
+    height: 60px;
+  position: absolute;
+  top: 0;             /* Lo pega al borde superior */
+  left: 50%;          /* Lo mueve al centro de la pantalla */
+  transform: translateX(-50%); /* Centrado perfecto: compensa el ancho del propio hijo */
+  margin-top: 20px;
+  background-color: #e0e0e0;
+}
+
+/*--------------------------------------cosas de nervi FIN------------------------------------------*/
