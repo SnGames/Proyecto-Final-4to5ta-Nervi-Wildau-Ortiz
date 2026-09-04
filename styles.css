@@ -386,4 +386,57 @@ ul {
   background-color: #e0e0e0;
 }
 
-/*--------------------------------------cosas de nervi FIN------------------------------------------*/
+/*--------------------------------------cosas de nervi FIN------------------------------------------*/ 
+/*--------------------------------------cosas de Ortiz inicio----------------------------------------*/
+
+.panel-bloques {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+
+.bloque-carmesi {
+    border: 1px solid #474747;
+    background-color: #ffffff;
+    border-left: 4px solid #c50000;
+    padding: 20px;
+}
+
+
+.bloque-carmesi .categoria {
+    color: #7a001e;
+    text-transform: uppercase;
+    font-size: 0.75rem;
+    font-weight: bold;
+    margin-bottom: 8px;
+}
+
+
+.bloque-carmesi h2 {
+    color: #ffffff;
+    font-size: 1.4rem;
+    margin: 0 0 10px 0;
+}
+
+
+.bloque-carmesi p {
+    color: #000000;
+    font-size: 0.95rem;
+    line-height: 1.5;
+    margin: 0 0 15px 0;
+}
+
+
+.bloque-carmesi .enlace-formal {
+    color: #ffffff;
+    text-decoration: underline;
+    font-size: 0.85rem;
+}
+
+
+/*--------------------------------------cosas de Ortiz Fin----------------------------------------*/
+
+
