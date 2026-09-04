@@ -172,6 +172,12 @@ ul {
     transition: background-position 0.5s ease;
 }
 
+.icono-animado.compu{
+    background: linear-gradient(135deg, rgb(0, 238, 255) 35%, black 65%);
+    background-size: 300% 300%;
+    background-position: bottom right;
+}
+
 /*tarjetas finas con transicion*/
 
 .tarjeta_formal:hover .icono-animado {
@@ -179,6 +185,9 @@ ul {
 }
 .tarjeta_formal:hover .descripcion_icono {
     color: #d32f2f;
+}
+.tarjeta_formal.compu:hover .descripcion_icono {
+    color: #2fcdd3;
 }
 
 .descripcion_icono {
@@ -217,6 +226,10 @@ ul {
 .tarjeta_formal:hover {
     border: 1px solid rgb(165, 0, 0);
     box-shadow: 0 4px 12px rgba(100, 0, 0, 0.25);
+}
+.tarjeta_formal.compu:hover  {
+    border: 1px solid rgb(0, 165, 165);
+    box-shadow: 0 4px 12px rgba(0, 88, 100, 0.25);
 }
 
 /*para las cartas que se dan vuelta*/
@@ -261,17 +274,23 @@ ul {
 
 /* Cara de adelante */
 .card-front {
-    background: linear-gradient(to bottom right, #ff5a5a, #ff7e4b);
+    background: linear-gradient(to bottom right, #ff9900, #ff7a2d);
     color: #ffffff;
+}
+.card-front.compu{
+    background: linear-gradient(to bottom right, #5a81ff, #4bffff);
 }
 .card-back ul li{
     font-size: 20px;
 }
 /* Cara de atrás */
 .card-back {
-    background: linear-gradient(to bottom right, #ff8e32, #ff6b30);
+    background: linear-gradient(to bottom right, #ff0000, #ff7525);
     color: #ffffff;
     transform: rotateY(180deg);
+}
+.card-back.compu{
+    background: linear-gradient(to bottom right, #32ffff, #3060ff);
 }
 
 .label_principal{
@@ -300,9 +319,14 @@ ul {
   }
   
 .contenedor_movediza:hover{
-    background-color: #a10000;
+    background-color: #c40000;
     box-shadow: 0 4px 8px rgba(77, 0, 0, 0.534);
     border: 1px solid #490000;
+}
+.contenedor_movediza.compu:hover {
+    background-color: #0010a1;
+    box-shadow: 0 4px 8px rgba(0, 14, 77, 0.534);
+    border: 1px solid #000549;
 }
 
 .contenedor_movediza:hover .icono-animado{
