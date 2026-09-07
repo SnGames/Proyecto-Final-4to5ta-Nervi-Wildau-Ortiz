@@ -8,9 +8,17 @@
     <link rel="icon" href="images/logo_escuela_32x32.png" type="image/x-icon">
 </head>
 <body>
-    <header>
-        <img id="logo" src="images/logo_et35_letrado2.png" alt="Logo de la Escuela Técnica N°35">
+    <header><div class="alpha">
+        <div class="logos">
 
+            <a href="computacion.html"> <img class="icono_boton logo_carreras" src="images/icono_computacion.png" alt="Botón de Computación"> </a>
+            
+            <img id="logo" src="images/logo_escuela_75_largo.png" alt="Logo de la Escuela Técnica N°35"/>
+
+            <a href="automotor.html"> <img class="icono_boton logo_carreras" src="images/icono_automotor.png" alt="Botón de automotor"> </a>
+            
+
+        </div>
         <nav>
             <ul>
                 <li><a href="index.html">Inicio</a></li>
@@ -18,22 +26,45 @@
                 <li><a href="carreras.html">Carreras</a></li>
             </ul>
         </nav>
-    </header>
+    </div><div id="img1" class="img"></div><div id="img2" class="img"></div></header>
+
+    <script src="script.js"></script>
+
+
+
+
     <h2 style="text-align: center;"> Carreras</h2>
 
     <div class="centrado">
-    <div class="tarjeta" >
+    <div class="tarjeta icono-animado compu" >
         <a href="computacion.html"> 
         <img class="icono_boton" src="images/icono_computacion.png" alt="icono de computacion">
         </a>
-        <p>computacion</p>
+        <div class="caja_nombre">
+        <p>Computación</p>
+        </div>
+        <div class="caja_descripcion">
+            <div class="caja_texto">
+                <p>Aprende habilidades en diseño de paginas web, estructura de bases de datos, codificacion de algoritmos en diferentes lenguajes, armado de computadoras y más.</p>
+            </div>
+             <a href="computacion.html" class="a_boton centrado"><div class="boton compu"> <p>Explorar</p></div></a>
+        </div>
       </div>
-
-      <div class="tarjeta" >
+    </div>
+    <div class="centrado">
+      <div class="tarjeta icono-animado" >
         <a href="automotor.html"> 
         <img class="icono_boton" src="images/icono_automotor.png" alt="icono de automotor">
         </a>
-        <p>automotor</p>
+        <div class="caja_nombre">
+        <p>Automotor</p>
+        </div>
+        <div class="caja_descripcion">
+            <div class="caja_texto">
+                <p>Desarma y ensambla motores en el taller, aprende tanto la teoria como la practica del funcionamiento de un motor de 4 tiempos, sistemas de suspencion, frenos y más</p>
+            </div>
+             <a href="automotor.html" class="a_boton centrado"><div class="boton"> <p>Explorar</p> </div></a>
+        </div>
       </div>
     </div>
 
