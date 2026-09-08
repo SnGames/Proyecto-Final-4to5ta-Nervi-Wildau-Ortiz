@@ -3,6 +3,10 @@
     navigation: auto;
 }
 
+* {
+    font-family: Calibri, Arial, sans-serif;
+}
+
 body {
     margin: 0;
 }
