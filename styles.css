@@ -92,10 +92,21 @@ ul {
     width: 80%;
     height: auto;           
     border: 2px solid #ccc; 
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.26);
     border-radius: 15px;
     padding: 16px;    
-    margin: 16px;      
+    margin: 16px;   
+    transition: border 0.5s ease-out,box-shadow 0.5s ease-out;   
   }
+
+.tarjeta:hover{
+    border: 2px solid #c40000; 
+    box-shadow: 0 0 15px rgba(255, 0, 0, 0.5);
+}
+.tarjeta.compu:hover{
+    border: 2px solid #00c4ba; 
+    box-shadow: 0 0 15px rgba(0, 255, 242, 0.5);
+}
 
   .tarjeta img{
     width: 100%;
@@ -139,7 +150,7 @@ ul {
 
 .boton:hover{
     transform: scale(0.95);
-    background-color: #ff1e1e;
+    background-color: #e70000;
 }
 
 .boton.compu:hover{
