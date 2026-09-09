@@ -293,12 +293,12 @@ ul {
     transition: color 0.5s ease;
 }
 .texto_principal {
-    font-size: clamp(15px,3vw,22px);
+    font-size: clamp(13px,3vw,22px);
     font-weight: 700;
     color: #1a1a1a;
 }
 .formal {
-    font-size: clamp(12px,2vw,18px);
+    font-size: clamp(10px,2vw,18px);
     color: #555555;
     line-height: 1.5;
 }
@@ -313,7 +313,7 @@ ul {
     display: flex;
     flex-direction: column;
     gap: 12px;
-    margin: 20px;
+    margin: 2vw;
     transition: border 0.5s ease-out, box-shadow 0.5s ease-out;
 }
 .tarjeta_formal:hover {
@@ -331,7 +331,7 @@ ul {
     width: 350px;
     height: 200px;
     perspective: 1000px; 
-    margin: 20px;
+    margin: 2vw;
 }
 
 
@@ -401,7 +401,7 @@ ul {
     box-shadow: 0 4px 8px rgba(78, 78, 78, 0.322);
     width: 350px;
     height: 200px;
-    margin: 20px;
+    margin: 2vw;
     border: 1px solid #474747;
     border-radius: 15px;
     overflow: hidden;
