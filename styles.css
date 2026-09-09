@@ -90,7 +90,7 @@ ul {
     align-items: center;   
     text-align: center;    
     width: 80%;
-    height: 300px;           
+    height: auto;           
     border: 2px solid #ccc; 
     border-radius: 15px;
     padding: 16px;    
@@ -98,7 +98,11 @@ ul {
   }
 
   .tarjeta img{
-    height: 250px;
+    width: 100%;
+  }
+
+   .img_a{
+    width: 15vw;
   }
 
 .caja_descripcion{
@@ -113,10 +117,10 @@ ul {
     margin-top: 10%;
 }
 .caja_texto p{
-    padding-left: 35px;
-    padding-right: 35px;
-    color: gray;
-    font-size: 25px;
+    padding-left: 3vw;
+    padding-right: 3vw;
+    color: rgb(80, 80, 80);
+    font-size: clamp(10px, 4vw, 30px);
 }
 
 .a_boton{
@@ -126,7 +130,7 @@ ul {
 
 .boton{
     
-    width: 60%;
+    width: 80%;
     border: 2px solid #ff3838; 
     border-radius: 25px;
     background-color: #b40000;
@@ -145,7 +149,7 @@ ul {
 .boton p{
     color: white;
     margin: 5px;
-    font-size: 25px;
+    font-size: 2vw;
 }
 
 .boton.compu{
@@ -158,19 +162,17 @@ ul {
 }
   
   .caja_nombre p{
-    font-size: 40px;
+    font-size: clamp(2vw, 5vw, 50px);
     color: #474747;
 
   }
 
-  /*para centrar items*/
 .centrado {
     display: flex;
     justify-content: center; 
     width: 100%;
 }
 
-/*para que los botones de carreras sean con efecto de wooble o como se llame*/
 .icono_boton{
     transition: transform 0.5s ease;
 }
@@ -179,7 +181,7 @@ ul {
     cursor: pointer;
 }
 
-/*para las imagenes de los iconos de tarjetas que tienen transicion*/
+
 #tiempo{
     -webkit-mask-image: url('images/iconos/icono_tiempo.png');
     mask-image: url('images/iconos/icono_tiempo.png');
@@ -220,7 +222,7 @@ ul {
     -webkit-mask-image: url('images/iconos/icono_automotriz.png');
     mask-image: url('images/iconos/icono_automotriz.png');
 }
-/*la transicion*/
+
 .little_icon{
     width: 18px;
     height: 18px;
@@ -245,6 +247,7 @@ ul {
     background-size: 300% 300%;
     background-position: bottom right;
 }
+
 .tarjeta.icono-animado{
     background: linear-gradient(135deg, rgb(255, 73, 73) 35%, rgb(250, 250, 250) 65%);
     background-size: 300% 300%;
@@ -255,8 +258,6 @@ ul {
     background-size: 300% 300%;
     background-position: bottom right;
 }
-
-/*tarjetas finas con transicion*/
 
 .tarjeta_formal:hover .icono-animado {
     background-position: top left;
@@ -281,12 +282,12 @@ ul {
     transition: color 0.5s ease;
 }
 .texto_principal {
-    font-size: 22px;
+    font-size: clamp(15px,3vw,22px);
     font-weight: 700;
     color: #1a1a1a;
 }
 .formal {
-    font-size: 17px;
+    font-size: clamp(12px,2vw,18px);
     color: #555555;
     line-height: 1.5;
 }
@@ -342,7 +343,7 @@ ul {
     position: absolute;
     width: 100%;
     height: 100%;
-    backface-visibility: hidden; /* Oculta la cara que queda atrás */
+    backface-visibility: hidden;
     border-radius: 15px;
     display: flex;
     flex-direction: column;
@@ -353,18 +354,19 @@ ul {
     box-sizing: border-box;
 }
 
-/* Cara de adelante */
+
 .card-front {
     background: linear-gradient(to bottom right, #ff4c2d, #ff7a2d);
     color: #ffffff;
+    text-align: center;
 }
 .card-front.compu{
     background: linear-gradient(to bottom right, #5a81ff, #4bffff);
 }
 .card-back ul li{
-    font-size: 20px;
+    font-size: clamp(10px,4vw,20px);
 }
-/* Cara de atrás */
+
 .card-back {
     background: linear-gradient(to bottom right, #ff672b, #ffba25);
     color: #ffffff;
@@ -375,15 +377,11 @@ ul {
 }
 
 .label_principal{
-    font-size: 26px;
+    font-size: clamp(15px,5vw,26px);
 }
 .label_secundario{
-    font-size: 20px;
+    font-size: clamp(10px,4vw,20px);
 }
-
-
-/* tarjetas movedizas*/
-
 
 .contenedor_movediza {
     position: relative;
@@ -395,7 +393,7 @@ ul {
     margin: 20px;
     border: 1px solid #474747;
     border-radius: 15px;
-    overflow: hidden; /* Corta todo lo que quede fuera del marco */
+    overflow: hidden;
     transition: background-color 0.5s ease-in-out,box-shadow 0.5s ease-in-out,border 0.5s ease-in-out ;
   }
   
@@ -414,7 +412,6 @@ ul {
     background-position: top left;
 }
 
-  /* Estilos comunes para ambas caras */
   .movediza_base, .movediza_oculta {
     position: absolute;
     top: 10%;
@@ -427,28 +424,29 @@ ul {
     transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
   }
   
-  /* Estado inicial: Cara Base */
+
   .movediza_base {
-    font-size: 40px;
+    font-size: clamp(15px,5vw,40px);
     opacity: 1;
     transform: translateX(0);
+    text-align: center;
   }
   
-  /* Estado inicial: Cara Oculta (arranca a la derecha e invisible) */
   .movediza_oculta {
     opacity: 0;
-    font-size: 20px;
+    font-size: clamp(10px,3vw,20px);
     color: #ffffff;
     transform: translateX(100%);
   }
+  .movediza_oculta p{
+    text-align: center;
+  }
   
-  /* Hover: Cara Base sale hacia la izquierda y se desvanece */
   .contenedor_movediza:hover .movediza_base {
     opacity: 0;
     transform: translateX(-100%);
   }
   
-  /* Hover: Cara Oculta entra desde la derecha a su posición original */
   .contenedor_movediza:hover .movediza_oculta {
     opacity: 1;
     transform: translateX(0);
@@ -458,9 +456,9 @@ ul {
     width: 60px;
     height: 60px;
   position: absolute;
-  top: 0;             /* Lo pega al borde superior */
-  left: 50%;          /* Lo mueve al centro de la pantalla */
-  transform: translateX(-50%); /* Centrado perfecto: compensa el ancho del propio hijo */
+  top: 0;           
+  left: 50%;        
+  transform: translateX(-50%); 
   margin-top: 20px;
   background-color: #e0e0e0;
 }
