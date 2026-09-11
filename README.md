@@ -1,4 +1,4 @@
-# Proyecto Final 4to5ta Nervi Wildau Ortiz
+# Proyecto Final 4°5° Nervi Wildau Ortiz
 
 <img src="https://sngames.github.io/Proyecto-Final-4to5ta-Nervi-Wildau-Ortiz/images/logo_escuela_75_largo.png" alt="Logo de la E.T. N°35" style="width: 50%;"/>
 
