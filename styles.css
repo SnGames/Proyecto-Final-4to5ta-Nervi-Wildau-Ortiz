@@ -1,4 +1,4 @@
-/* wildau --- index */
+/* ------------------------------------ Cosas de Wildau (index) --------------------------------- */
 @view-transition {
     navigation: auto;
 }
@@ -53,10 +53,10 @@ header .logos a {
 }
 header .logos a:last-of-type {
     justify-content: flex-end;
-    margin-right: 2%; /*Solución temporal, deberiamos arreglar esto*/
+    margin-right: 2%; /**/
 }
 #logo {
-    margin-top: 2%; /*esto también hay que sacarlo*/
+    margin-top: 2%; /**/
     width: 35%;
     height: auto;
 }
@@ -65,14 +65,35 @@ header .logos a:last-of-type {
     height: auto;
 }
 
+/*Barra de navegación*/
 nav ul {
     list-style: none;
-    margin: 0;
+    margin: 0 auto;
     padding: 0;
     display: flex;
     justify-content: center;
+    align-items: center;
     flex-wrap: wrap;
+    font-size: 20px;
+    color: white;
+    width: 50%;
+    height: 50px;
+    border-top: 1px solid rgba(180, 180, 180, 0.5);
 }
+nav ul li {
+    padding: 0 15px;
+    display: flex;
+    align-items: center;
+    height: 100%;
+}
+nav ul li a {
+    text-decoration: none;
+    color: white;
+}
+nav ul li:hover {
+    background-color: rgba(180, 180, 180, 0.5);
+}
+
 ul {
     display: block;
     list-style-type: disc;
@@ -83,20 +104,23 @@ ul {
 }
 
 footer {
+    margin-top: 2%;
     width: 100%;
     background-color: #050505;
     color: white;
     padding: 1%;
     text-align: center;
     font-size: 15px;
-    position: absolute;
-    bottom: 0;
 }
 footer h2 {
     font-size: 20px;
     margin: 0;
 }
-
+.sin_llegar_final {
+    position: absolute;
+    bottom: 0;
+}
+/* ------------------------------------ Cosas de Wildau FIN  ------------------------------------ */
 /*--------------------------------------cosas de nervi INICIO-------------------------------------*/
 /*tarjeta basica*/
 .tarjeta {
