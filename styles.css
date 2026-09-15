@@ -274,8 +274,8 @@ footer h2 {
 }
 
 .little_icon{
-    width: 18px;
-    height: 18px;
+    width: clamp(15px,1vw,25px);
+    height: clamp(15px,1vw,25px);
 }
 
 .icono-animado {
@@ -327,7 +327,7 @@ footer h2 {
     align-items: center;
     gap: 8px;
     color: #5e5e5e;
-    font-size: 14px;
+    font-size: clamp(10px,1vw,20px);
     font-weight: 500;
     transition: color 0.5s ease;
 }
@@ -337,7 +337,7 @@ footer h2 {
     color: #1a1a1a;
 }
 .formal {
-    font-size: clamp(10px,2vw,18px);
+    font-size: clamp(10px,2vw,22px);
     color: #555555;
     line-height: 1.5;
 }
@@ -345,13 +345,13 @@ footer h2 {
     background-color: #ffffff;
     border-radius: 12px;
     border: 1px solid rgb(168, 168, 168);
-    padding: 25px;
-    width: 300px;
-    height: 150px;
+    padding: clamp(15px,1vw,25px);
+    width: clamp(300px,35vw,450px);
+    height: clamp(150px,15vw,225px);
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
     display: flex;
     flex-direction: column;
-    gap: 12px;
+    gap: clamp(8px,1vw,14px);
     margin: 2vw;
     transition: border 0.5s ease-out, box-shadow 0.5s ease-out;
 }
@@ -367,8 +367,8 @@ footer h2 {
 /*para las cartas que se dan vuelta*/
 
 .card-container {
-    width: 350px;
-    height: 200px;
+    width: clamp(350px,35vw,500px);
+    height: clamp(200px,20vw,300px);
     perspective: 1000px; 
     margin: 2vw;
 }
@@ -413,24 +413,22 @@ footer h2 {
 .card-front.compu{
     background: linear-gradient(to bottom right, #5a81ff, #4bffff);
 }
-.card-back ul li{
-    font-size: clamp(10px,4vw,20px);
-}
 
 .card-back {
     background: linear-gradient(to bottom right, #ff672b, #ffba25);
     color: #ffffff;
     transform: rotateY(180deg);
+    font-size: clamp(10px,4vw,25px)
 }
 .card-back.compu{
     background: linear-gradient(to bottom right, #32ffff, #3060ff);
 }
 
 .label_principal{
-    font-size: clamp(15px,5vw,26px);
+    font-size: clamp(15px,3vw,35px);
 }
 .label_secundario{
-    font-size: clamp(10px,4vw,20px);
+    font-size: clamp(10px,2vw,20px);
 }
 
 .contenedor_movediza {
@@ -438,8 +436,8 @@ footer h2 {
     background-color: #dddcdc;
     position: relative;
     box-shadow: 0 4px 8px rgba(78, 78, 78, 0.322);
-    width: 350px;
-    height: 200px;
+    width: clamp(350px,35vw,500px);
+    height: clamp(200px,20vw,300px);
     margin: 2vw;
     border: 1px solid #474747;
     border-radius: 15px;
@@ -484,7 +482,7 @@ footer h2 {
   
   .movediza_oculta {
     opacity: 0;
-    font-size: clamp(10px,3vw,20px);
+    font-size: clamp(10px,2vw,25px);
     color: #ffffff;
     transform: translateX(100%);
   }
@@ -503,15 +501,35 @@ footer h2 {
   }
 
 .icon_up_center {
-    width: 60px;
-    height: 60px;
+    width: clamp(50px,5vw,100px);
+    height: clamp(50px,5vw,100px);
   position: absolute;
   top: 0;           
   left: 50%;        
   transform: translateX(-50%); 
-  margin-top: 20px;
+  margin-top: clamp(15px,1.5vw,30px);
   background-color: #e0e0e0;
 }
+
+h2{
+    font-size: clamp(15px,5vw,40px);
+}
+
+h1{
+    font-size: clamp(20px,6vw,55px);
+}
+
+.p_titulo{
+    text-align: center;
+    -webkit-text-stroke: 0.1vw #960000; 
+    color: rgb(255, 230, 0); 
+}
+
+.p_titulo.compu{
+    -webkit-text-stroke: 0.1vw #000a96; 
+    color: rgb(0, 255, 255); 
+}
+
 
 /*--------------------------------------cosas de nervi FIN------------------------------------------*/ 
 /*--------------------------------------cosas de Ortiz inicio----------------------------------------*/
