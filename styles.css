@@ -40,12 +40,13 @@ header {
     height: 100%;
 }
 header .logos {
-    padding: 1%;
+    padding: 6% 1%; /**/
     display: flex;
     align-items: center;
     justify-content: space-between;
     height: 150px;
     width: 100%;
+    box-sizing: border-box;
 }
 header .logos a {
     display: flex;
@@ -53,10 +54,8 @@ header .logos a {
 }
 header .logos a:last-of-type {
     justify-content: flex-end;
-    margin-right: 2%; /**/
 }
 #logo {
-    margin-top: 2%; /**/
     width: 35%;
     height: auto;
 }
@@ -93,6 +92,9 @@ nav ul li a {
 nav ul li:hover {
     background-color: rgba(180, 180, 180, 0.5);
 }
+nav ul li:active {
+    background-color: rgba(210, 210, 210, 0.5);
+}
 
 ul {
     display: block;
@@ -111,12 +113,13 @@ footer {
     padding: 1%;
     text-align: center;
     font-size: 15px;
+    box-sizing: border-box;
 }
 footer h2 {
     font-size: 20px;
     margin: 0;
 }
-.sin_llegar_final {
+.sin_llegar_final { /*Clase temporal*/
     position: absolute;
     bottom: 0;
 }
