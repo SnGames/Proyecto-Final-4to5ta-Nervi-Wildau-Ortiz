@@ -530,7 +530,15 @@ h1{
     color: rgb(0, 255, 255); 
 }
 
+.p_titulo.suyai{
+    -webkit-text-stroke: 0.1vw #239600; 
+    color: rgb(51, 255, 0); 
+}
 
+.left_text{
+    text-align: left;
+    margin-left: 5vw;
+}
 /*--------------------------------------cosas de nervi FIN------------------------------------------*/ 
 /*--------------------------------------cosas de Ortiz inicio----------------------------------------*/
 
