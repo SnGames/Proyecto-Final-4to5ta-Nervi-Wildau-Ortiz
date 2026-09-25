@@ -44,6 +44,46 @@ function bg_image() {
     console.log(l2.style.opacity);
 }
 
+//Para el cambio de imagen del header
 const change_bg = setInterval(() => {
     bg_image();
 }, time);
+
+//Header y footer sincronizados
+class cHeader extends HTMLElement {
+    connectedCallback() {
+        this.innerHTML = `<header><div class="alpha">
+        <div class="logos">
+
+            <a href="computacion.html"> <img class="icono_boton logo_carreras" src="images/icono_computacion.png" alt="Botón de Computación"> </a>
+            
+            <img id="logo" src="images/logo_escuela_75_largo.png" alt="Logo de la Escuela Técnica N°35"/>
+
+            <a href="automotor.html"> <img class="icono_boton logo_carreras" src="images/icono_automotor.png" alt="Botón de automotor"> </a>
+            
+
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="institucional.html">Institucional</a></li>
+                <li><a href="carreras.html">Carreras</a></li>
+            </ul>
+        </nav>
+    </div><div id="img1" class="img"></div><div id="img2" class="img"></div></header>`;
+    }
+}
+
+customElements.define('custom-header', cHeader);
+
+class cFooter extends HTMLElement {
+    connectedCallback() {
+        this.innerHTML = `<footer class="sin_llegar_final">
+        <h2>Escuela Técnica N°35 - Ing. Eduardo Latzina</h2>
+        <p>Creado por: Ezequiel Nervi, Santiago Wildau y Johnatan Ortiz 4°5°</p>
+        <p>Sitio en construcción... por ahora</p>
+    </footer>`;
+    }
+}
+
+customElements.define('custom-footer', cFooter);
