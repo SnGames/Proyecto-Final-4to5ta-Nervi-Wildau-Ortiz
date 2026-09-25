@@ -1,5 +1,5 @@
 //Imágenes
-const bandera_lq = "url(images/bg/bandera_patio_lowq.webp)";
+const bandera_lq = "url(images/bg/bandera_patio_lowq.webp)"; //No se usa para el header porque tiene baja calidad
 const autos = "url(images/bg/dos_autos.webp)";
 const escenario = "url(images/bg/escenario.webp)";
 const taller_arriba = "url(images/bg/taller_autos_desde_arriba.webp)";
