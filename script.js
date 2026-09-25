@@ -78,7 +78,7 @@ customElements.define('custom-header', cHeader);
 
 class cFooter extends HTMLElement {
     connectedCallback() {
-        this.innerHTML = `<footer class="sin_llegar_final">
+        this.innerHTML = `<footer>
         <h2>Escuela Técnica N°35 - Ing. Eduardo Latzina</h2>
         <p>Creado por: Ezequiel Nervi, Santiago Wildau y Johnatan Ortiz 4°5°</p>
         <p>Sitio en construcción... por ahora</p>
