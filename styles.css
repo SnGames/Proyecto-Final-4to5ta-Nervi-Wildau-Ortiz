@@ -122,6 +122,7 @@ footer h2 {
 .sin_llegar_final { /*Clase temporal*/
     position: absolute;
     bottom: 0;
+    width: 100%;
 }
 /* ------------------------------------ Cosas de Wildau FIN  ------------------------------------ */
 /*--------------------------------------cosas de nervi INICIO-------------------------------------*/
