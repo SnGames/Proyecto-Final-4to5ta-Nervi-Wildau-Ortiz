@@ -119,7 +119,7 @@ footer h2 {
     font-size: 20px;
     margin: 0;
 }
-.sin_llegar_final { /*Clase temporal*/
+.sin_llegar_final { /*Clase temporal para las páginas que no llegan al final*/
     position: absolute;
     bottom: 0;
     width: 100%;
