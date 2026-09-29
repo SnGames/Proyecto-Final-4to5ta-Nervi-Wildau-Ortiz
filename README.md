@@ -16,4 +16,6 @@ Integrantes del grupo:
 
 Profesor: **Emiliano Francisco Dorsi**
 
-Para entrar a la página web, utiliza este link: <https://sngames.github.io/Proyecto-Final-4to5ta-Nervi-Wildau-Ortiz/>
+Para entrar a la página web, utiliza este link: **<https://sngames.github.io/Proyecto-Final-4to5ta-Nervi-Wildau-Ortiz/>**
+
+*(NOTA: para que todos los recursos de la página funcionen como se espera, utilice la extensión **Live Server** de VS Code al visualizar la página localmente, ya que algunas fotos pueden verse de manera errónea).*
