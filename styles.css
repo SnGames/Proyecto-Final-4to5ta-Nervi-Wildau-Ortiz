@@ -305,8 +305,13 @@ footer a:hover {
 }
 
 .little_icon{
-    width: clamp(15px,1vw,25px);
-    height: clamp(15px,1vw,25px);
+    width: clamp(15px,1.5vw,25px);
+    height: clamp(15px,1.5vw,25px);
+}
+
+.medium_icon{
+    width: clamp(15px,2vw,30px);
+    height: clamp(15px,2vw,30px);
 }
 
 .icono-animado {
@@ -325,6 +330,11 @@ footer a:hover {
 
 .icono-animado.compu{
     background: linear-gradient(135deg, rgb(0, 238, 255) 35%, black 65%);
+    background-size: 300% 300%;
+    background-position: bottom right;
+}
+.icono-animado.suyai{
+    background: linear-gradient(135deg, rgb(21, 255, 0) 35%, black 65%);
     background-size: 300% 300%;
     background-position: bottom right;
 }
@@ -352,20 +362,27 @@ footer a:hover {
 .tarjeta_formal.compu:hover .descripcion_icono {
     color: #2fcdd3;
 }
+.tarjeta_formal.suyai:hover .descripcion_icono {
+    color: #34d32f;
+}
+.tarjeta_formal.suyai:hover .texto_principal {
+    color: #34d32f;
+}
 
 .descripcion_icono {
     display: flex;
     align-items: center;
     gap: 8px;
     color: #5e5e5e;
-    font-size: clamp(10px,1vw,20px);
+    font-size: clamp(10px,1.2vw,15px);
     font-weight: 500;
-    transition: color 0.5s ease;
+    transition: color 0.5s ease-out;
 }
 .texto_principal {
-    font-size: clamp(13px,3vw,22px);
+    font-size: clamp(15px,3vw,25px);
     font-weight: 700;
     color: #1a1a1a;
+    transition: color 0.5s ease-out;
 }
 .formal {
     font-size: clamp(10px,2vw,22px);
@@ -386,6 +403,11 @@ footer a:hover {
     margin: 2vw;
     transition: border 0.5s ease-out, box-shadow 0.5s ease-out;
 }
+
+.tarjeta_formal.height_reduced{
+    height: clamp(100px,10vw,150px);
+}
+
 .tarjeta_formal:hover {
     border: 1px solid rgb(165, 0, 0);
     box-shadow: 0 4px 12px rgba(100, 0, 0, 0.25);
@@ -393,6 +415,10 @@ footer a:hover {
 .tarjeta_formal.compu:hover  {
     border: 1px solid rgb(0, 165, 165);
     box-shadow: 0 4px 12px rgba(0, 88, 100, 0.25);
+}
+.tarjeta_formal.suyai:hover  {
+    border: 1px solid rgb(33, 165, 0);
+    box-shadow: 0 4px 12px rgba(3, 100, 0, 0.25);
 }
 
 /*para las cartas que se dan vuelta*/
@@ -542,6 +568,10 @@ footer a:hover {
   background-color: #e0e0e0;
 }
 
+.texto{
+    font-size: clamp(10px,2vw,25px); 
+}
+
 h2{
     font-size: clamp(15px,5vw,40px);
 }
@@ -575,10 +605,12 @@ h1{
     }
 
 }
+
 .left_text{
     text-align: left;
     margin-left: 5vw;
 }
+
 /*--------------------------------------cosas de nervi FIN------------------------------------------*/ 
 /*--------------------------------------cosas de Ortiz inicio----------------------------------------*/
 
