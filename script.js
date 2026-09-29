@@ -68,6 +68,7 @@ class cHeader extends HTMLElement {
                 <li><a href="index.html">Inicio</a></li>
                 <li><a href="institucional.html">Institucional</a></li>
                 <li><a href="carreras.html">Carreras</a></li>
+                <li><a href="suyai.html">Suyai</a></li>
             </ul>
         </nav>
     </div><div id="img1" class="img"></div><div id="img2" class="img"></div></header>`;
@@ -79,11 +80,35 @@ customElements.define('custom-header', cHeader);
 class cFooter extends HTMLElement {
     connectedCallback() {
         this.innerHTML = `<footer>
-        <h2>Escuela Técnica N°35 - Ing. Eduardo Latzina</h2>
-        <p>Creado por: Ezequiel Nervi, Santiago Wildau y Johnatan Ortiz 4°5°</p>
-        <p>Sitio en construcción... por ahora</p>
+        <div>
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="institucional.html">Institucional</a></li>
+                <li><a href="carreras.html">Carreras</a></li>
+                <li><a href="suyai.html">Suyai</a></li>
+            </ul>
+        </div>
+        <div>
+            <h2>Escuela Técnica N°35 - Ing. Eduardo Latzina</h2>
+            <p>Creado por: Ezequiel Nervi, Santiago Wildau y Johnatan Ortiz 4°5°</p>
+            <p>Sitio en construcción... por ahora</p>
+        </div>
+        <div>
+            <h2>Contacto de la escuela</h2>
+            <p>Email: det_35_de18@bue.edu.ar</p>
+            <p>Teléfono/Fax: 4567-5838/1441</p>
+        </div>
+        
     </footer>`;
     }
 }
 
 customElements.define('custom-footer', cFooter);
+
+document.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', function(e) {
+        if (this.href === window.location.href) {
+            e.preventDefault();
+        }
+    });
+});
