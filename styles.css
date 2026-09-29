@@ -112,13 +112,40 @@ footer {
     color: white;
     padding: 1%;
     text-align: center;
-    font-size: 15px;
+    font-size: 16px;
     box-sizing: border-box;
+    display: flex;
 }
 footer h2 {
     font-size: 20px;
     margin: 0;
 }
+
+footer div {
+    width: 33.3%;
+}
+footer div:first-of-type {
+    text-align: left;
+}
+footer div:last-of-type {
+    text-align: right;
+    padding-right: 2.5%;
+}
+
+footer li {
+    list-style-type: none;
+    padding: 2px;
+}
+footer a {
+    text-decoration: none;
+    color: white;
+    transition: color 0.5s ease-out;
+}
+footer a:hover {
+    color: red;
+    text-decoration: underline;
+}
+
 .sin_llegar_final { /*Clase temporal para las páginas que no llegan al final*/
     position: absolute;
     bottom: 0;
