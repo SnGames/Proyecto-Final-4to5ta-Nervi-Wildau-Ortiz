@@ -153,10 +153,10 @@ footer a:hover {
 }
 /* ------------------------------------ Cosas de Wildau FIN  ------------------------------------ */
 /*--------------------------------------cosas de nervi INICIO-------------------------------------*/
-/*tarjeta basica*/
+
 .tarjeta {
     display: flex;
-    flex-direction:row;
+    flex-direction: row;
     align-items: center;   
     text-align: center;    
     width: 80%;
@@ -166,17 +166,25 @@ footer a:hover {
     border-radius: 15px;
     padding: 16px;    
     margin: 16px;   
-    transition: border 0.5s ease-out,box-shadow 0.5s ease-out;   
-  }
+    transition: border-color 0.5s ease-out, box-shadow 0.5s ease-out;   
+}
 
-.tarjeta:hover{
-    border: 2px solid #c40000; 
+.tarjeta.icono-animado {
+    transition: border-color 0.5s ease-out, 
+                box-shadow 0.5s ease-out, 
+                background-position 0.5s ease-out;
+}
+
+.tarjeta:hover {
+    border-color: #c40000; 
     box-shadow: 0 0 15px rgba(255, 0, 0, 0.5);
 }
-.tarjeta.compu:hover{
-    border: 2px solid #00c4ba; 
+
+.tarjeta.compu:hover {
+    border-color: #00c4ba; 
     box-shadow: 0 0 15px rgba(0, 255, 242, 0.5);
 }
+
 
   .tarjeta img{
     width: 100%;
@@ -212,19 +220,19 @@ footer a:hover {
 .boton{
     
     width: 80%;
-    border: 2px solid #ff3838; 
+    border: 2px solid #ff2f2f; 
     border-radius: 25px;
-    background-color: #b40000;
+    background-color: #cc0000;
     transition: transform 0.5s ease-out,background-color 0.5s ease-out;
 }
 
 .boton:hover{
     transform: scale(0.95);
-    background-color: #e70000;
+    background-color: #ff0000;
 }
 
 .boton.compu:hover{
-    background-color: #00e6d2;
+    background-color: #00d6c4;
 }
 
 .boton p{
@@ -234,8 +242,8 @@ footer a:hover {
 }
 
 .boton.compu{
-    border: 2px solid #44ffef;
-    background-color: #00ad88;
+    border: 2px solid #3dffef;
+    background-color: #00cca0;
 }
 
 .caja_nombre{
