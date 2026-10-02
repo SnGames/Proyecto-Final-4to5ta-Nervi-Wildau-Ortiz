@@ -139,7 +139,7 @@ footer div:last-of-type {
 footer ul {
     display: flex;
     flex-wrap: wrap;
-    flex-direction: column;
+    flex-direction: column; /**/
     height: 92px;
 }
 footer li {
