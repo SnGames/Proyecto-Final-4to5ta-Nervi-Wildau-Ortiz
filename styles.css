@@ -311,6 +311,18 @@ footer a:hover {
     -webkit-mask-image: url('images/iconos/icono_automotriz.png');
     mask-image: url('images/iconos/icono_automotriz.png');
 }
+#cabaña {
+    -webkit-mask-image: url('images/iconos/cabaña.png');
+    mask-image: url('images/iconos/cabaña.png');
+}
+#dormitorio {
+    -webkit-mask-image: url('images/iconos/dormitorio.png');
+    mask-image: url('images/iconos/dormitorio.png');
+}
+#galpon {
+    -webkit-mask-image: url('images/iconos/galpon.png');
+    mask-image: url('images/iconos/galpon.png');
+}
 
 .little_icon{
     width: clamp(15px,1.5vw,25px);
