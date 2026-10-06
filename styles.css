@@ -676,6 +676,12 @@ h1{
     font-size: 3rem;          
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); 
 }
+.ancho_documento{ 
+    max-width: 85vw; 
+    width: 100%; 
+    margin: 40px auto; 
+    padding: 0 20px; 
+}
 
 /*--------------------------------------cosas de nervi FIN------------------------------------------*/ 
 /*--------------------------------------cosas de Ortiz inicio----------------------------------------*/
