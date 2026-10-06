@@ -695,7 +695,12 @@ h1{
 
 /*--------------------------------------cosas de nervi FIN------------------------------------------*/ 
 /*--------------------------------------cosas de Ortiz inicio----------------------------------------*/
-
+.centradov2 {
+    display: flex;
+    justify-content: center; 
+    align-items: center;     
+    min-height: 50vh;       
+  }
 .panel-bloques {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
