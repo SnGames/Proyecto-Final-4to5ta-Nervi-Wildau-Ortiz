@@ -57,7 +57,7 @@ class cHeader extends HTMLElement {
 
             <a href="computacion.html"> <img class="icono_boton logo_carreras" src="images/icono_computacion.png" alt="Botón de Computación"> </a>
             
-            <img id="logo" src="images/logo_escuela_75_largo.png" alt="Logo de la Escuela Técnica N°35"/>
+            <a href="index.html"> <img id="logo" src="images/logo_escuela_75_largo.png" alt="Logo de la Escuela Técnica N°35"/> </a>
 
             <a href="automotor.html"> <img class="icono_boton logo_carreras" src="images/icono_automotor.png" alt="Botón de automotor"> </a>
             
