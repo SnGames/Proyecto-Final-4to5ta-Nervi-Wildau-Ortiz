@@ -325,6 +325,10 @@ footer a:hover {
     -webkit-mask-image: url('images/iconos/cabaña.png');
     mask-image: url('images/iconos/cabaña.png');
 }
+#cabaña2 {
+    -webkit-mask-image: url('images/iconos/cabaña2.png');
+    mask-image: url('images/iconos/cabaña2.png');
+}
 #dormitorio {
     -webkit-mask-image: url('images/iconos/dormitorio.png');
     mask-image: url('images/iconos/dormitorio.png');
@@ -332,6 +336,10 @@ footer a:hover {
 #galpon {
     -webkit-mask-image: url('images/iconos/galpon.png');
     mask-image: url('images/iconos/galpon.png');
+}
+#fulbo {
+    -webkit-mask-image: url('images/iconos/fulbo.png');
+    mask-image: url('images/iconos/fulbo.png');
 }
 
 .little_icon{
