@@ -706,6 +706,14 @@ h1{
     background: linear-gradient(45deg,#003d05, #005e4e); 
 }
 
+.banner-contenedor.compu{
+    background: linear-gradient(45deg,#1b1eff, #01d6dd,#1b1eff); 
+}
+
+.banner-contenedor.auto{
+    background: linear-gradient(45deg,#cf0000, #dac400,#cf0000); 
+}
+
 .banner-contenedor img{
     height: 8vw;
 }
@@ -762,6 +770,13 @@ h1{
 .bg-verde { background-color: #2a9d8f; }
 .bg-naranja { background-color: #f4a261; }
 
+.v_div{
+    flex-direction: column;
+}
+
+.separado{
+    margin: 5vw;
+}
 
 
 /*--------------------------------------cosas de nervi FIN------------------------------------------*/ 
