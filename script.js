@@ -69,6 +69,7 @@ class cHeader extends HTMLElement {
                 <li><a href="institucional.html">Institucional</a></li>
                 <li><a href="carreras.html">Carreras</a></li>
                 <li><a href="suyai.html">Suyai</a></li>
+                <li><a href="contacto.html"</a>Contacto</li>
             </ul>
         </nav>
     </div><div id="img1" class="img"></div><div id="img2" class="img"></div></header>`;
@@ -82,8 +83,10 @@ class cFooter extends HTMLElement {
         this.innerHTML = `<footer>
         <div>
             <ul>
+                
                 <li><a href="index.html" class="bold">Inicio</a></li>
                 <li><a href="institucional.html" class="bold">Institucional</a></li>
+                <li><a href="contacto.html" class="bold"</a>Contacto</li>
                 <li><a href="carreras.html" class="bold">Carreras</a></li>
                 <li><a href="automotor.html">Automotor</a></li>
                 <li><a href="computacion.html">Computación</a></li>
