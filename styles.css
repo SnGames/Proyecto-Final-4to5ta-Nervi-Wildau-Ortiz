@@ -336,6 +336,13 @@ footer a:hover {
     width: 100%;
 }
 
+.Hflowcontainer {/*Godot referencia*/
+    display: flex;
+    justify-content: center; 
+    flex-wrap: wrap;
+    width: 100%;
+}
+
 .icono_boton{
     transition: transform 0.5s ease;
 }
@@ -506,10 +513,6 @@ footer a:hover {
     transition: border 0.5s ease-out, box-shadow 0.5s ease-out;
 }
 
-.tarjeta_formal.height_reduced{
-    height: clamp(100px,10vw,150px);
-}
-
 .tarjeta_formal:hover {
     border: 1px solid rgb(165, 0, 0);
     box-shadow: 0 4px 12px rgba(100, 0, 0, 0.25);
@@ -517,6 +520,11 @@ footer a:hover {
 .tarjeta_formal.compu:hover  {
     border: 1px solid rgb(0, 165, 165);
     box-shadow: 0 4px 12px rgba(0, 88, 100, 0.25);
+}
+.tarjeta_formal.suyai  {
+    width: clamp(150px,12vw,250px);
+    height: clamp(150px,21vw,400px);
+    margin: 2vw auto;
 }
 .tarjeta_formal.suyai:hover  {
     border: 1px solid rgb(33, 165, 0);
