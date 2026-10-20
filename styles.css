@@ -988,5 +988,17 @@ display: flex;
     font-size: 0.85rem;
 }
 
-
+.tarjeta22  {
+    background-color: #ffffff;
+    border-radius: 12px;
+    padding: 45px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.7);
+    max-width: 600px;
+    font-family: sans-serif;
+    margin-bottom: 24px;
+  }
+  
+  .banner-contenedor.institu{
+    background: linear-gradient(45deg,#ff0000,#ff0000, #ff0000); 
+}
 /*--------------------------------------cosas de Ortiz Fin----------------------------------------*/
