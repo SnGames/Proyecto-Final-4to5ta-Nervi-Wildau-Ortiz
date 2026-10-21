@@ -53,16 +53,8 @@ const change_bg = setInterval(() => {
 class cHeader extends HTMLElement {
     connectedCallback() {
         this.innerHTML = `<header><div class="alpha">
-        <div class="logos">
+        <a id="link_logo" href="index.html"> <img id="logo" src="images/logo_escuela_75_largo.png" alt="Logo de la Escuela Técnica N°35"/> </a>
 
-            <a href="computacion.html"> <img class="icono_boton logo_carreras" src="images/icono_computacion.png" alt="Botón de Computación"> </a>
-            
-            <a href="index.html"> <img id="logo" src="images/logo_escuela_75_largo.png" alt="Logo de la Escuela Técnica N°35"/> </a>
-
-            <a href="automotor.html"> <img class="icono_boton logo_carreras" src="images/icono_automotor.png" alt="Botón de automotor"> </a>
-            
-
-        </div>
         <nav>
             <ul>
                 <li><a href="index.html">Inicio</a></li>
