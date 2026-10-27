@@ -290,11 +290,16 @@ footer a:hover {
 
 
 .boton:hover{
+    transform: scale(1.05);
+    
+}
+
+.boton:active{
     transform: scale(0.95);
     background-color: #e20000;
 }
 
-.boton.compu:hover{
+.boton.compu:active{
     background-color: #00c7b6;
 }
 
@@ -432,7 +437,7 @@ footer a:hover {
     background-position: bottom right;
 }
 .icono-animado.suyai{
-    background: linear-gradient(135deg, rgb(21, 255, 0) 35%, black 65%);
+    background: linear-gradient(135deg, rgb(19, 228, 0) 35%, black 65%);
     background-size: 300% 300%;
     background-position: bottom right;
 }
@@ -690,21 +695,15 @@ h1{
 
 .p_titulo{
     text-align: center;
-    text-shadow: 2px 2px 4px rgba(90, 0, 0, 0.4); 
 }
-.p_titulo.suyai{
-    text-shadow: 2px 2px 4px rgba(13, 77, 0, 0.4); 
-}
-.p_titulo.compu{
-    text-shadow: 2px 2px 4px rgba(1, 87, 87, 0.4); 
-}
+
 
 .left_text{
     text-align: left;
 }
 
 .banner-contenedor {
-    background: linear-gradient(45deg, #ff0000, #0077ff); 
+    background: linear-gradient(45deg, #ff0000, #0026ff); 
     padding: 20px 20px;        
     text-align: center;      
     margin-bottom: 2vw;
