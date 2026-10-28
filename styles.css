@@ -832,7 +832,7 @@ display: flex;
 .timeline-event {
     position: relative;
     display: inline-block;
-    margin: 0 2vw;
+    margin: 3vw 2vw;
     white-space: normal;
     vertical-align: middle;
     z-index: 2;
@@ -866,8 +866,8 @@ display: flex;
     transition: all 0.3s ease;
 
 
-    width: 20vw;            
-    max-height: 8vw;      
+    width: clamp(100px,20vw,300px);            
+    max-height: clamp(50px,8vw,100px);     
     box-sizing: border-box;  
     
     overflow-y: auto;       
@@ -896,11 +896,11 @@ display: flex;
 }
 
 .timeline-event:nth-child(odd) .event-card { /*impares arriba*/
-    bottom: 6vw;
+    bottom: clamp(30px,10vw,100px);
 }
 
 .timeline-event:nth-child(even) .event-card { /*pares abajo*/
-    top: 6vw;
+    top: clamp(30px,10vw,100px);
 }
 
 
