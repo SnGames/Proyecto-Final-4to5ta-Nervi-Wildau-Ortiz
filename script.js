@@ -109,3 +109,48 @@ document.querySelectorAll('a').forEach(link => {
         }
     });
 });
+
+//---------------------------parte de nervi--------------------------
+
+
+document.addEventListener("DOMContentLoaded", () => {
+    const carrusel = document.querySelector("#carrusel");
+    if (!carrusel) return; // si la página no tiene carrusel, no hace nada
+
+    const slides = carrusel.querySelectorAll(".slide");
+    const btnPrev = carrusel.querySelector(".prev");
+    const btnNext = carrusel.querySelector(".next");
+
+    const TIEMPO = 5000; 
+    let actual = 0;
+    let timer;
+
+    function mostrar(indice) {
+        slides[actual].classList.remove("active");
+        
+        actual = (indice + slides.length) % slides.length;
+        slides[actual].classList.add("active");
+    }
+
+    
+    function programar(espera) {
+        clearTimeout(timer);
+        timer = setTimeout(() => {
+            mostrar(actual + 1);
+            programar(TIEMPO); 
+        }, espera);
+    }
+
+    btnNext.addEventListener("click", () => {
+        mostrar(actual + 1);
+        programar(TIEMPO * 2); 
+    });
+
+    btnPrev.addEventListener("click", () => {
+        mostrar(actual - 1);
+        programar(TIEMPO * 2);
+    });
+
+    programar(TIEMPO);
+});
+

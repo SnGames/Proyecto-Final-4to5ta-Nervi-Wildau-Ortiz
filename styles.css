@@ -738,8 +738,8 @@ h1{
 .ancho_documento{ 
     max-width: 85vw; 
     width: 100%; 
-    margin: 40px auto; 
-    padding: 0 20px; 
+    margin: 4vw auto; 
+    padding: 0 2vw; 
 }
 
 .v_div{
@@ -779,10 +779,11 @@ display: flex;
     background: var(--background-box);
     padding: 4vw 2vw;
     border-radius: 1vw;
+    box-sizing: border-box;
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
     border: 1px solid rgba(0, 0, 0, 0.2);
     overflow-x: auto;
-    
+    margin-bottom: 5vw;
     white-space: nowrap;
     position: relative;
     transition: box-shadow 0.5s ease-out,border-color 0.5s ease-out;
@@ -942,6 +943,63 @@ display: flex;
 
     /*-------linea de tiempo fin---------*/
 
+    /*-------------Carrusel para suyai INICIO--------*/
+.carrusel {
+    position: relative;
+    width: 100%;
+    max-height: clamp(300px,40vw,500px);
+    aspect-ratio: 16 / 9;
+    margin: 2rem auto;
+    overflow: hidden;
+    border-radius: 1vw;
+    
+    margin-bottom: 5vw;
+}
+
+.carrusel .slide {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0;
+    transition: opacity 1s;
+}
+
+.carrusel .slide.active {
+    opacity: 1;
+}
+
+.carrusel .btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: clamp(30px,4vw,60px);
+    height: clamp(30px,4vw,60px);
+    border: none;
+    border-radius: 50%;
+    background: rgba(0, 0, 0, 0.6);
+    color: white;
+    font-size: clamp(15px,3vw,30px);
+    text-align: center;
+    cursor: pointer;
+    opacity: 0;               /* ocultos hasta el hover */
+    transition: opacity 0.5s ease-out;
+}
+
+.carrusel .prev { left: 10px; }
+.carrusel .next { right: 10px; }
+
+.carrusel:hover .btn {
+    opacity: 1;
+}
+
+/* En celulares no existe el hover, así que los dejamos siempre visibles */
+@media (hover: none) {
+    .carrusel .btn { opacity: 1; }
+}
+/*-------------Carrusel para suyai FIN--------*/
+
 /*--------------------------------------cosas de nervi FIN------------------------------------------*/ 
 /*--------------------------------------cosas de Ortiz inicio----------------------------------------*/
 .centradov2 {
@@ -950,6 +1008,7 @@ display: flex;
     align-items: center;     
     min-height: 50vh;       
   }
+
 .panel-bloques {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
