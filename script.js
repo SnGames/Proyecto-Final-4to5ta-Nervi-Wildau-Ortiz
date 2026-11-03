@@ -102,6 +102,7 @@ class cFooter extends HTMLElement {
 
 customElements.define('custom-footer', cFooter);
 
+//Para que no te recargue la página al tocar el botón de la página en la que estás
 document.querySelectorAll('a').forEach(link => {
     link.addEventListener('click', function(e) {
         if (this.href === window.location.href) {
