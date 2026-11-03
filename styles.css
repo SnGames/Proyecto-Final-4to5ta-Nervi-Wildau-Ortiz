@@ -3,6 +3,10 @@
     navigation: auto;
 }
 
+:root {
+    --h-links-footer: 92px; /*La altura que tiene el 'ul' en el footer (cambia dependiendo el ancho de pantalla)*/
+}
+
 * {
     font-family: Calibri, Arial, sans-serif;
 }
@@ -51,7 +55,7 @@ header {
     align-items: center;
 }
 #logo {
-    width: 32%;
+    width: clamp(225px, 32vw, 330px);
     padding: 1.5vw;
 }
 
@@ -108,6 +112,7 @@ footer {
     font-size: 16px;
     box-sizing: border-box;
     display: flex;
+    overflow-wrap: break-word;
 }
 footer h2 {
     font-size: 20px;
@@ -128,8 +133,9 @@ footer ul {
     display: flex;
     flex-wrap: wrap;
     flex-direction: column; /**/
-    height: 92px;
+    height: var(--h-links-footer);
 }
+
 footer li {
     list-style-type: none;
     padding: 2px;
@@ -184,10 +190,10 @@ footer a:hover {
 
     font-size: 1.2em;
     padding: 0 3%;
-    margin-bottom: 0;
+    margin-bottom: 10px;
     margin-top: 0;
 
-    flex-grow: 1; 
+    flex-grow: 1;
 }
   
 .tarj_institucional .mas_info {
@@ -220,7 +226,7 @@ footer a:hover {
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.26);
     border-radius: 15px;
     padding: 16px;    
-    margin: 16px auto;   
+    margin: 32px auto;   
     transition: border-color 0.3s ease-out, box-shadow 0.3s ease-out;
     overflow-wrap: break-word;
 }
@@ -266,6 +272,26 @@ footer a:hover {
 .mas_info:hover {
     transform: scale(1.05);
 }
+
+/* ----------------- Media queries (tamaños dependiendo del ancho de pantalla) ------------------ */
+
+/*Para tablets o menos*/
+@media (max-width: 768px) {
+    footer ul {
+        height: calc(var(--h-links-footer) * 2);
+    }
+}
+
+/*Para celulares*/
+@media (max-width: 480px) {
+    footer ul {
+        padding: 10px;
+    }
+    .tarj_institucional {
+        width: 88%;
+    }
+}
+
 /* ------------------------------------ Cosas de Wildau FIN  ------------------------------------ */
 
 .tarjeta {
