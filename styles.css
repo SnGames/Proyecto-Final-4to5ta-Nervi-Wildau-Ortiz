@@ -55,7 +55,7 @@ header {
     align-items: center;
 }
 #logo {
-    width: clamp(225px, 32vw, 330px);
+    width: clamp(250px, 40%, 500px);
     padding: 1.5vw;
 }
 
