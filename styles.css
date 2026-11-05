@@ -861,7 +861,7 @@ display: flex;
     width: 100%;
     
     background: var(--background-box);
-    padding: 4vw 2vw;
+    padding: clamp(30px,4vw,50px) 2vw;
     border-radius: 1vw;
     box-sizing: border-box;
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
@@ -957,8 +957,8 @@ display: flex;
     transition: all 0.3s ease;
 
 
-    width: clamp(100px,20vw,300px);            
-    max-height: clamp(50px,12vw,200px);     
+    width: clamp(120px,20vw,380px);            
+    max-height: clamp(80px,12vw,260px);     
     box-sizing: border-box;  
     
     overflow-y: auto;       
@@ -993,11 +993,11 @@ display: flex;
 }
 
 .timeline-event:nth-child(odd) .event-card { /*impares arriba*/
-    bottom: clamp(30px,10vw,150px);
+    bottom: clamp(50px,10vw,150px);
 }
 
 .timeline-event:nth-child(even) .event-card { /*pares abajo*/
-    top: clamp(30px,10vw,150px);
+    top: clamp(50px,10vw,150px);
 }
 
 
@@ -1067,7 +1067,7 @@ display: flex;
     font-size: clamp(15px,3vw,30px);
     text-align: center;
     cursor: pointer;
-    opacity: 0;               /* ocultos hasta el hover */
+    opacity: 0;             
     transition: opacity 0.5s ease-out;
 }
 
@@ -1078,7 +1078,7 @@ display: flex;
     opacity: 1;
 }
 
-/* En celulares no existe el hover, así que los dejamos siempre visibles */
+/* si no hay hover se deja siempre el boton visible */
 @media (hover: none) {
     .carrusel .btn { opacity: 1; }
 }
