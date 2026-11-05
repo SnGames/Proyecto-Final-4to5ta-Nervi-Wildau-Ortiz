@@ -418,6 +418,8 @@ footer a:hover {
     justify-content: center; 
     flex-wrap: wrap;
     width: 100%;
+    gap: 2vw; 
+    box-sizing: border-box;
 }
 
 .img_reduced{
@@ -592,7 +594,7 @@ footer a:hover {
     background-color: #ffffff;
     border-radius: 12px;
     border: 1px solid rgb(168, 168, 168);
-    padding: clamp(15px,1vw,25px);
+    padding: clamp(8px,1vw,25px);
     width: clamp(300px,35vw,450px);
     height: clamp(150px,15vw,225px);
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
@@ -611,9 +613,21 @@ footer a:hover {
     border: 1px solid rgb(0, 165, 165);
     box-shadow: 0 4px 12px rgba(0, 88, 100, 0.25);
 }
-.tarjeta_formal.suyai  {
-    width: clamp(80px,13vw,250px);
+.tarjeta_formal.suyai {
+    /* 1. Quitamos el margin */
+    margin: 0; 
     
+    /* 2. flex: grow shrink basis 
+          - grow: 1 (se estira si sobra espacio)
+          - shrink: 1 (se achica si falta espacio)
+          - basis: 250px (el tamaño ideal base para calcular cuántas entran por fila) */
+    flex: 1 1 100px; 
+    
+    /* 3. El tope absoluto que permites que mida cuando se estire */
+    max-width: clamp(250px,35vw,450px); 
+    
+    /* 4. Opcional: un mínimo real por si la pantalla es extremadamente chica (ej. celulares viejos) */
+    min-width: clamp(80px,15vw,200px); 
 }
 
 .sub_hflow{
@@ -842,9 +856,8 @@ h1{
     flex-direction: column;
 }
 .h_div{
-display: flex;            
+  display: flex;            
   flex-direction: row;     
-  justify-content: space-between; 
   align-items: center;       
   width: 100%;
 }
@@ -861,8 +874,8 @@ display: flex;
   }
 
 .subcont_banner_suyai{
-    margin: auto;
-    max-width: 60vw;
+    justify-content: center; 
+    gap: clamp(20px,8vw,180px);
     color: white;
     font-size: clamp(10px,1.5vw,20px);
 }
@@ -980,8 +993,8 @@ display: flex;
 
 
 .event-card::-webkit-scrollbar { /*esto es pa que las tarjetas tengan una barra de scroll con hover y todo*/
-    width: 0.4vw;
-    height: 0.4vw;
+    width: clamp(3px,0.5vw,8px);
+    height: clamp(3px,0.5vw,8px);
 }
 
 .event-card::-webkit-scrollbar-track {
@@ -1011,8 +1024,6 @@ display: flex;
 .timeline-event:nth-child(even) .event-card { /*pares abajo*/
     top: clamp(50px,10vw,150px);
 }
-
-
 
 .event-title {
     font-size: 1.1rem;
