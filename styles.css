@@ -596,7 +596,14 @@ footer a:hover {
 .tarjeta_formal:hover .descripcion_icono {
     color: #d32f2f;
 }
+.tarjeta_formal:hover .texto_principal {
+    color: #d32f2f;
+}
+
 .tarjeta_formal.compu:hover .descripcion_icono {
+    color: #2fcdd3;
+}
+.tarjeta_formal.compu:hover .texto_principal {
     color: #2fcdd3;
 }
 .tarjeta_formal.suyai:hover .descripcion_icono {
@@ -650,7 +657,6 @@ footer a:hover {
     box-shadow: 0 4px 12px rgba(0, 88, 100, 0.25);
 }
 .tarjeta_formal.suyai {
-    /* 1. Quitamos el margin */
     margin: 0; 
     
     /* 2. flex: grow shrink basis 
@@ -658,12 +664,15 @@ footer a:hover {
           - shrink: 1 (se achica si falta espacio)
           - basis: 250px (el tamaño ideal base para calcular cuántas entran por fila) */
     flex: 1 1 100px; 
-    
-    /* 3. El tope absoluto que permites que mida cuando se estire */
     max-width: clamp(250px,35vw,450px); 
-    
-    /* 4. Opcional: un mínimo real por si la pantalla es extremadamente chica (ej. celulares viejos) */
-    min-width: clamp(80px,15vw,200px); 
+    min-width: clamp(80px,15vw,150px); 
+}
+
+.tarjeta_formal.comunidad {
+    margin: 0; 
+    flex: 1 1 100px; 
+    max-width: clamp(250px,45vw,600px); 
+    min-width: clamp(80px,25vw,350px); 
 }
 
 .sub_hflow{
@@ -916,6 +925,57 @@ h1{
     font-size: clamp(10px,1.5vw,20px);
 }
 
+/*-------------Diagrama circular inicio----------------------*/
+
+.chart-container {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    padding: 30px;
+    margin-left: 5vw;
+
+  }
+
+
+  .pie-chart {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+
+    background: conic-gradient(
+      #3498db 0% 32%,
+      #2ecc71 32% 60%,
+      #e67e22 60% 85%,
+      #e74c3c 85% 100%
+    );
+  }
+
+  .legend {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .legend-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 16px;
+    color: #333;
+  }
+
+  .color-box {
+    width: 18px;
+    height: 18px;
+    border-radius: 4px;
+  }
+
+  .color-1 { background-color: #3498db; }
+  .color-2 { background-color: #2ecc71; }
+  .color-3 { background-color: #e67e22; }
+  .color-4 { background-color: #e74c3c; }
+
+/*--------------Diagrama circular Fin--------------------*/
 /*-----linea de tiempo inicio--------*/
 
 .timeline-container {
