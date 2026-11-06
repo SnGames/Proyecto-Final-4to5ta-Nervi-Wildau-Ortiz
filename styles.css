@@ -307,6 +307,7 @@ footer a:hover {
 
 /* ------------------------------------ Cosas de Wildau FIN  ------------------------------------ */
 
+/* ------------------------------------ Cosas de Nervi INICIO  ------------------------------------ */
 .tarjeta {
     display: flex;
     flex-direction: row;
@@ -373,18 +374,34 @@ footer a:hover {
     border: 2px solid #ff2f2f; 
     border-radius: 25px;
     background-color: #b90000;
-    transition: transform 0.5s ease-out,background-color 0.5s ease-out;
+    transition: all 0.5s ease-out;
 }
 
+.boton.facebook{
+    width: auto;
+    padding: 1vw;
+    border-radius: clamp(20px,3vw,60px);
+    background-color: #1877F2;
+    box-shadow: 0 0 15px #1876f24d;
+    border: none;
+    align-items: center;
+}
+
+.boton.facebook:hover{
+    box-shadow: 0 0 15px #1877F2;
+}
 
 .boton:hover{
     transform: scale(1.05);
-    
 }
 
 .boton:active{
     transform: scale(0.95);
     background-color: #e20000;
+}
+
+.boton.facebook:active{
+    background-color: #1877F2;
 }
 
 .boton.compu:active{
@@ -394,7 +411,7 @@ footer a:hover {
 .boton p{
     color: white;
     margin: 5px;
-    font-size: 2vw;
+    font-size: clamp(15px,2vw,25px);
 }
 
 .boton.compu{
