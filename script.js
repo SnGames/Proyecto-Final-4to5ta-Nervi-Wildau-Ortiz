@@ -28,10 +28,12 @@ const ver_poster = "url(images/suyai_images/13.jpeg)";
 const ver_suyai = [ver_de_lado, ver_casa, ver_arboles, ver_playa, ver_lago, ver_lago_lejos, ver_poster];
 
 let bg_index = [1]; //Index de las imágenes del header
-let bg_index_suyai = [1]; //Index de las imágenes de la sección del suyai
+let bg_index_suyai = [1]; //Index de las imágenes de la sección del suyai inv
+let bg_index_suyai2 = [1]; //Index de las imágenes de la sección del suyai ver
 let time = 5000;
 let layer = [false]; //Header
-let layer_suyai = [false]; //Suyai
+let layer_suyai = [false]; //Suyai inv
+let layer_suyai2 = [false]; //Suyai ver
 
 function bg_image(images, id_i1, id_i2, bg_index, layer) {
     bg_index[0]++;
@@ -69,8 +71,14 @@ const change_bg = setInterval(() => {
     bg_image(images, "#img1", "#img2", bg_index, layer);
 }, time);
 
+//Cambio de imagen de la sección del suyai: invierno
 const change_bg_suyai = setInterval(() => {
     bg_image(inv_suyai, "#img3", "#img4", bg_index_suyai, layer_suyai);
+}, time);
+
+//Cambio de imagen de la sección del suyai: verano
+const change_bg_suyai2 = setInterval(() => {
+    bg_image(ver_suyai, "#img5", "#img6", bg_index_suyai2, layer_suyai2);
 }, time);
 
 //Header y footer sincronizados
