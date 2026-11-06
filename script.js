@@ -1,4 +1,4 @@
-//Imágenes
+//Imágenes de la escuela
 const bandera_lq = "url(images/bg/bandera_patio_lowq.webp)"; //No se usa para el header porque tiene baja calidad
 const autos = "url(images/bg/dos_autos.webp)";
 const escenario = "url(images/bg/escenario.webp)";
@@ -9,22 +9,42 @@ const taller_panoramica = "url(images/bg/taller_panoramica.jpg)";
 
 const images = [taller_panoramica, escenario, taller_gente, taller_autos, autos, taller_arriba];
 
-let bg_index = 1;
+//Imágenes del campamento de invierno Suyai
+const inv_cartel = "url(images/suyai_images/1.jpeg)";
+const inv_casa = "url(images/suyai_images/2.jpeg)";
+const inv_interior = "url(images/suyai_images/3.jpeg)";
+const inv_de_lado = "url(images/suyai_images/4.jpeg)";
+
+const inv_suyai = [inv_cartel, inv_casa, inv_interior, inv_de_lado];
+
+const ver_de_lado = "url(images/suyai_images/5.jpeg)";
+const ver_casa = "url(images/suyai_images/8.jpeg)";
+const ver_arboles = "url(images/suyai_images/9.jpeg)";
+const ver_playa = "url(images/suyai_images/10.jpeg)";
+const ver_lago = "url(images/suyai_images/11.jpeg)";
+const ver_lago_lejos = "url(images/suyai_images/12.jpeg)";
+const ver_poster = "url(images/suyai_images/13.jpeg)";
+
+const ver_suyai = [ver_de_lado, ver_casa, ver_arboles, ver_playa, ver_lago, ver_lago_lejos, ver_poster];
+
+let bg_index = [1]; //Index de las imágenes del header
+let bg_index_suyai = [1]; //Index de las imágenes de la sección del suyai
 let time = 5000;
-let layer = false;
+let layer = [false]; //Header
+let layer_suyai = [false]; //Suyai
 
-function bg_image() {
-    bg_index++;
-    layer = !layer;
-    if (bg_index >= images.length) {
-        bg_index = 0;
+function bg_image(images, id_i1, id_i2, bg_index, layer) {
+    bg_index[0]++;
+    layer[0] = !layer[0];
+    if (bg_index[0] >= images.length) {
+        bg_index[0] = 0;
     }
-    const l1 = document.querySelector("#img1");
-    const l2 = document.querySelector("#img2");
-    console.log(images[bg_index]);
-    console.log(layer);
+    const l1 = document.querySelector(id_i1);
+    const l2 = document.querySelector(id_i2);
+    console.log(images[bg_index[0]]);
+    console.log(layer[0]);
 
-    if (layer) {
+    if (layer[0]) {
         l1.style.opacity = 0;
         l2.style.opacity = 1;
     } else {
@@ -33,10 +53,10 @@ function bg_image() {
     }
 
     setTimeout(() => {
-        if (layer) {
-            l1.style.backgroundImage = images[bg_index];
+        if (layer[0]) {
+            l1.style.backgroundImage = images[bg_index[0]];
         } else {
-            l2.style.backgroundImage = images[bg_index];
+            l2.style.backgroundImage = images[bg_index[0]];
         }
         
     }, 1000);
@@ -46,7 +66,11 @@ function bg_image() {
 
 //Para el cambio de imagen del header
 const change_bg = setInterval(() => {
-    bg_image();
+    bg_image(images, "#img1", "#img2", bg_index, layer);
+}, time);
+
+const change_bg_suyai = setInterval(() => {
+    bg_image(inv_suyai, "#img3", "#img4", bg_index_suyai, layer_suyai);
 }, time);
 
 //Header y footer sincronizados
@@ -61,8 +85,8 @@ class cHeader extends HTMLElement {
                 <li><a href="institucional.html">Institucional</a></li>
                 <li><a href="carreras.html">Carreras</a></li>
                 <li><a href="suyai.html">Suyai</a></li>
-                <li><a href="comunidad.html"</a>Comunidad Educativa</li>
-                <li><a href="contacto.html"</a>Contacto</li>
+                <li><a href="comunidad.html">Comunidad Educativa</a></li>
+                <li><a href="contacto.html">Contacto</a></li>
             </ul>
         </nav>
     </div><div id="img1" class="img"></div><div id="img2" class="img"></div></header>`;
@@ -79,7 +103,7 @@ class cFooter extends HTMLElement {
                 
                 <li><a href="index.html" class="bold">Inicio</a></li>
                 <li><a href="institucional.html" class="bold">Institucional</a></li>
-                <li><a href="contacto.html" class="bold"></a>Contacto</li>
+                <li><a href="contacto.html" class="bold">Contacto</a></li>
                 <li><a href="carreras.html" class="bold">Carreras</a></li>
                 <li><a href="automotor.html">Automotor</a></li>
                 <li><a href="computacion.html">Computación</a></li>
