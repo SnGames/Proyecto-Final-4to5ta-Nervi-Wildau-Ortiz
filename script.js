@@ -31,6 +31,7 @@ let bg_index = [1]; //Index de las imágenes del header
 let bg_index_suyai = [1]; //Index de las imágenes de la sección del suyai inv
 let bg_index_suyai2 = [1]; //Index de las imágenes de la sección del suyai ver
 let time = 5000;
+let offset = 200; //Offset del cambio de bg de suyai ver
 let layer = [false]; //Header
 let layer_suyai = [false]; //Suyai inv
 let layer_suyai2 = [false]; //Suyai ver
@@ -77,9 +78,9 @@ const change_bg_suyai = setInterval(() => {
 }, time);
 
 //Cambio de imagen de la sección del suyai: verano
-const change_bg_suyai2 = setInterval(() => {
+const change_bg_suyai2 = setTimeout(() => {setInterval(() => {
     bg_image(ver_suyai, "#img5", "#img6", bg_index_suyai2, layer_suyai2);
-}, time);
+}, time)}, offset);
 
 //Header y footer sincronizados
 class cHeader extends HTMLElement {
