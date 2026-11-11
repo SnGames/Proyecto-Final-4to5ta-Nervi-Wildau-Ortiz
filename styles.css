@@ -3,6 +3,24 @@
     navigation: auto;
 }
 
+/*Nota: lo de la fuente montserrat lo pongo por las dudas, al final no se si la vamos a usar o no*/
+
+/*Fuente Montserrat*/
+@font-face {
+  font-family: 'Montserrat';
+  src: url('fonts/Montserrat-VariableFont_wght.ttf') format('truetype-variations');
+  font-weight: 100 900;
+  font-style: normal;
+}
+
+/*Montserrat cursiva*/
+@font-face {
+  font-family: 'Montserrat';
+  src: url('fonts/Montserrat-Italic-VariableFont_wght.ttf') format('truetype-variations');
+  font-weight: 100 900;
+  font-style: italic;
+}
+
 :root {
     --h-links-footer: 92px; /*La altura que tiene el 'ul' en el footer (cambia dependiendo el ancho de pantalla)*/
 }
@@ -284,17 +302,8 @@ footer a:hover {
     position: relative;
     width: 100%;
     height: 600px;
-}
-._izq {
-    clip-path: polygon(0 0, 100% 0, 0 100%);
-    z-index: -1;
-}
-._der {
-    clip-path: polygon(100% 0, 100% 100%, 0 100%);
-    z-index: 0;
-}
-.img.variation {
-    height: 600px;
+    text-align: center;
+    color: white;
 }
 .img_div {
     position: absolute;
@@ -305,6 +314,18 @@ footer a:hover {
     display: flex;
     align-items: center;
     justify-content: center;
+}
+._izq {
+    clip-path: polygon(0 0, 75% 0, 25% 100%, 0 100%);
+    z-index: -1;
+}
+._der {
+    clip-path: polygon(75% 0, 100% 0%, 100% 100%, 25% 100%);
+    z-index: 0;
+}
+
+.img.variation {
+    height: 600px;
 }
 #img3 {
     background-image: url(images/suyai_images/1.jpeg);
@@ -325,6 +346,21 @@ footer a:hover {
     background-image: url(images/suyai_images/8.jpeg);
     z-index: -2;
     opacity: 0;
+}
+
+.alpha.suyai_variation {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.tarj_suyai h2 {
+    font-size: 45px;
+    margin-block-end: 0;
+    margin-top: 150px;
+}
+.tarj_suyai p {
+    font-size: 25px;
+    margin-top: 5px;
 }
 
 /* ----------------- Media queries (tamaños dependiendo del ancho de pantalla) ------------------ */
