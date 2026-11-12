@@ -401,6 +401,10 @@ footer a:hover {
     footer ul {
         height: calc(var(--h-links-footer) * 2);
     }
+
+    .suyai_buttons {
+        width: 90%;
+    }
 }
 
 /*Para celulares*/
@@ -414,6 +418,30 @@ footer a:hover {
     }
     nav ul { /*Problema de que se rompe la palabra Comunidad Educativa*/
         width: 70%;
+    }
+
+    .img_div {
+        clip-path: none;
+    }
+    ._der {
+        top: 50%;
+    }
+    .img.variation {
+        height: 50%;
+    }
+    .tarj_suyai h2 {
+        margin-top: 25px;
+    }
+    .suyai_buttons {
+        display: block;
+    }
+    .suyai_b {
+        width: fit-content;
+        margin: 0 auto;
+    }
+    .suyai_buttons a + a {
+        display: block;
+        margin-top: 95px;
     }
 }
 
