@@ -215,29 +215,6 @@ footer a:hover {
     flex-grow: 1;
 }
 
-/*Botón de "Conocer más" para la tarjeta de institucional (unused)*/
-.tarj_institucional .mas_info {
-    background-color: #ff1414;
-    padding: 0.5rem;
-    width: auto;
-    min-width: 4%;
-    border: 1px solid black;
-    text-align: center;
-    box-shadow: 0 0 5px;
-
-    align-self: flex-end;
-    margin-top: auto;
-}
-.tarj_institucional .mas_info a {
-    text-decoration: none;
-    color: white;
-    font-weight: bold;
-}
-
-.a_tarj_inst {
-    text-decoration: none;
-}
-
 .tarj_institucional {
     display: flex;
     flex-direction: column;
@@ -289,12 +266,8 @@ footer a:hover {
     background-position: top left;
 }
 
-.mas_info {
-    transition: transform 0.2s ease-out;
-    border-radius: 10px;
-}
-.mas_info:hover {
-    transform: scale(1.05);
+.a_tarj_inst {
+    text-decoration: none;
 }
 
 /*Sección del suyai index*/
@@ -354,13 +327,71 @@ footer a:hover {
     left: 0;
 }
 .tarj_suyai h2 {
-    font-size: 45px;
+    font-size: 60px;
     margin-block-end: 0;
     margin-top: 150px;
 }
 .tarj_suyai p {
     font-size: 25px;
     margin-top: 5px;
+}
+
+.suyai_buttons {
+    display: flex;
+    padding: 10px;
+    width: 65%;
+    margin: 5% auto 0 auto;   
+    justify-content: space-between;
+    font-size: 25px;
+}
+.suyai_buttons a {
+    text-decoration: none;
+    color: white;
+}
+.suyai_buttons p {
+    margin-block: 0;
+}
+.suyai_b {
+    border: 2px white solid;
+    border-radius: 10px;
+    padding: 10px;
+    background: linear-gradient(135deg, #029eff, #03e9e9);
+    transition: transform 0.2s ease-out;
+}
+.suyai_b.summer {
+    background: linear-gradient(135deg, #ff8902, #f5b000);
+}
+.suyai_b:hover {
+    transform: scale(1.05);
+}
+#verano_act, #invierno_act {
+    scroll-margin-top: 180px;
+}
+
+.suyai_variation .mas_info {
+    background: linear-gradient(135deg, #ff1414, #ff6214);
+    padding: 0.5rem;
+    border: 2px solid white;
+    text-align: center;
+    margin: 40px auto;
+    font-weight: bold;
+}
+.suyai_variation a .mas_info {
+    color: white;
+}
+.suyai_variation a {
+    text-decoration: none;
+}
+.mas_info {
+    transition: transform 0.2s ease-out;
+    border-radius: 10px;
+    width: fit-content;
+}
+.mas_info p {
+    margin-block: 0;
+}
+.mas_info:hover {
+    transform: scale(1.05);
 }
 
 /* ----------------- Media queries (tamaños dependiendo del ancho de pantalla) ------------------ */
@@ -653,7 +684,8 @@ footer a:hover {
 .tarjeta_formal:hover .icono-animado {
     background-position: top left;
 }
-.tarjeta.icono-animado:hover {
+/*editado por Wildau, para hacer algo con los botones del apartado de suyai en el index*/
+.tarjeta.icono-animado:hover, .tarjeta.icono-animado:focus {
     background-position: top left;
 }
 .tarjeta_formal:hover .descripcion_icono {
