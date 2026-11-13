@@ -227,7 +227,7 @@ footer a:hover {
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.26);
     border-radius: 15px;
     padding: 16px;    
-    margin: 48px auto 96px auto;   
+    margin: 48px auto 48px auto;   
     transition: border-color 0.3s ease-out, box-shadow 0.3s ease-out;
     overflow-wrap: break-word;
 }
@@ -394,6 +394,42 @@ footer a:hover {
     transform: scale(1.05);
 }
 
+/*Tarjeta Instagram*/
+.tarj_insta {
+    display: flex;
+    align-items: center;
+    width: 65%;
+    height: 150px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.26);
+    border-radius: 15px;
+    padding: 16px;
+    margin: 0 auto 96px auto;
+    transition: box-shadow 0.3s ease-out, transform 0.3s ease-out;
+    overflow-wrap: break-word;
+    background: linear-gradient(135deg, #833ab4, #fd1d1d, #fcb045);
+    color: white;
+}
+.tarj_insta:hover {
+    transform: scale(1.02);
+}
+.icon_insta {
+    width: 70px;
+    padding: 0 20px;
+}
+.text_insta {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+.text_insta h2 {
+    margin-block: 0;
+    font-size: 40px;
+}
+.text_insta p {
+    margin-block: 0;
+    font-size: 20px;
+}
+
 /* ----------------- Media queries (tamaños dependiendo del ancho de pantalla) ------------------ */
 
 /*Para tablets o menos*/
@@ -419,7 +455,10 @@ footer a:hover {
     nav ul { /*Problema de que se rompe la palabra Comunidad Educativa*/
         width: 70%;
     }
+}
 
+/*Para el caso específico este del coso del suyai xd*/
+@media (max-width: 563px) {
     .img_div {
         clip-path: none;
     }
