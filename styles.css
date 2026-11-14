@@ -220,14 +220,15 @@ footer a:hover {
     flex-direction: column;
     align-items: center;   
     text-align: center;    
-    width: 65%;
+    width: 100%;
+    box-sizing: border-box;
     min-height: 150px;
     height: auto;
     border: 2px solid #ccc; 
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.26);
     border-radius: 15px;
     padding: 16px;    
-    margin: 48px auto 48px auto;   
+    margin: 0;   
     transition: border-color 0.3s ease-out, box-shadow 0.3s ease-out;
     overflow-wrap: break-word;
 }
@@ -267,7 +268,14 @@ footer a:hover {
 }
 
 .a_tarj_inst {
+    display: block;
+    width: 65%;
+    margin: 48px auto;
     text-decoration: none;
+}
+.a_tarj_inst:last-of-type { /*Tarjeta de instagram*/
+    margin-top: 0;
+    margin-bottom: 96px;
 }
 
 /*Sección del suyai index*/
@@ -398,23 +406,54 @@ footer a:hover {
 .tarj_insta {
     display: flex;
     align-items: center;
-    width: 65%;
-    height: 150px;
+    width: 100%;
+    box-sizing: border-box;
+    min-height: 150px;
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.26);
     border-radius: 15px;
     padding: 16px;
-    margin: 0 auto 96px auto;
-    transition: box-shadow 0.3s ease-out, transform 0.3s ease-out;
+    margin: 0;
+    transition: box-shadow 0.3s ease-out, transform 0.3s ease-out, color 0.3s ease-out;
     overflow-wrap: break-word;
-    background: linear-gradient(135deg, #833ab4, #fd1d1d, #fcb045);
     color: white;
+    border: none;
+    background: transparent;
+
+    position: relative;
+    z-index: 1;
 }
 .tarj_insta:hover {
     transform: scale(1.02);
+    color: black;   
 }
 .icon_insta {
-    width: 70px;
     padding: 0 20px;
+    position: relative;
+    display: inline-block;
+}
+.icon_insta::before, .icon_insta::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    
+    -webkit-mask: url('images/iconos/instagram.svg') no-repeat center / contain;
+    mask: url('images/iconos/instagram.svg') no-repeat center / contain;
+    
+    transition: opacity 0.3s ease-out;
+}
+.icon_insta::before {
+  background: #ffffff;
+  opacity: 1;
+}
+.icon_insta::after {
+  background: linear-gradient(135deg, #833ab4, #fd1d1d, #fcb045);
+  opacity: 0;
+}
+.tarj_insta:hover .icon_insta::before {
+  opacity: 0;
+}
+.tarj_insta:hover .icon_insta::after {
+  opacity: 1;
 }
 .text_insta {
     display: flex;
@@ -428,6 +467,40 @@ footer a:hover {
 .text_insta p {
     margin-block: 0;
     font-size: 20px;
+}
+
+.tarj_insta::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    background: linear-gradient(135deg, #833ab4, #fd1d1d, #fcb045);
+    z-index: -1;
+    transition: opacity 0.3s ease-out;
+}
+.tarj_insta::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    padding: 3px;
+    background: linear-gradient(135deg, #833ab4, #fd1d1d, #fcb045);
+
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    mask-composite: exclude;
+    
+    opacity: 0;
+    z-index: -1;
+    transition: opacity 0.3s ease-out;
+}
+.tarj_insta:hover::before {
+    opacity: 0;
+}
+.tarj_insta:hover::after {
+    opacity: 1;
 }
 
 /* ----------------- Media queries (tamaños dependiendo del ancho de pantalla) ------------------ */
@@ -449,7 +522,7 @@ footer a:hover {
         padding: 10px;
         height: auto;
     }
-    .tarj_institucional {
+    .a_tarj_inst {
         width: 88%;
     }
     nav ul { /*Problema de que se rompe la palabra Comunidad Educativa*/
@@ -511,6 +584,7 @@ footer a:hover {
 .tarjeta.icono-animado {
     transition: border-color 0.5s ease-out, 
                 box-shadow 0.5s ease-out, 
+                transform 0.5s ease-out,
                 background-position 0.5s ease-out;
 }
 
@@ -754,7 +828,13 @@ footer a:hover {
 /*editado por Wildau, para hacer algo con los botones del apartado de suyai en el index*/
 .tarjeta.icono-animado:hover, .tarjeta.icono-animado:focus {
     background-position: top left;
+    transform: scale(1.05);
 }
+
+.tarjeta.icono-animado:active {
+    transform: scale(0.95);
+}
+
 .tarjeta_formal:hover .descripcion_icono {
     color: #d32f2f;
 }
@@ -820,11 +900,6 @@ footer a:hover {
 }
 .tarjeta_formal.suyai {
     margin: 0; 
-    
-    /* 2. flex: grow shrink basis 
-          - grow: 1 (se estira si sobra espacio)
-          - shrink: 1 (se achica si falta espacio)
-          - basis: 250px (el tamaño ideal base para calcular cuántas entran por fila) */
     flex: 1 1 100px; 
     max-width: clamp(250px,35vw,450px); 
     min-width: clamp(80px,15vw,150px); 
@@ -833,8 +908,8 @@ footer a:hover {
 .tarjeta_formal.comunidad {
     margin: 0; 
     flex: 1 1 100px; 
-    max-width: clamp(250px,45vw,600px); 
-    min-width: clamp(80px,25vw,350px); 
+    max-width: clamp(250px,50vw,700px); 
+    min-width: clamp(80px,25vw,250px); 
 }
 
 .sub_hflow{
@@ -1100,8 +1175,8 @@ h1{
 
 
   .pie-chart {
-    width: 200px;
-    height: 200px;
+    width: clamp(100px,15vw,250px);
+    height: clamp(100px,15vw,250px);
     border-radius: 50%;
 
     background: conic-gradient(
