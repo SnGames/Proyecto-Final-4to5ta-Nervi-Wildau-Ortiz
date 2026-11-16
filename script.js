@@ -27,14 +27,19 @@ const ver_poster = "url(images/suyai_images/13.jpeg)";
 
 const ver_suyai = [ver_de_lado, ver_casa, ver_arboles, ver_playa, ver_lago, ver_lago_lejos, ver_poster];
 
+const carreras_img = [autos, taller_arriba, taller_autos, taller_gente, taller_panoramica];
+
 let bg_index = [1]; //Index de las imágenes del header
 let bg_index_suyai = [1]; //Index de las imágenes de la sección del suyai inv
 let bg_index_suyai2 = [1]; //Index de las imágenes de la sección del suyai ver
+let bg_index_carreras = [1]; //Index de las imágenes de la sección de carreras
 let time = 5000;
 let offset = 200; //Offset del cambio de bg de suyai ver
+let offset_c = 2500; //Offset del cambio de bg de la sección de carreras
 let layer = [false]; //Header
 let layer_suyai = [false]; //Suyai inv
 let layer_suyai2 = [false]; //Suyai ver
+let layer_carreras = [false]; //Carreras
 
 function bg_image(images, id_i1, id_i2, bg_index, layer) {
     bg_index[0]++;
@@ -81,6 +86,10 @@ const change_bg_suyai = setInterval(() => {
 const change_bg_suyai2 = setTimeout(() => {setInterval(() => {
     bg_image(ver_suyai, "#img5", "#img6", bg_index_suyai2, layer_suyai2);
 }, time)}, offset);
+
+const change_bg_carreras = setTimeout(() => {setInterval(() => {
+    bg_image(carreras_img, "#img7", "#img8", bg_index_carreras, layer_carreras);
+}, time)}, offset_c);
 
 //Header y footer sincronizados
 class cHeader extends HTMLElement {

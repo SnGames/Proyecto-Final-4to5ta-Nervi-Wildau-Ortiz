@@ -278,130 +278,6 @@ footer a:hover {
     margin-bottom: 96px;
 }
 
-/*Sección del suyai index*/
-.tarj_suyai {
-    position: relative;
-    width: 100%;
-    height: 600px;
-    text-align: center;
-    color: white;
-}
-.img_div {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-._izq {
-    clip-path: polygon(0 0, 75% 0, 25% 100%, 0 100%);
-    z-index: -1;
-}
-._der {
-    clip-path: polygon(75% 0, 100% 0%, 100% 100%, 25% 100%);
-    z-index: 0;
-}
-
-.img.variation {
-    height: 600px;
-}
-#img3 {
-    background-image: url(images/suyai_images/1.jpeg);
-    z-index: -1;
-    opacity: 1;
-}
-#img4 {
-    background-image: url(images/suyai_images/2.jpeg);
-    z-index: -2;
-    opacity: 0;
-}
-#img5 {
-    background-image: url(images/suyai_images/5.jpeg);
-    z-index: -1;
-    opacity: 1;
-}
-#img6 {
-    background-image: url(images/suyai_images/8.jpeg);
-    z-index: -2;
-    opacity: 0;
-}
-
-.alpha.suyai_variation {
-    position: absolute;
-    top: 0;
-    left: 0;
-}
-.tarj_suyai h2 {
-    font-size: 60px;
-    margin-block-end: 0;
-    margin-top: 150px;
-}
-.tarj_suyai p {
-    font-size: 25px;
-    margin-top: 5px;
-}
-
-.suyai_buttons {
-    display: flex;
-    padding: 10px;
-    width: 65%;
-    margin: 5% auto 0 auto;   
-    justify-content: space-between;
-    font-size: 25px;
-}
-.suyai_buttons a {
-    text-decoration: none;
-    color: white;
-}
-.suyai_buttons p {
-    margin-block: 0;
-}
-.suyai_b {
-    border: 2px white solid;
-    border-radius: 10px;
-    padding: 10px;
-    background: linear-gradient(135deg, #029eff, #03e9e9);
-    transition: transform 0.2s ease-out;
-}
-.suyai_b.summer {
-    background: linear-gradient(135deg, #ff8902, #f5b000);
-}
-.suyai_b:hover {
-    transform: scale(1.05);
-}
-#verano_act, #invierno_act {
-    scroll-margin-top: 180px;
-}
-
-.suyai_variation .mas_info {
-    background: linear-gradient(135deg, #ff1414, #ff6214);
-    padding: 0.5rem;
-    border: 2px solid white;
-    text-align: center;
-    margin: 40px auto;
-    font-weight: bold;
-}
-.suyai_variation a .mas_info {
-    color: white;
-}
-.suyai_variation a {
-    text-decoration: none;
-}
-.mas_info {
-    transition: transform 0.2s ease-out;
-    border-radius: 10px;
-    width: fit-content;
-}
-.mas_info p {
-    margin-block: 0;
-}
-.mas_info:hover {
-    transform: scale(1.05);
-}
-
 /*Tarjeta Instagram*/
 .tarj_insta {
     display: flex;
@@ -503,6 +379,172 @@ footer a:hover {
     opacity: 1;
 }
 
+/*Sección del suyai index*/
+.section_img {
+    position: relative;
+    width: 100%;
+    height: 700px;
+    text-align: center;
+    color: white;
+}
+.img_div {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+._izq {
+    clip-path: polygon(0 0, 75% 0, 25% 100%, 0 100%);
+    z-index: -1;
+}
+._der {
+    clip-path: polygon(75% 0, 100% 0%, 100% 100%, 25% 100%);
+    z-index: 0;
+}
+
+.img.variation {
+    height: 700px;
+}
+#img3 {
+    background-image: url(images/suyai_images/1.jpeg);
+    z-index: -1;
+    opacity: 1;
+}
+#img4 {
+    background-image: url(images/suyai_images/2.jpeg);
+    z-index: -2;
+    opacity: 0;
+}
+#img5 {
+    background-image: url(images/suyai_images/5.jpeg);
+    z-index: -1;
+    opacity: 1;
+}
+#img6 {
+    background-image: url(images/suyai_images/8.jpeg);
+    z-index: -2;
+    opacity: 0;
+}
+
+.alpha.suyai_variation {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.section_img h2 {
+    font-size: 60px;
+    margin-block-end: 0;
+    margin-top: 175px;
+}
+.section_img p {
+    font-size: 25px;
+    margin-top: 5px;
+}
+
+.section_buttons {
+    display: flex;
+    padding: 10px;
+    width: 65%;
+    margin: 5% auto 0 auto;   
+    justify-content: space-between;
+    font-size: 25px;
+}
+.section_buttons a {
+    text-decoration: none;
+    color: white;
+}
+.section_buttons p {
+    margin-block: 0;
+}
+.suyai_b {
+    border: 2px white solid;
+    border-radius: 10px;
+    padding: 10px;
+    background: linear-gradient(135deg, #029eff, #03e9e9);
+    transition: transform 0.2s ease-out;
+}
+.suyai_b.summer {
+    background: linear-gradient(135deg, #ff8902, #f5b000);
+}
+.suyai_b:hover {
+    transform: scale(1.05);
+}
+#verano_act, #invierno_act {
+    scroll-margin-top: 180px;
+}
+
+.suyai_variation .mas_info {
+    background: linear-gradient(135deg, #ff1414, #ff6214);
+    padding: 0.5rem;
+    border: 2px solid white;
+    text-align: center;
+    margin: 40px auto;
+    font-weight: bold;
+}
+.suyai_variation a .mas_info {
+    color: white;
+}
+.suyai_variation a {
+    text-decoration: none;
+}
+.mas_info {
+    transition: transform 0.2s ease-out;
+    border-radius: 10px;
+    width: fit-content;
+}
+.mas_info p {
+    margin-block: 0;
+}
+.mas_info:hover {
+    transform: scale(1.05);
+}
+
+/*Sección de carreras*/
+#img7 {
+    background-image: url(images/bg/taller_panoramica.jpg);
+    z-index: -1;
+    opacity: 1;
+}
+#img8 {
+    background-image: url(images/bg/taller_autos_desde_arriba.webp);
+    z-index: -2;
+    opacity: 0;
+}
+
+.alpha.red_variation {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: rgba(90, 0, 0, 0.5);
+}
+
+.section_buttons.carreras_var {
+    width: 50%;
+    margin-top: 2%;
+}
+.img_carreras{
+    width: clamp(50px,12vw,200px);
+    transition: transform 0.3s ease-out;
+}
+.a_carreras:hover .img_carreras {
+    transform: scale(1.08);
+}
+.a_carreras:hover ~ p {
+    color: #ff7700;
+}
+.a_carreras:hover ~ ._compu {
+    color: #0080ff;
+}
+.carreras_button p {
+    margin-top: 15px;
+    transition: color 0.3s ease-out;
+    font-weight: bold;
+}
+
 /* ----------------- Media queries (tamaños dependiendo del ancho de pantalla) ------------------ */
 
 /*Para tablets o menos*/
@@ -541,7 +583,7 @@ footer a:hover {
     .img.variation {
         height: 50%;
     }
-    .tarj_suyai h2 {
+    .section_img h2 {
         margin-top: 25px;
     }
     .suyai_buttons {
