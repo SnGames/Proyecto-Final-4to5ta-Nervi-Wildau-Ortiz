@@ -553,8 +553,12 @@ footer a:hover {
         height: calc(var(--h-links-footer) * 2);
     }
 
-    .suyai_buttons {
+    .section_buttons {
         width: 90%;
+    }
+
+    .section_buttons.carreras_var {
+        width: 80%;
     }
 }
 
@@ -570,35 +574,47 @@ footer a:hover {
     nav ul { /*Problema de que se rompe la palabra Comunidad Educativa*/
         width: 70%;
     }
+
+    .alpha.red_variation h2 {
+        font-size: 45px;
+    }
+    .section_buttons.carreras_var {
+        display: block;
+        width: 100%;
+        margin: 0 auto;
+    }
+    .carreras_button + .carreras_button{
+        margin-top: 50px;
+    }
 }
 
 /*Para el caso específico este del coso del suyai xd*/
 @media (max-width: 563px) {
-    .img_div {
+    .img_div._suyai {
         clip-path: none;
     }
     ._der {
         top: 50%;
     }
-    .img.variation {
+    .img.variation._suyai {
         height: 50%;
     }
-    .section_img h2 {
+    .section_img .suyai_h2 {
         margin-top: 25px;
     }
-    .suyai_buttons {
+    .section_buttons._suyai {
         display: block;
     }
     .suyai_b {
         width: fit-content;
+        height: fit-content;
         margin: 0 auto;
     }
-    .suyai_buttons a + a {
+    .section_buttons a + a {
         display: block;
-        margin-top: 95px;
+        margin-top: 110px;
     }
 }
-
 /* ------------------------------------ Cosas de Wildau FIN  ------------------------------------ */
 
 /* ------------------------------------ Cosas de Nervi INICIO  ------------------------------------ */
@@ -649,6 +665,7 @@ footer a:hover {
     height: 100%;
     display: flex;
     flex-direction: column;
+    /*margin: 0 auto; /* fix de wildau */
 }
 
 .caja_texto{
