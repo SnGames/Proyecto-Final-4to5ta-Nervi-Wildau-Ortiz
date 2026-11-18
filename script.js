@@ -42,16 +42,18 @@ let layer_suyai2 = [false]; //Suyai ver
 let layer_carreras = [false]; //Carreras
 
 function bg_image(images, id_i1, id_i2, bg_index, layer) {
-    bg_index[0]++;
-    layer[0] = !layer[0];
+    bg_index[0]++; //Se aumenta 1 en la posición del array de las imágenes
+    layer[0] = !layer[0]; //Se invierte que capa se usa
+
+    //Si se desborda el índice vuelve a 0
     if (bg_index[0] >= images.length) {
         bg_index[0] = 0;
     }
+
     const l1 = document.querySelector(id_i1);
     const l2 = document.querySelector(id_i2);
-    console.log(images[bg_index[0]]);
-    console.log(layer[0]);
 
+    //Se intercambia la opacidad de las capas
     if (layer[0]) {
         l1.style.opacity = 0;
         l2.style.opacity = 1;
@@ -60,6 +62,7 @@ function bg_image(images, id_i1, id_i2, bg_index, layer) {
         l2.style.opacity = 0;
     }
 
+    //Se cambia la imagen dependiendo de que capa está activa
     setTimeout(() => {
         if (layer[0]) {
             l1.style.backgroundImage = images[bg_index[0]];
@@ -68,8 +71,6 @@ function bg_image(images, id_i1, id_i2, bg_index, layer) {
         }
         
     }, 1000);
-    console.log(l1.style.opacity);
-    console.log(l2.style.opacity);
 }
 
 //Para el cambio de imagen del header
@@ -85,13 +86,15 @@ const change_bg_suyai = setInterval(() => {
 //Cambio de imagen de la sección del suyai: verano
 const change_bg_suyai2 = setTimeout(() => {setInterval(() => {
     bg_image(ver_suyai, "#img5", "#img6", bg_index_suyai2, layer_suyai2);
-}, time)}, offset);
+}, time)}, offset); //Offset con respecto a la imagen de al lado
 
 const change_bg_carreras = setTimeout(() => {setInterval(() => {
     bg_image(carreras_img, "#img7", "#img8", bg_index_carreras, layer_carreras);
-}, time)}, offset_c);
+}, time)}, offset_c); //Offset con respecto al header
 
 //Header y footer sincronizados
+
+//Header custom
 class cHeader extends HTMLElement {
     connectedCallback() {
         this.innerHTML = `<header><div class="alpha">
@@ -111,8 +114,10 @@ class cHeader extends HTMLElement {
     }
 }
 
+//Se asigna a una etiqueta custom
 customElements.define('custom-header', cHeader);
 
+//Footer custom
 class cFooter extends HTMLElement {
     connectedCallback() {
         this.innerHTML = `<footer>
@@ -132,7 +137,6 @@ class cFooter extends HTMLElement {
         <div>
             <h2>Escuela Técnica N°35 - Ing. Eduardo Latzina</h2>
             <p>Creado por: Ezequiel Nervi, Santiago Wildau y Johnatan Ortiz 4°5°</p>
-            <p>Sitio en construcción... por ahora</p>
         </div>
         <div>
             <h2>Contacto de la escuela</h2>
@@ -144,6 +148,7 @@ class cFooter extends HTMLElement {
     }
 }
 
+//Se asigna a una etiqueta custom
 customElements.define('custom-footer', cFooter);
 
 //Para que no te recargue la página al tocar el botón de la página en la que estás
