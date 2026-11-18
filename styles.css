@@ -1,5 +1,5 @@
 /* ------------------------------------ Cosas de Wildau (index) --------------------------------- */
-@view-transition {
+@view-transition { /* Le hace un efecto de transición suave al cambiar de página */
     navigation: auto;
 }
 
@@ -26,7 +26,7 @@
 }
 
 * {
-    font-family: Calibri, Arial, sans-serif;
+    font-family: Calibri, Arial, sans-serif; /* Fuentes de la página */
 }
 
 .bold {
@@ -37,19 +37,21 @@ body {
     margin: 0;
 }
 
+/*Header de la página*/
 header {
     height: 400px;
 }
 .img {
-    background-size: cover;
-    background-position: center;
+    background-size: cover; /*La imágen de fondo cubre todo el contenedor*/
+    background-position: center; /*Se posiciona en el centro*/
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 400px;
-    transition: opacity 1s ease;
+    transition: opacity 1s ease; /*Transición para el efecto de desvanecimiento*/
 }
+/*IDs para el cambio de bg del header*/
 #img1 {
     background-image: url(images/bg/taller_panoramica.jpg);
     z-index: -1;
@@ -60,7 +62,7 @@ header {
     z-index: -2;
     opacity: 0;
 }
-.alpha {
+.alpha { /*Para el oscurecimiento de algunas imágenes de fondo*/
     background-color: rgba(0, 0, 0, 0.5);
     width: 100%;
     height: 100%;
@@ -72,7 +74,7 @@ header {
     justify-content: center;
     align-items: center;
 }
-#logo {
+#logo { /*Tamaño del logo*/
     width: clamp(250px, 40%, 500px);
     padding: 1.5vw;
 }
@@ -82,10 +84,10 @@ nav ul {
     list-style: none;
     margin: 0 auto;
     padding: 0;
-    display: flex;
+    display: flex; /*Usamos una lista con flexbox para hacer el nav*/
     justify-content: center;
     align-items: center;
-    flex-wrap: wrap;
+    flex-wrap: wrap; /*En caso de que desborde los ítems del nav pasa a la siguiente fila*/
     font-size: 20px;
     color: white;
     width: 60%;
@@ -98,7 +100,7 @@ nav ul li {
     display: flex;
     align-items: center;
     height: 100%;
-    transition: background-color 0.2s ease-out;
+    transition: background-color 0.2s ease-out; /*Para el hover y el efecto de hacer click*/
 }
 nav ul li a {
     text-decoration: none;
@@ -120,6 +122,7 @@ ul {
     unicode-bidi: isolate;
 }
 
+/*Footer*/
 footer {
     margin-top: 2%;
     width: 100%;
@@ -128,9 +131,9 @@ footer {
     padding: 1%;
     text-align: center;
     font-size: 16px;
-    box-sizing: border-box;
+    box-sizing: border-box; /*Sirve para que no se rompa el ancho de página*/
     display: flex;
-    overflow-wrap: break-word;
+    overflow-wrap: break-word; /*Para que las palabras se mantengan en el contenedor*/
 }
 footer h2 {
     font-size: 20px;
@@ -139,10 +142,10 @@ footer h2 {
 footer div {
     width: 33.3%;
 }
-footer div:first-of-type {
+footer div:first-of-type { /*El primer elemento va a la izquierda*/
     text-align: left;
 }
-footer div:last-of-type {
+footer div:last-of-type { /*El último a la derecha*/
     text-align: right;
     padding-right: 2.5%;
 }
@@ -151,7 +154,7 @@ footer ul {
     display: flex;
     flex-wrap: wrap;
     flex-direction: column; /**/
-    height: var(--h-links-footer);
+    height: var(--h-links-footer); /*El alto del footer lo delimita una variable para editarlo más fácil con los media queries*/
 }
 
 footer li {
@@ -170,12 +173,12 @@ footer a:hover {
 
 .sin_llegar_final { /*Clase temporal para las páginas que no llegan al final*/
     position: absolute;
-    bottom: 0;
+    bottom: 0; /*Básicamente se coloca el footer abajo de todo en la página. Debería no usarse en la página final*/
     width: 100%;
 }
 
 
-/*Tarjeta para institucional*/
+/*Tarjeta para institucional (obsoleto y reemplazado)*/
 /*.tarj_institucional {
     border: 1px solid #ababab;
     border-radius: 1.5vw;
@@ -199,7 +202,7 @@ footer a:hover {
 }*/
 
 .tarj_institucional h2 {
-    font-size: 2em;
+    font-size: 2em; /*El doble del tamaño de letra original*/
     text-align: center;
     color: black;
 }
@@ -212,17 +215,17 @@ footer a:hover {
     margin-bottom: 10px;
     margin-top: 0;
 
-    flex-grow: 1;
+    flex-grow: 1; /*Hace que el espacio sobrante en el contenedor lo tome el párrafo*/
 }
 
 .tarj_institucional {
     display: flex;
-    flex-direction: column;
+    flex-direction: column; /*Para que el h2 y el p esten alineados verticalmente*/
     align-items: center;   
     text-align: center;    
     width: 100%;
     box-sizing: border-box;
-    min-height: 150px;
+    min-height: 150px; /*La altura depende del ancho del viewport, en cierto punto*/
     height: auto;
     border: 2px solid #ccc; 
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.26);
@@ -230,26 +233,26 @@ footer a:hover {
     padding: 16px;    
     margin: 0;   
     transition: border-color 0.3s ease-out, box-shadow 0.3s ease-out;
-    overflow-wrap: break-word;
+    overflow-wrap: break-word; /*Se rompe la palabra para que no desborde si es muy larga*/
 }
 
 .tarj_institucional.v{
     flex-direction: column;
-    width: clamp(250px,30vw,500px);
+    width: clamp(250px,30vw,500px); /*Hace que el tamaño del ícono esté entre estos valores*/
     padding: 1vw;
 }
 
 .tarj_institucional.icono-animado {
     transition: border-color 0.5s ease-out, 
                 box-shadow 0.5s ease-out, 
-                background-position 0.5s ease-out;
+                background-position 0.5s ease-out; /*La transición suave del bg*/
 
-    background: linear-gradient(135deg, rgb(255, 0, 0, 0.2) 35%, rgb(250, 250, 250) 65%);
-    background-size: 300% 300%;
-    background-position: bottom right;
+    background: linear-gradient(135deg, rgb(255, 0, 0, 0.2) 35%, rgb(250, 250, 250) 65%); /*La base del efecto del hover*/
+    background-size: 300% 300%; /*Aumenta el tamaño del bg para que el fondo aparezca fuera del contenedor*/
+    background-position: bottom right; /*Coloca el bg fuera del contenedor*/
 }
 .tarj_institucional.icono-animado:hover {
-    background-position: top left;
+    background-position: top left; /*Se mueve el bg del linear-gradient a arriba izquierda, afectando al icono y poniendolo de color rojo*/
 }
 
 .tarj_institucional:hover {
@@ -260,14 +263,14 @@ footer a:hover {
 .tarj_institucional .titulo_institucional {
     display: flex;
     align-items: center;
-    gap: 10px;
+    gap: 10px; /*Separación horizontal entre el ícono y el título*/
 }
 
 .tarj_institucional:hover .icono-animado {
-    background-position: top left;
+    background-position: top left; /*Lo mismo del icono antes, pero ahora de todo el contenedor. El linear-gradient pone de color rojo a toda la sección*/
 }
 
-.a_tarj_inst {
+.a_tarj_inst { /*Propiedades para los "a" que se usan en botones*/
     display: block;
     width: 65%;
     margin: 48px auto;
@@ -279,12 +282,12 @@ footer a:hover {
 }
 
 /*Tarjeta Instagram*/
-.tarj_insta {
+.tarj_insta { /*Diseño similar al de la tarjeta anterior*/
     display: flex;
     align-items: center;
     width: 100%;
     box-sizing: border-box;
-    min-height: 150px;
+    min-height: 150px; /*La altura depende del ancho del viewport, en cierto punto*/
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.26);
     border-radius: 15px;
     padding: 16px;
@@ -299,42 +302,13 @@ footer a:hover {
     z-index: 1;
 }
 .tarj_insta:hover {
-    transform: scale(1.02);
+    transform: scale(1.02); /*Se agranda al pasar el mouse por encima*/
     color: black;   
-}
-.icon_insta {
-    padding: 0 20px;
-    position: relative;
-    display: inline-block;
-}
-.icon_insta::before, .icon_insta::after {
-    content: "";
-    position: absolute;
-    inset: 0;
-    
-    -webkit-mask: url('images/iconos/instagram.svg') no-repeat center / contain;
-    mask: url('images/iconos/instagram.svg') no-repeat center / contain;
-    
-    transition: opacity 0.3s ease-out;
-}
-.icon_insta::before {
-  background: #ffffff;
-  opacity: 1;
-}
-.icon_insta::after {
-  background: linear-gradient(135deg, #833ab4, #fd1d1d, #fcb045);
-  opacity: 0;
-}
-.tarj_insta:hover .icon_insta::before {
-  opacity: 0;
-}
-.tarj_insta:hover .icon_insta::after {
-  opacity: 1;
 }
 .text_insta {
     display: flex;
     flex-direction: column;
-    gap: 16px;
+    gap: 16px; /*Espacio de 16px entre el h2 y el p*/
 }
 .text_insta h2 {
     margin-block: 0;
@@ -345,30 +319,68 @@ footer a:hover {
     font-size: 20px;
 }
 
+/*Efecto de los colores de Instagram al pasar por el botón*/
+
+/*Efecto del ícono*/
+.icon_insta {
+    padding: 0 20px;
+    position: relative;
+    display: inline-block;
+}
+.icon_insta::before, .icon_insta::after { /*Se coloca la imagen de Insta*/
+    content: "";
+    position: absolute;
+    /*Se coloca en la posición original del ícono*/
+    inset: 0; /*el inset es como un coso que te permite usar top, left, bottom y right a la vez, como el margin o padding*/
+    
+    /*La propiedad mask sirve para aplicar el linear-gradient en el ícono*/
+    -webkit-mask: url('images/iconos/instagram.svg') no-repeat center / contain; /*Para navegadores que no soportan "mask"*/
+    mask: url('images/iconos/instagram.svg') no-repeat center / contain;
+    
+    transition: opacity 0.3s ease-out; /*Hace el efecto de desvanecimiento suave al intercambiar la opacidad de los pseudoelementos*/
+}
+.icon_insta::before {
+  background: #ffffff; /*Sin el hover el fondo es blanco*/
+  opacity: 1; /*Este elemento es el que aparece por defecto*/
+}
+.icon_insta::after {
+  background: linear-gradient(135deg, #833ab4, #fd1d1d, #fcb045); /*Haciendo hover el fondo es el linear-gradient*/
+  opacity: 0; /*Por defecto esta oculto, aparece haciendo hover*/
+}
+.tarj_insta:hover .icon_insta::before { /*Al hacer hover, el ícono con el bg en blanco desaparece*/
+  opacity: 0;
+}
+.tarj_insta:hover .icon_insta::after { /*El ícono con el bg del linear gradient aparece*/
+  opacity: 1;
+}
+
+/*Efecto de toda la tarjeta*/
+/*aca es al reves del icono, al hacer hover se pone el fondo en blanco y solo el borde aparece con el color de instagram, originalmente esta con los colores de instagram todo el elemento*/
 .tarj_insta::before {
     content: "";
     position: absolute;
-    inset: 0;
-    border-radius: inherit;
-    background: linear-gradient(135deg, #833ab4, #fd1d1d, #fcb045);
+    inset: 0; /*Se coloca al pseudoelemento en la posición del elemento original*/
+    border-radius: inherit; /*El borde es el mismo del elemento original*/
+    background: linear-gradient(135deg, #833ab4, #fd1d1d, #fcb045); /*El fondo original es el linear-gradient*/
     z-index: -1;
-    transition: opacity 0.3s ease-out;
+    transition: opacity 0.3s ease-out; /*Da el efecto de desvanecimiento al intercambiar la opacidad de los dos pseudoelementos*/
 }
 .tarj_insta::after {
     content: "";
     position: absolute;
-    inset: 0;
-    border-radius: inherit;
-    padding: 3px;
+    inset: 0; /*Se coloca al pseudoelemento en la posición del elemento original*/
+    border-radius: inherit; /*El borde es el mismo del elemento original*/
+    padding: 3px; /*Los 3px de padding son para que se mantenga el borde*/
     background: linear-gradient(135deg, #833ab4, #fd1d1d, #fcb045);
 
+    /*webkit-mask se usa para navegadores más antiguos*/
     -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
     -webkit-mask-composite: xor;
-    mask-composite: exclude;
+    /*Se hacen dos máscaras, una que aplica a todo el elemento y la otra que no llega hasta el borde y el padding*/
     mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-    mask-composite: exclude;
+    mask-composite: exclude; /*Solo se muestra el bg del linear-gradient donde no se superponen las máscaras, o sea, en los bordes y el padding*/
     
-    opacity: 0;
+    opacity: 0; /*Originalmente está oculto, se muestra al hacer hover*/
     z-index: -1;
     transition: opacity 0.3s ease-out;
 }
@@ -387,7 +399,8 @@ footer a:hover {
     text-align: center;
     color: white;
 }
-.img_div {
+.img_div { /*Div para contener el fondo que va cambiando (con js)*/
+    /*Se utiliza position absolute para que el div con el bg no ocupe espacio en el documento html*/
     position: absolute;
     top: 0;
     left: 0;
@@ -397,18 +410,20 @@ footer a:hover {
     align-items: center;
     justify-content: center;
 }
-._izq {
+._izq { /*Se corta el div izquierdo para que tenga un borde en diagonal*/
     clip-path: polygon(0 0, 75% 0, 25% 100%, 0 100%);
     z-index: -1;
 }
-._der {
+._der { /*Se corta el div derecho para que también tenga el borde diagonal, y además para que se vea el div izquierdo*/
     clip-path: polygon(75% 0, 100% 0%, 100% 100%, 25% 100%);
     z-index: 0;
 }
 
 .img.variation {
-    height: 700px;
+    height: 700px; /*Mayor espacio para imágenes*/
 }
+/*IDs para el cambio de bg del apartado del suyai en el index*/
+/*Div izquierdo*/
 #img3 {
     background-image: url(images/suyai_images/1.jpeg);
     z-index: -1;
@@ -419,6 +434,7 @@ footer a:hover {
     z-index: -2;
     opacity: 0;
 }
+/*Div derecho*/
 #img5 {
     background-image: url(images/suyai_images/5.jpeg);
     z-index: -1;
@@ -430,6 +446,7 @@ footer a:hover {
     opacity: 0;
 }
 
+/*El alpha se coloca en el origen de la sección para la que se usa*/
 .alpha.suyai_variation {
     position: absolute;
     top: 0;
@@ -450,7 +467,7 @@ footer a:hover {
     padding: 10px;
     width: 65%;
     margin: 5% auto 0 auto;   
-    justify-content: space-between;
+    justify-content: space-between; /*Espacio entre los botones*/
     font-size: 25px;
 }
 .section_buttons a {
@@ -460,23 +477,25 @@ footer a:hover {
 .section_buttons p {
     margin-block: 0;
 }
+/*Estilos de los botones del suyai (index)*/
 .suyai_b {
     border: 2px white solid;
     border-radius: 10px;
     padding: 10px;
-    background: linear-gradient(135deg, #029eff, #03e9e9);
+    background: linear-gradient(135deg, #029eff, #03e9e9); /*Diseño del botón de invierno*/
     transition: transform 0.2s ease-out;
 }
 .suyai_b.summer {
-    background: linear-gradient(135deg, #ff8902, #f5b000);
+    background: linear-gradient(135deg, #ff8902, #f5b000); /*Diseño del botón de verano*/
 }
 .suyai_b:hover {
     transform: scale(1.05);
 }
-#verano_act, #invierno_act {
-    scroll-margin-top: 180px;
+#verano_act, #invierno_act { /*Usado en página del suyai*/
+    scroll-margin-top: 180px; /*Para que al enviarte a la página del suyai usando IDs haya un márgen entre el tope del alto de pantalla y el elemento*/
 }
 
+/*Botón de más info*/
 .suyai_variation .mas_info {
     background: linear-gradient(135deg, #ff1414, #ff6214);
     padding: 0.5rem;
@@ -504,6 +523,7 @@ footer a:hover {
 }
 
 /*Sección de carreras*/
+/*IDs usadas para el cambio de bg*/
 #img7 {
     background-image: url(images/bg/taller_panoramica.jpg);
     z-index: -1;
@@ -515,30 +535,33 @@ footer a:hover {
     opacity: 0;
 }
 
+/*Alpha usado para la parte de especialidades*/
 .alpha.red_variation {
     position: absolute;
     top: 0;
     left: 0;
-    background-color: rgba(90, 0, 0, 0.5);
+    background-color: rgba(90, 0, 0, 0.5); /*Tonalidad roja*/
 }
 
 .section_buttons.carreras_var {
     width: 50%;
     margin-top: 2%;
 }
+/*Botones de las especialidades*/
 .img_carreras{
-    width: clamp(50px,12vw,200px);
+    width: clamp(50px,12vw,200px); /*El tamaño está entre los valores asignados aquí*/
     transition: transform 0.3s ease-out;
 }
 .a_carreras:hover .img_carreras {
     transform: scale(1.08);
 }
 .a_carreras:hover ~ p {
-    color: #ff7700;
+    color: #ff7700; /*Al hacer hover en el botón cambia el color del texto de debajo*/
 }
 .a_carreras:hover ~ ._compu {
-    color: #0080ff;
+    color: #0080ff; /*Otro color para computación*/
 }
+/*Estilos del texto debajo del botón*/
 .carreras_button p {
     margin-top: 15px;
     transition: color 0.3s ease-out;
@@ -549,14 +572,12 @@ footer a:hover {
 
 /*Para tablets o menos*/
 @media (max-width: 768px) {
+    /*Aumento de altura del footer*/
     footer ul {
-        height: calc(var(--h-links-footer) * 2);
+        height: calc(var(--h-links-footer) * 2.5);
     }
 
-    .section_buttons {
-        width: 90%;
-    }
-
+    /*Más espacio para los botones de la sección de especialidades*/
     .section_buttons.carreras_var {
         width: 80%;
     }
@@ -564,6 +585,7 @@ footer a:hover {
 
 /*Para celulares*/
 @media (max-width: 480px) {
+    /*La altura del padding depende del contenido*/
     footer ul {
         padding: 10px;
         height: auto;
@@ -575,9 +597,11 @@ footer a:hover {
         width: 70%;
     }
 
+    /*Disminuye el tamaño de letra para que se vea bien*/
     .alpha.red_variation h2 {
         font-size: 45px;
     }
+    /*Modifica como se ven los elementos de botones y pasan a ser en vertical*/
     .section_buttons.carreras_var {
         display: block;
         width: 100%;
@@ -600,19 +624,34 @@ footer a:hover {
         height: 50%;
     }
     .section_img .suyai_h2 {
-        margin-top: 25px;
+        margin-top: 50px;
     }
+    /*Modifica como se ven los elementos de botones y pasan a ser en vertical*/
     .section_buttons._suyai {
         display: block;
     }
+    /*Los botones se adaptan al contenido de dentro*/
     .suyai_b {
         width: fit-content;
         height: fit-content;
         margin: 0 auto;
     }
+    /*Márgen vertical entre los botones*/
+    .section_buttons a {
+        display: block;
+        margin-top: 45px;
+    }
     .section_buttons a + a {
         display: block;
         margin-top: 110px;
+    }
+}
+
+/*Otro caso del suyai xd*/
+@media (max-width: 850px) {
+    /*Más espacio para los botones de la sección del suyai*/
+    .section_buttons {
+        width: 90%;
     }
 }
 /* ------------------------------------ Cosas de Wildau FIN  ------------------------------------ */
