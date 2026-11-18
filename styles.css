@@ -1,5 +1,5 @@
 /* ------------------------------------ Cosas de Wildau (index) --------------------------------- */
-@view-transition {
+@view-transition { /* Le hace un efecto de transición suave al cambiar de página */
     navigation: auto;
 }
 
@@ -26,7 +26,7 @@
 }
 
 * {
-    font-family: Calibri, Arial, sans-serif;
+    font-family: Calibri, Arial, sans-serif; /* Fuentes de la página */
 }
 
 .bold {
@@ -37,19 +37,21 @@ body {
     margin: 0;
 }
 
+/*Header de la página*/
 header {
     height: 400px;
 }
 .img {
-    background-size: cover;
-    background-position: center;
+    background-size: cover; /*La imágen de fondo cubre todo el contenedor*/
+    background-position: center; /*Se posiciona en el centro*/
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 400px;
-    transition: opacity 1s ease;
+    transition: opacity 1s ease; /*Transición para el efecto de desvanecimiento*/
 }
+/*IDs para el cambio de bg del header*/
 #img1 {
     background-image: url(images/bg/taller_panoramica.jpg);
     z-index: -1;
@@ -60,7 +62,7 @@ header {
     z-index: -2;
     opacity: 0;
 }
-.alpha {
+.alpha { /*Para el oscurecimiento de algunas imágenes de fondo*/
     background-color: rgba(0, 0, 0, 0.5);
     width: 100%;
     height: 100%;
@@ -72,7 +74,7 @@ header {
     justify-content: center;
     align-items: center;
 }
-#logo {
+#logo { /*Tamaño del logo*/
     width: clamp(250px, 40%, 500px);
     padding: 1.5vw;
 }
@@ -82,10 +84,10 @@ nav ul {
     list-style: none;
     margin: 0 auto;
     padding: 0;
-    display: flex;
+    display: flex; /*Usamos una lista con flexbox para hacer el nav*/
     justify-content: center;
     align-items: center;
-    flex-wrap: wrap;
+    flex-wrap: wrap; /*En caso de que desborde los ítems del nav pasa a la siguiente fila*/
     font-size: 20px;
     color: white;
     width: 60%;
@@ -98,7 +100,7 @@ nav ul li {
     display: flex;
     align-items: center;
     height: 100%;
-    transition: background-color 0.2s ease-out;
+    transition: background-color 0.2s ease-out; /*Para el hover y el efecto de hacer click*/
 }
 nav ul li a {
     text-decoration: none;
@@ -120,6 +122,7 @@ ul {
     unicode-bidi: isolate;
 }
 
+/*Footer*/
 footer {
     margin-top: 2%;
     width: 100%;
@@ -128,9 +131,9 @@ footer {
     padding: 1%;
     text-align: center;
     font-size: 16px;
-    box-sizing: border-box;
+    box-sizing: border-box; /*Sirve para que no se rompa el ancho de página*/
     display: flex;
-    overflow-wrap: break-word;
+    overflow-wrap: break-word; /*Para que las palabras se mantengan en el contenedor*/
 }
 footer h2 {
     font-size: 20px;
@@ -139,10 +142,10 @@ footer h2 {
 footer div {
     width: 33.3%;
 }
-footer div:first-of-type {
+footer div:first-of-type { /*El primer elemento va a la izquierda*/
     text-align: left;
 }
-footer div:last-of-type {
+footer div:last-of-type { /*El último a la derecha*/
     text-align: right;
     padding-right: 2.5%;
 }
@@ -151,7 +154,7 @@ footer ul {
     display: flex;
     flex-wrap: wrap;
     flex-direction: column; /**/
-    height: var(--h-links-footer);
+    height: var(--h-links-footer); /*El alto del footer lo delimita una variable para editarlo más fácil con los media queries*/
 }
 
 footer li {
@@ -170,12 +173,12 @@ footer a:hover {
 
 .sin_llegar_final { /*Clase temporal para las páginas que no llegan al final*/
     position: absolute;
-    bottom: 0;
+    bottom: 0; /*Básicamente se coloca el footer abajo de todo en la página. Debería no usarse en la página final*/
     width: 100%;
 }
 
 
-/*Tarjeta para institucional*/
+/*Tarjeta para institucional (obsoleto y reemplazado)*/
 /*.tarj_institucional {
     border: 1px solid #ababab;
     border-radius: 1.5vw;
@@ -199,7 +202,7 @@ footer a:hover {
 }*/
 
 .tarj_institucional h2 {
-    font-size: 2em;
+    font-size: 2em; /*El doble del tamaño de letra original*/
     text-align: center;
     color: black;
 }
@@ -212,17 +215,17 @@ footer a:hover {
     margin-bottom: 10px;
     margin-top: 0;
 
-    flex-grow: 1;
+    flex-grow: 1; /*Hace que el espacio sobrante en el contenedor lo tome el párrafo*/
 }
 
 .tarj_institucional {
     display: flex;
-    flex-direction: column;
+    flex-direction: column; /*Para que el h2 y el p esten alineados verticalmente*/
     align-items: center;   
     text-align: center;    
     width: 100%;
     box-sizing: border-box;
-    min-height: 150px;
+    min-height: 150px; /*La altura depende del ancho del viewport, en cierto punto*/
     height: auto;
     border: 2px solid #ccc; 
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.26);
@@ -230,26 +233,26 @@ footer a:hover {
     padding: 16px;    
     margin: 0;   
     transition: border-color 0.3s ease-out, box-shadow 0.3s ease-out;
-    overflow-wrap: break-word;
+    overflow-wrap: break-word; /*Se rompe la palabra para que no desborde si es muy larga*/
 }
 
 .tarj_institucional.v{
     flex-direction: column;
-    width: clamp(250px,30vw,500px);
+    width: clamp(250px,30vw,500px); /*Hace que el tamaño del ícono esté entre estos valores*/
     padding: 1vw;
 }
 
 .tarj_institucional.icono-animado {
     transition: border-color 0.5s ease-out, 
                 box-shadow 0.5s ease-out, 
-                background-position 0.5s ease-out;
+                background-position 0.5s ease-out; /*La transición suave del bg*/
 
-    background: linear-gradient(135deg, rgb(255, 0, 0, 0.2) 35%, rgb(250, 250, 250) 65%);
-    background-size: 300% 300%;
-    background-position: bottom right;
+    background: linear-gradient(135deg, rgb(255, 0, 0, 0.2) 35%, rgb(250, 250, 250) 65%); /*La base del efecto del hover*/
+    background-size: 300% 300%; /*Aumenta el tamaño del bg para que el fondo aparezca fuera del contenedor*/
+    background-position: bottom right; /*Coloca el bg fuera del contenedor*/
 }
 .tarj_institucional.icono-animado:hover {
-    background-position: top left;
+    background-position: top left; /*Se mueve el bg del linear-gradient a arriba izquierda, afectando al icono y poniendolo de color rojo*/
 }
 
 .tarj_institucional:hover {
@@ -260,14 +263,14 @@ footer a:hover {
 .tarj_institucional .titulo_institucional {
     display: flex;
     align-items: center;
-    gap: 10px;
+    gap: 10px; /*Separación horizontal entre el ícono y el título*/
 }
 
 .tarj_institucional:hover .icono-animado {
-    background-position: top left;
+    background-position: top left; /*Lo mismo del icono antes, pero ahora de todo el contenedor. El linear-gradient pone de color rojo a toda la sección*/
 }
 
-.a_tarj_inst {
+.a_tarj_inst { /*Propiedades para los "a" que se usan en botones*/
     display: block;
     width: 65%;
     margin: 48px auto;
@@ -279,12 +282,12 @@ footer a:hover {
 }
 
 /*Tarjeta Instagram*/
-.tarj_insta {
+.tarj_insta { /*Diseño similar al de la tarjeta anterior*/
     display: flex;
     align-items: center;
     width: 100%;
     box-sizing: border-box;
-    min-height: 150px;
+    min-height: 150px; /*La altura depende del ancho del viewport, en cierto punto*/
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.26);
     border-radius: 15px;
     padding: 16px;
@@ -299,42 +302,13 @@ footer a:hover {
     z-index: 1;
 }
 .tarj_insta:hover {
-    transform: scale(1.02);
+    transform: scale(1.02); /*Se agranda al pasar el mouse por encima*/
     color: black;   
-}
-.icon_insta {
-    padding: 0 20px;
-    position: relative;
-    display: inline-block;
-}
-.icon_insta::before, .icon_insta::after {
-    content: "";
-    position: absolute;
-    inset: 0;
-    
-    -webkit-mask: url('images/iconos/instagram.svg') no-repeat center / contain;
-    mask: url('images/iconos/instagram.svg') no-repeat center / contain;
-    
-    transition: opacity 0.3s ease-out;
-}
-.icon_insta::before {
-  background: #ffffff;
-  opacity: 1;
-}
-.icon_insta::after {
-  background: linear-gradient(135deg, #833ab4, #fd1d1d, #fcb045);
-  opacity: 0;
-}
-.tarj_insta:hover .icon_insta::before {
-  opacity: 0;
-}
-.tarj_insta:hover .icon_insta::after {
-  opacity: 1;
 }
 .text_insta {
     display: flex;
     flex-direction: column;
-    gap: 16px;
+    gap: 16px; /*Espacio de 16px entre el h2 y el p*/
 }
 .text_insta h2 {
     margin-block: 0;
@@ -345,30 +319,68 @@ footer a:hover {
     font-size: 20px;
 }
 
+/*Efecto de los colores de Instagram al pasar por el botón*/
+
+/*Efecto del ícono*/
+.icon_insta {
+    padding: 0 20px;
+    position: relative;
+    display: inline-block;
+}
+.icon_insta::before, .icon_insta::after { /*Se coloca la imagen de Insta*/
+    content: "";
+    position: absolute;
+    /*Se coloca en la posición original del ícono*/
+    inset: 0; /*el inset es como un coso que te permite usar top, left, bottom y right a la vez, como el margin o padding*/
+    
+    /*La propiedad mask sirve para aplicar el linear-gradient en el ícono*/
+    -webkit-mask: url('images/iconos/instagram.svg') no-repeat center / contain; /*Para navegadores que no soportan "mask"*/
+    mask: url('images/iconos/instagram.svg') no-repeat center / contain;
+    
+    transition: opacity 0.3s ease-out; /*Hace el efecto de desvanecimiento suave al intercambiar la opacidad de los pseudoelementos*/
+}
+.icon_insta::before {
+  background: #ffffff; /*Sin el hover el fondo es blanco*/
+  opacity: 1; /*Este elemento es el que aparece por defecto*/
+}
+.icon_insta::after {
+  background: linear-gradient(135deg, #833ab4, #fd1d1d, #fcb045); /*Haciendo hover el fondo es el linear-gradient*/
+  opacity: 0; /*Por defecto esta oculto, aparece haciendo hover*/
+}
+.tarj_insta:hover .icon_insta::before { /*Al hacer hover, el ícono con el bg en blanco desaparece*/
+  opacity: 0;
+}
+.tarj_insta:hover .icon_insta::after { /*El ícono con el bg del linear gradient aparece*/
+  opacity: 1;
+}
+
+/*Efecto de toda la tarjeta*/
+/*aca es al reves del icono, al hacer hover se pone el fondo en blanco y solo el borde aparece con el color de instagram, originalmente esta con los colores de instagram todo el elemento*/
 .tarj_insta::before {
     content: "";
     position: absolute;
-    inset: 0;
-    border-radius: inherit;
-    background: linear-gradient(135deg, #833ab4, #fd1d1d, #fcb045);
+    inset: 0; /*Se coloca al pseudoelemento en la posición del elemento original*/
+    border-radius: inherit; /*El borde es el mismo del elemento original*/
+    background: linear-gradient(135deg, #833ab4, #fd1d1d, #fcb045); /*El fondo original es el linear-gradient*/
     z-index: -1;
-    transition: opacity 0.3s ease-out;
+    transition: opacity 0.3s ease-out; /*Da el efecto de desvanecimiento al intercambiar la opacidad de los dos pseudoelementos*/
 }
 .tarj_insta::after {
     content: "";
     position: absolute;
-    inset: 0;
-    border-radius: inherit;
-    padding: 3px;
+    inset: 0; /*Se coloca al pseudoelemento en la posición del elemento original*/
+    border-radius: inherit; /*El borde es el mismo del elemento original*/
+    padding: 3px; /*Los 3px de padding son para que se mantenga el borde*/
     background: linear-gradient(135deg, #833ab4, #fd1d1d, #fcb045);
 
+    /*webkit-mask se usa para navegadores más antiguos*/
     -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
     -webkit-mask-composite: xor;
-    mask-composite: exclude;
+    /*Se hacen dos máscaras, una que aplica a todo el elemento y la otra que no llega hasta el borde y el padding*/
     mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-    mask-composite: exclude;
+    mask-composite: exclude; /*Solo se muestra el bg del linear-gradient donde no se superponen las máscaras, o sea, en los bordes y el padding*/
     
-    opacity: 0;
+    opacity: 0; /*Originalmente está oculto, se muestra al hacer hover*/
     z-index: -1;
     transition: opacity 0.3s ease-out;
 }
@@ -387,7 +399,8 @@ footer a:hover {
     text-align: center;
     color: white;
 }
-.img_div {
+.img_div { /*Div para contener el fondo que va cambiando (con js)*/
+    /*Se utiliza position absolute para que el div con el bg no ocupe espacio en el documento html*/
     position: absolute;
     top: 0;
     left: 0;
@@ -397,18 +410,20 @@ footer a:hover {
     align-items: center;
     justify-content: center;
 }
-._izq {
+._izq { /*Se corta el div izquierdo para que tenga un borde en diagonal*/
     clip-path: polygon(0 0, 75% 0, 25% 100%, 0 100%);
     z-index: -1;
 }
-._der {
+._der { /*Se corta el div derecho para que también tenga el borde diagonal, y además para que se vea el div izquierdo*/
     clip-path: polygon(75% 0, 100% 0%, 100% 100%, 25% 100%);
     z-index: 0;
 }
 
 .img.variation {
-    height: 700px;
+    height: 700px; /*Mayor espacio para imágenes*/
 }
+/*IDs para el cambio de bg del apartado del suyai en el index*/
+/*Div izquierdo*/
 #img3 {
     background-image: url(images/suyai_images/1.jpeg);
     z-index: -1;
@@ -419,6 +434,7 @@ footer a:hover {
     z-index: -2;
     opacity: 0;
 }
+/*Div derecho*/
 #img5 {
     background-image: url(images/suyai_images/5.jpeg);
     z-index: -1;
@@ -430,6 +446,7 @@ footer a:hover {
     opacity: 0;
 }
 
+/*El alpha se coloca en el origen de la sección para la que se usa*/
 .alpha.suyai_variation {
     position: absolute;
     top: 0;
@@ -450,7 +467,7 @@ footer a:hover {
     padding: 10px;
     width: 65%;
     margin: 5% auto 0 auto;   
-    justify-content: space-between;
+    justify-content: space-between; /*Espacio entre los botones*/
     font-size: 25px;
 }
 .section_buttons a {
@@ -460,23 +477,25 @@ footer a:hover {
 .section_buttons p {
     margin-block: 0;
 }
+/*Estilos de los botones del suyai (index)*/
 .suyai_b {
     border: 2px white solid;
     border-radius: 10px;
     padding: 10px;
-    background: linear-gradient(135deg, #029eff, #03e9e9);
+    background: linear-gradient(135deg, #029eff, #03e9e9); /*Diseño del botón de invierno*/
     transition: transform 0.2s ease-out;
 }
 .suyai_b.summer {
-    background: linear-gradient(135deg, #ff8902, #f5b000);
+    background: linear-gradient(135deg, #ff8902, #f5b000); /*Diseño del botón de verano*/
 }
 .suyai_b:hover {
     transform: scale(1.05);
 }
-#verano_act, #invierno_act {
-    scroll-margin-top: 180px;
+#verano_act, #invierno_act { /*Usado en página del suyai*/
+    scroll-margin-top: 180px; /*Para que al enviarte a la página del suyai usando IDs haya un márgen entre el tope del alto de pantalla y el elemento*/
 }
 
+/*Botón de más info*/
 .suyai_variation .mas_info {
     background: linear-gradient(135deg, #ff1414, #ff6214);
     padding: 0.5rem;
@@ -504,6 +523,7 @@ footer a:hover {
 }
 
 /*Sección de carreras*/
+/*IDs usadas para el cambio de bg*/
 #img7 {
     background-image: url(images/bg/taller_panoramica.jpg);
     z-index: -1;
@@ -515,30 +535,33 @@ footer a:hover {
     opacity: 0;
 }
 
+/*Alpha usado para la parte de especialidades*/
 .alpha.red_variation {
     position: absolute;
     top: 0;
     left: 0;
-    background-color: rgba(90, 0, 0, 0.5);
+    background-color: rgba(90, 0, 0, 0.5); /*Tonalidad roja*/
 }
 
 .section_buttons.carreras_var {
     width: 50%;
     margin-top: 2%;
 }
+/*Botones de las especialidades*/
 .img_carreras{
-    width: clamp(50px,12vw,200px);
+    width: clamp(50px,12vw,200px); /*El tamaño está entre los valores asignados aquí*/
     transition: transform 0.3s ease-out;
 }
 .a_carreras:hover .img_carreras {
     transform: scale(1.08);
 }
 .a_carreras:hover ~ p {
-    color: #ff7700;
+    color: #ff7700; /*Al hacer hover en el botón cambia el color del texto de debajo*/
 }
 .a_carreras:hover ~ ._compu {
-    color: #0080ff;
+    color: #0080ff; /*Otro color para computación*/
 }
+/*Estilos del texto debajo del botón*/
 .carreras_button p {
     margin-top: 15px;
     transition: color 0.3s ease-out;
@@ -549,14 +572,12 @@ footer a:hover {
 
 /*Para tablets o menos*/
 @media (max-width: 768px) {
+    /*Aumento de altura del footer*/
     footer ul {
-        height: calc(var(--h-links-footer) * 2);
+        height: calc(var(--h-links-footer) * 2.5);
     }
 
-    .section_buttons {
-        width: 90%;
-    }
-
+    /*Más espacio para los botones de la sección de especialidades*/
     .section_buttons.carreras_var {
         width: 80%;
     }
@@ -564,6 +585,7 @@ footer a:hover {
 
 /*Para celulares*/
 @media (max-width: 480px) {
+    /*La altura del padding depende del contenido*/
     footer ul {
         padding: 10px;
         height: auto;
@@ -575,9 +597,11 @@ footer a:hover {
         width: 70%;
     }
 
+    /*Disminuye el tamaño de letra para que se vea bien*/
     .alpha.red_variation h2 {
         font-size: 45px;
     }
+    /*Modifica como se ven los elementos de botones y pasan a ser en vertical*/
     .section_buttons.carreras_var {
         display: block;
         width: 100%;
@@ -600,25 +624,40 @@ footer a:hover {
         height: 50%;
     }
     .section_img .suyai_h2 {
-        margin-top: 25px;
+        margin-top: 50px;
     }
+    /*Modifica como se ven los elementos de botones y pasan a ser en vertical*/
     .section_buttons._suyai {
         display: block;
     }
+    /*Los botones se adaptan al contenido de dentro*/
     .suyai_b {
         width: fit-content;
         height: fit-content;
         margin: 0 auto;
+    }
+    /*Márgen vertical entre los botones*/
+    .section_buttons a {
+        display: block;
+        margin-top: 45px;
     }
     .section_buttons a + a {
         display: block;
         margin-top: 110px;
     }
 }
+
+/*Otro caso del suyai xd*/
+@media (max-width: 850px) {
+    /*Más espacio para los botones de la sección del suyai*/
+    .section_buttons {
+        width: 90%;
+    }
+}
 /* ------------------------------------ Cosas de Wildau FIN  ------------------------------------ */
 
 /* ------------------------------------ Cosas de Nervi INICIO  ------------------------------------ */
-.tarjeta {
+.tarjeta { /*tarjetas basicas que contienen elementos*/
     display: flex;
     flex-direction: row;
     align-items: center;   
@@ -633,55 +672,53 @@ footer a:hover {
     transition: border-color 0.5s ease-out, box-shadow 0.5s ease-out;   
 }
 
-.tarjeta.v{
+.tarjeta.v{ /*lo mismo pero guarda los elementos internos en vertical para la parte de carreras*/
     flex-direction: column;
-    width: clamp(250px,30vw,500px);
-    padding: 1vw;
+    width: clamp(200px,25vw,450px);
+    padding: 2vw;
 }
 
-.tarjeta.icono-animado {
+.tarjeta.icono-animado { /*para que tengan el efecto facha de hover*/
     transition: border-color 0.5s ease-out, 
                 box-shadow 0.5s ease-out, 
                 transform 0.5s ease-out,
                 background-position 0.5s ease-out;
 }
 
-.tarjeta:hover {
+.tarjeta:hover {/*cambia el color y la sombra para auto*/
     border-color: #c40000; 
     box-shadow: 0 0 15px rgba(255, 0, 0, 0.5);
 }
 
-.tarjeta.compu:hover {
+.tarjeta.compu:hover {/*lo mismo pero en colores tecnologicos*/
     border-color: #00c4ba; 
     box-shadow: 0 0 15px rgba(0, 255, 242, 0.5);
 }
 
-.img_a{
-    width: 15vw;
-}
-
-.caja_descripcion{
-    width: 80%;
-    height: 100%;
+.caja_descripcion{ /*div que tiene la descripcion de las tarjetas de carreras*/
+    width: 100%;
     display: flex;
     flex-direction: column;
-    /*margin: 0 auto; /* fix de wildau */
 }
 
-.caja_texto{
-    width: 100%;
-}
-.caja_texto p{
+.caja_descripcion p{ /*para el color y tamaño de los titulos*/
     color: rgb(80, 80, 80);
     font-size: clamp(10px, 4vw, 30px);
+    padding-left: clamp(10px, 4vw, 30px);
+    padding-right: clamp(6px, 1.5vw, 25px);
 }
 
-.a_boton{
-    margin-top: auto; 
+.caja_nombre p{ /*guarda el titulo de las tarjetas de carreras*/
+    font-size: clamp(2vw, 5vw, 50px);
+    color: #474747;
+    margin: 1vw;
+}
+
+.a_boton{ /*para quitarle el underline a los textos debajo de un div que actua de boton*/
     text-decoration: none;
 }
 
-.boton{
+.boton{ /*para botones*/
     width: 80%;
     border: 2px solid #ff2f2f; 
     border-radius: 25px;
@@ -689,7 +726,7 @@ footer a:hover {
     transition: all 0.5s ease-out;
 }
 
-.boton.facebook{
+.boton.facebook{ /*para el boton de facebook*/
     width: auto;
     padding: 1vw;
     border-radius: clamp(20px,3vw,60px);
@@ -699,51 +736,45 @@ footer a:hover {
     align-items: center;
 }
 
-.boton.facebook:hover{
+.boton.facebook:hover{ /*el hover del boton de facebook*/
     box-shadow: 0 0 15px #1877F2;
 }
 
-.boton:hover{
+.boton:hover{ /*hover base de un boton pa que se agrande*/
     transform: scale(1.05);
 }
 
-.boton:active{
+.boton:active{ /*hace que al pulsarlo se achique*/
     transform: scale(0.95);
     background-color: #e20000;
 }
 
-.boton.facebook:active{
+.boton.facebook:active{ /*hace que al pulsar el boton de facebook tenga ese color de fondo*/
     background-color: #1877F2;
 }
 
-.boton.compu:active{
+.boton.compu:active{ /*ya no se usa porque no hay botones de compu*/
     background-color: #00c7b6;
 }
 
-.boton p{
+.boton p{ /*para el texto de un boton*/
     color: white;
     margin: 5px;
     font-size: clamp(15px,2vw,25px);
 }
 
-.boton.compu{
+.boton.compu{ /*ya no  hay botones de compu asi que no se usa*/
     border: 2px solid #3dffef;
     background-color: #00cca0;
 }
-  
-.caja_nombre p{
-    font-size: clamp(2vw, 5vw, 50px);
-    color: #474747;
 
-}
-
-.centrado {
+.centrado { /*centra items al centro horizontal de la pagina*/
     display: flex;
     justify-content: center; 
     width: 100%;
 }
 
-.Hflowcontainer {/*Godot referencia*/
+.Hflowcontainer {/*Godot referencia*/ /*basicamente acomoda items en horizontal y si no entran lo hace en vertical*/
     display: flex;
     justify-content: center; 
     flex-wrap: wrap;
@@ -752,18 +783,11 @@ footer a:hover {
     box-sizing: border-box;
 }
 
-.img_reduced{
-    width: clamp(50px,15vw,250px);
+.img_reduced{ /*son las imagenes de carreras*/
+    width: clamp(80px,15vw,250px);
 }
-
-.icono_boton{
-    transition: transform 0.5s ease;
-}
-.icono_boton:hover{
-    transform: scale(0.9);
-    cursor: pointer;
-}
-
+/*todas estas son rutas a las imagenes para cada icono que se anima por 2 capas, ambas son la misma imagen pero basicamente la de abajo es de color y la de arriba negra
+luego con una transicion se transparenta la superior y asi se ve la de abajo*/
 
 #tiempo{
     -webkit-mask-image: url('images/iconos/icono_tiempo.png');
@@ -830,22 +854,17 @@ footer a:hover {
     mask-image: url('images/iconos/icono_escuela.png');
 }
 
-.little_icon{
-    width: clamp(15px,1.5vw,25px);
-    height: clamp(15px,1.5vw,25px);
+.little_icon{ /*son los iconos con transicion, esto les regula el tamaño*/
+    width: clamp(15px,1.5vw,30px);
+    height: clamp(15px,1.5vw,30px);
 }
 
-.medium_icon{
-    width: clamp(15px,2vw,30px);
-    height: clamp(15px,2vw,30px);
-}
-
-.big_icon{
+.big_icon{ /*esto lo puso wildau a mi no me miren*/
     width: clamp(70px,7vw,100px);
     height: clamp(70px,7vw,100px);
 }
 
-.icono-animado {
+.icono-animado { /*para las tranciciones diagonales de color*/
 
     -webkit-mask-size: contain;
     mask-size: contain;
@@ -859,29 +878,29 @@ footer a:hover {
     transition: background-position 0.5s ease;
 }
 
-.icono-animado.compu{
+.icono-animado.compu{ /*lo mismo pero celeste*/
     background: linear-gradient(135deg, rgb(0, 238, 255) 35%, black 65%);
     background-size: 300% 300%;
     background-position: bottom right;
 }
-.icono-animado.suyai{
+.icono-animado.suyai{ /*lo mismo pero de color verde*/
     background: linear-gradient(135deg, rgb(19, 228, 0) 35%, black 65%);
     background-size: 300% 300%;
     background-position: bottom right;
 }
 
-.tarjeta.icono-animado{
+.tarjeta.icono-animado{ /*cambia el color en las tarjetas, principalmente en carreras*/
     background: linear-gradient(135deg, rgb(255, 135, 135) 35%, rgb(250, 250, 250) 65%);
     background-size: 300% 300%;
     background-position: bottom right;
 }
-.tarjeta.icono-animado.compu{
+.tarjeta.icono-animado.compu{ /*lo mismo pero tarjetas celestes*/
     background: linear-gradient(135deg, rgb(126, 255, 255) 35%, rgb(250, 250, 250) 65%);
     background-size: 300% 300%;
     background-position: bottom right;
 }
 
-.tarjeta_formal:hover .icono-animado {
+.tarjeta_formal:hover .icono-animado { /*que si pasas el mouse sobre una tarjeta hace que el icono-animado haga su transicion*/
     background-position: top left;
 }
 /*editado por Wildau, para hacer algo con los botones del apartado de suyai en el index*/
@@ -890,31 +909,31 @@ footer a:hover {
     transform: scale(1.05);
 }
 
-.tarjeta.icono-animado:active {
+.tarjeta.icono-animado:active {/*para que las tarjetas del suyai se pulsen*/
     transform: scale(0.95);
 }
 
-.tarjeta_formal:hover .descripcion_icono {
+.tarjeta_formal:hover .descripcion_icono { /*cambia el color del texto dentro de descripcion icono cuando haces hover a tarjeta formal*/
     color: #d32f2f;
 }
-.tarjeta_formal:hover .texto_principal {
+.tarjeta_formal:hover .texto_principal { /*cambia el color del texto dentro de texto_principal cuando haces hover a tarjeta formal*/
     color: #d32f2f;
 }
 
-.tarjeta_formal.compu:hover .descripcion_icono {
+.tarjeta_formal.compu:hover .descripcion_icono {/*color diferente para compu*/
     color: #2fcdd3;
 }
-.tarjeta_formal.compu:hover .texto_principal {
+.tarjeta_formal.compu:hover .texto_principal {/*color diferente para compu*/
     color: #2fcdd3;
 }
-.tarjeta_formal.suyai:hover .descripcion_icono {
+.tarjeta_formal.suyai:hover .descripcion_icono {/*color diferente para suyai*/
     color: #34d32f;
 }
-.tarjeta_formal.suyai:hover .texto_principal {
+.tarjeta_formal.suyai:hover .texto_principal {/*color diferente para suyai*/
     color: #34d32f;
 }
 
-.descripcion_icono {
+.descripcion_icono { /*div que guarda la descripcion de un icono de una tarjeta formal*/
     display: flex;
     align-items: center;
     gap: 8px;
@@ -923,18 +942,18 @@ footer a:hover {
     font-weight: 500;
     transition: color 0.5s ease-out;
 }
-.texto_principal {
+.texto_principal { /*div para el texto principal de una tarjeta formal*/
     font-size: clamp(15px,3vw,25px);
     font-weight: 700;
     color: #1a1a1a;
     transition: color 0.5s ease-out;
 }
-.formal {
+.formal { /*letra para las tarjetas formales*/
     font-size: clamp(10px,2vw,22px);
     color: #555555;
     line-height: 1.5;
 }
-.tarjeta_formal {
+.tarjeta_formal { /*es como tarjeta pero formal, la diferencia principal es que tiene iconos y la transicion de color de borde*/
     background-color: #ffffff;
     border-radius: 12px;
     border: 1px solid rgb(168, 168, 168);
@@ -949,53 +968,52 @@ footer a:hover {
     transition: border 0.5s ease-out, box-shadow 0.5s ease-out;
 }
 
-.tarjeta_formal:hover {
+.tarjeta_formal:hover {/*en el hover se pone el borde rojo*/
     border: 1px solid rgb(165, 0, 0);
     box-shadow: 0 4px 12px rgba(100, 0, 0, 0.25);
 }
-.tarjeta_formal.compu:hover  {
+.tarjeta_formal.compu:hover  { /*igual pero en celeste*/
     border: 1px solid rgb(0, 165, 165);
     box-shadow: 0 4px 12px rgba(0, 88, 100, 0.25);
 }
-.tarjeta_formal.suyai {
+.tarjeta_formal.suyai { /*para suyai se necesitaba un tamaño mas especifico de tarjeta, usa una altura auto (sub_hflow) y parametros de width*/
     margin: 0; 
     flex: 1 1 100px; 
     max-width: clamp(250px,35vw,450px); 
     min-width: clamp(80px,15vw,150px); 
 }
 
-.tarjeta_formal.comunidad {
+.tarjeta_formal.comunidad {/*variante para comunidad mas alargada*/
     margin: 0; 
     flex: 1 1 100px; 
     max-width: clamp(250px,50vw,700px); 
     min-width: clamp(80px,25vw,200px); 
 }
 
-.sub_hflow{
+.sub_hflow{ /*altura auto para tarjetas dentro de hflowcontainer godot deidad*/
     height: auto;
     margin: 1.5vw;
 }
 
-.margin_auto{
+.margin_auto{ /*clase para los margenes entre elementos sub_hflow*/
     margin: 1.5vw auto;
 }
 
-.tarjeta_formal.suyai:hover  {
+.tarjeta_formal.suyai:hover  { /*hover pero en verde*/
     border: 1px solid rgb(33, 165, 0);
     box-shadow: 0 4px 12px rgba(3, 100, 0, 0.25);
 }
 
 /*para las cartas que se dan vuelta*/
-
-.card-container {
+/*aca las clases estan en ingles porque soy re bilingue viste*/
+.card-container { /*contenedor de cartas giratorias*/
     width: clamp(350px,35vw,500px);
     height: clamp(200px,20vw,300px);
     perspective: 1000px; 
     margin: 2vw;
 }
 
-
-.card-inner {
+.card-inner { /*contenedor interno de cartas giratorias*/
     position: relative;
     width: 100%;
     height: 100%;
@@ -1004,13 +1022,11 @@ footer a:hover {
     cursor: pointer;
 }
 
-
-.card-container:hover .card-inner {
+.card-container:hover .card-inner { /*al hacer hover sobre la carta principal gira la carta interna 180 dejando ver el otro lado*/
     transform: rotateY(180deg);
 }
 
-
-.card-front, .card-back {
+.card-front, .card-back { /*partes de la carta frontales y ocultas*/
     position: absolute;
     width: 100%;
     height: 100%;
@@ -1026,33 +1042,30 @@ footer a:hover {
 }
 
 
-.card-front {
+.card-front { /*la carta frontal*/
     background: linear-gradient(to bottom right, #ffc74e, #ff7d49);
     color: #ffffff;
     text-align: center;
 }
-.card-front.compu{
+.card-front.compu{ /*otro color pa compu viste*/
     background: linear-gradient(to bottom right, #5a81ff, #4bffff);
 }
 
-.card-back {
+.card-back {/*la carta oculta*/
     background: linear-gradient(to bottom right, #ff7d49, #ffc74e);
     color: #ffffff;
     transform: rotateY(180deg);
     font-size: clamp(10px,4vw,25px)
 }
-.card-back.compu{
+.card-back.compu{ /*color para compu*/
     background: linear-gradient(to bottom right, #32ffff, #3060ff);
 }
 
-.label_principal{
+.label_principal{/*como estaba in ingles todo le puse label y principal en español xdxdxd, es el titulo de la carta*/
     font-size: clamp(15px,3vw,35px);
 }
-.label_secundario{
-    font-size: clamp(10px,2vw,20px);
-}
 
-.contenedor_movediza {
+.contenedor_movediza {/*las cartas que en hover se mueven a la izquierda y muestran el otro texto*/
     position: relative;
     background-color: #dddcdc;
     position: relative;
@@ -1066,22 +1079,22 @@ footer a:hover {
     transition: background-color 0.5s ease-in-out,box-shadow 0.5s ease-in-out,border 0.5s ease-in-out ;
   }
   
-.contenedor_movediza:hover{
+.contenedor_movediza:hover{ /*el hover de la tarjeta*/
     background-color: #ff8e25;
     box-shadow: 0 4px 8px rgba(77, 41, 0, 0.534);
     border: 1px solid #492f00;
 }
-.contenedor_movediza.compu:hover {
+.contenedor_movediza.compu:hover { /*mismo mismo pero otro color*/
     background-color: #3045ff;
     box-shadow: 0 4px 8px rgba(0, 14, 77, 0.534);
     border: 1px solid #000549;
 }
 
-.contenedor_movediza:hover .icono-animado{
+.contenedor_movediza:hover .icono-animado{ /*hace que el icono tenga transicion al hacerle hover a la tarjeta*/
     background-position: top left;
 }
 
-.movediza_base, .movediza_oculta {
+.movediza_base, .movediza_oculta { /*divs internos de la tarjeta movediza*/
     position: absolute;
     top: 10%;
     left: 0;
@@ -1094,34 +1107,34 @@ footer a:hover {
 }
   
 
-.movediza_base {
+.movediza_base { /*es la que se muestra al frente*/
     font-size: clamp(15px,5vw,40px);
     opacity: 1;
     transform: translateX(0);
     text-align: center;
 }
   
-.movediza_oculta {
+.movediza_oculta { /*es la que esta oculta y se muestra en el hover*/
     opacity: 0;
     font-size: clamp(10px,2vw,25px);
     color: #ffffff;
     transform: translateX(100%);
 }
-.movediza_oculta p{
+.movediza_oculta p{ /*para que se centren los textos dentro de la cara oculta*/
     text-align: center;
 }
   
-.contenedor_movediza:hover .movediza_base {
+.contenedor_movediza:hover .movediza_base { /*mueve la cara base a la izquierda en hover*/
     opacity: 0;
     transform: translateX(-100%);
 }
 
-.contenedor_movediza:hover .movediza_oculta {
+.contenedor_movediza:hover .movediza_oculta { /*mueve la cara oculta a la posicion central de la tarjeta*/
     opacity: 1;
     transform: translateX(0);
 }
 
-.icon_up_center {
+.icon_up_center { /*para que el icono de movediza este en el centro arriba*/
     width: clamp(50px,5vw,100px);
     height: clamp(50px,5vw,100px);
     position: absolute;
@@ -1132,28 +1145,28 @@ footer a:hover {
     background-color: #e0e0e0;
 }
 
-.texto{
+.texto{ /*tamaño para etiquetas de texto normal*/
     font-size: clamp(10px,2vw,25px); 
 }
 
-h2{
+h2{ /*tamaño para titulos secundarios*/
     font-size: clamp(15px,5vw,40px);
 }
 
-h1{
+h1{ /*tamaño para titulos*/
     font-size: clamp(20px,6vw,55px);
 }
 
-.p_titulo{
+.p_titulo{ /*antes hacia un efecto de delineado a los titulos pero quedo reducido a centrar el texto*/
     text-align: center;
 }
 
 
-.left_text{
+.left_text{/*alinea textos a la izquierda*/
     text-align: left;
 }
 
-.banner-contenedor {
+.banner-contenedor {/*contenedor div para banners con texto y demas*/
     background: linear-gradient(45deg, #ff0000, #0026ff); 
     padding: 2vw;        
     text-align: center;      
@@ -1162,27 +1175,27 @@ h1{
     border-bottom: 1px solid rgba(0, 0, 0, 0.25); 
 }
 
-.banner-contenedor.suyai{
+.banner-contenedor.suyai{ /*otro color para suyai*/
     background: linear-gradient(45deg,#63ff70,#1a965c, #5bffe4); 
 }
 
-.banner-contenedor.comunidad{
+.banner-contenedor.comunidad{/*color para comunidad*/
     background: linear-gradient(45deg,#970000,#db0000, #970000); 
 }
 
-.banner-contenedor.compu{
+.banner-contenedor.compu{/*color para compu*/
     background: linear-gradient(45deg,#1b1eff, #01d6dd,#1b1eff); 
 }
 
-.banner-contenedor.auto{
+.banner-contenedor.auto{/*color para automotor*/
     background: linear-gradient(45deg,#cf0000, #ffe819,#cf0000); 
 }
 
-.banner-contenedor img{
+.banner-contenedor img{ /*para las imagenes dentro, mas que nada la de suyai*/
     height: clamp(50px,8vw,150px);
 }
 
-.banner-contenedor h1 {
+.banner-contenedor h1 { /*para los titulos dentro de banners*/
     color: white;             
     margin: 0;                
     font-family: Arial, sans-serif;
@@ -1190,35 +1203,35 @@ h1{
     text-shadow: 0.2vw 0.2vw 0.4vw rgba(0, 0, 0, 0.3); 
 }
 
-.ancho_documento{ 
+.ancho_documento{ /*deja margenes a la izquierda de la pagina*/
     max-width: 85vw; 
     width: 100%; 
     margin: 4vw auto; 
     padding: 0 2vw; 
 }
 
-.v_div{
+.v_div{ /*cambia la direccion de divs flexbox a vertical*/
     flex-direction: column;
 }
-.h_div{
+.h_div{ /*cambia la direccion de divs flexbox a horizontal*/
   display: flex;            
   flex-direction: row;     
   align-items: center;       
   width: 100%;
 }
 
-.separado{
+.separado{ /*deja margenes para las tarjetas en suyai*/
     margin: 5vw;
 }
 
-.linea-separadora {
+.linea-separadora { /*es una linea del header del suyai que separa la imagen de los valores*/
     width: 50%;              
     border: none;            
     border-top: 1px solid rgba(255, 255, 255, 0.5); 
     margin: 1vw auto;        
   }
 
-.subcont_banner_suyai{
+.subcont_banner_suyai{/*es el div dentro del banner, un subcontenedor*/
     justify-content: center; 
     gap: clamp(20px,8vw,180px);
     color: white;
@@ -1227,7 +1240,7 @@ h1{
 
 /*-------------Diagrama circular inicio----------------------*/
 
-.chart-container {
+.chart-container {/*contenedor principal del diagrama circular*/
     display: flex;
     align-items: center;
     gap: 40px;
@@ -1237,7 +1250,7 @@ h1{
   }
 
 
-  .pie-chart {
+  .pie-chart { /*diagrama con porcentajes de colores*/
     width: clamp(100px,15vw,250px);
     height: clamp(100px,15vw,250px);
     border-radius: 50%;
@@ -1250,13 +1263,13 @@ h1{
     );
   }
 
-  .legend {
+  .legend { /*contenedor de descripciones de colores*/
     display: flex;
     flex-direction: column;
     gap: 12px;
   }
 
-  .legend-item {
+  .legend-item { /*cada item interno de leyenda que tiene su color y texto*/
     display: flex;
     align-items: center;
     gap: 10px;
@@ -1264,7 +1277,7 @@ h1{
     color: #333;
   }
 
-  .color-box {
+  .color-box { /*incica que ese div es un color y le pone tamaño y borde*/
     width: 18px;
     height: 18px;
     border-radius: 4px;
@@ -1278,10 +1291,10 @@ h1{
 /*--------------Diagrama circular Fin--------------------*/
 /*-----linea de tiempo inicio--------*/
 
-.timeline-container {
+.timeline-container { /*contenedor principal de la linea de tiempo*/
     width: 100%;
     
-    background: var(--background-box);
+
     padding: clamp(30px,4vw,50px) 2vw;
     border-radius: 1vw;
     box-sizing: border-box;
@@ -1294,30 +1307,30 @@ h1{
     transition: box-shadow 0.5s ease-out,border-color 0.5s ease-out;
 }
 
-.timeline-container:hover {
+.timeline-container:hover {/*en hover cambia ligeramente el borde*/
     border-color: rgba(22, 22, 22, 0.3);
     box-shadow: 0 10px 25px rgba(53, 53, 53, 0.1);
 }
 
-.timeline-container::-webkit-scrollbar {
+.timeline-container::-webkit-scrollbar { /*es la barra para escrollear el div de la linea de tiempo*/
     height: 8px;
 }
-.timeline-container::-webkit-scrollbar-track {
+.timeline-container::-webkit-scrollbar-track { /*la configuracion de la barra de scroll de la linea de tiempo*/
     background: #e5e7eb;
     border-radius: 4px;
     margin: 0 10vw;
 }
 
-.timeline-container::-webkit-scrollbar-thumb {
+.timeline-container::-webkit-scrollbar-thumb { /*configuracion pero de la barra de scroll vertical, aunque no deberia tener*/
     background: #cbd5e1;
     border-radius: 4px;
 }
 
-.timeline-container::-webkit-scrollbar-thumb:hover {
+.timeline-container::-webkit-scrollbar-thumb:hover { /*barra de scroll en hover*/
     background: #94a3b8;
 }
 
-.timeline {
+.timeline {/*subcontenedor dentro de timeline-container*/
     display: inline-flex;
     position: relative;
     padding: 5vw 0;
@@ -1339,7 +1352,7 @@ h1{
 }
 
 
-.timeline-event {
+.timeline-event { /*tarjetas dentro de la linea de tiempo*/
     position: relative;
     display: inline-block;
     margin: 3vw 2vw;
@@ -1348,11 +1361,10 @@ h1{
     z-index: 2;
 }
 
-.event-dot {
+.event-dot { /*es el punto que marca la posicion en la linea de tiempo*/
     width: 1vw;
     height: 1vw;
-    background-color: var(--primary-color);
-    border: 0.2vw solid var(--background-box);
+    border: 0.2vw;
     border-radius: 50%;
     position: absolute;
     top: 50%;
@@ -1363,13 +1375,13 @@ h1{
     transition: background-color 0.3s ease-out,transform 0.3s ease-out, box-shadow 0.3s ease-out;
 }
 
-.timeline-event:hover .event-dot {
+.timeline-event:hover .event-dot { /*el punto se agranda en el hover*/
     transform: translate(-50%, -50%) scale(1.3);
     box-shadow: 0 0 0 4px rgb(60, 194, 66);
     background-color: rgb(149, 209, 137);
 }
 
-.event-card {
+.event-card { /*tarjeta dentro del timeline-event*/
     background: #f9fafb;
     border: 1px solid #e5e7eb;
     padding: 1vw;
@@ -1393,21 +1405,21 @@ h1{
     height: clamp(3px,0.5vw,8px);
 }
 
-.event-card::-webkit-scrollbar-track {
+.event-card::-webkit-scrollbar-track { /*configuracion de la barra horizontal*/
     background: #e5e7eb;
     border-radius: 0.2vw;
     margin: 0.5vw;
 }
 
-.event-card::-webkit-scrollbar-thumb {
+.event-card::-webkit-scrollbar-thumb { /*configuracion de la barra vertical*/
     background-color: #cbd5e1;
     border-radius: 0.2vw;
 }
-.event-card::-webkit-scrollbar-thumb:hover {
+.event-card::-webkit-scrollbar-thumb:hover { /*cambio de color de la barra vertical en hover*/
     background-color: #9ca3ac;
 }
 
-.timeline-event:hover .event-card {
+.timeline-event:hover .event-card { /*agranda la tarjeta en hover*/
     border-color: rgb(4, 124, 0);
     transform: scale(1.1);
     box-shadow: 0 4px 12px rgba(0, 255, 42, 0.1);
@@ -1421,33 +1433,30 @@ h1{
     top: clamp(50px,10vw,150px);
 }
 
-.event-title {
-    font-size: 1.1rem;
+.event-title { /*titulo de la targeta*/
     margin: 0 0 8px 0;
-    color: var(--text-color);
+    font-size: clamp(10px,1vw,20px);
 }
 
-.event-desc {
+.event-desc { /*descripcion de la tarjeta*/
     font-size: 0.85rem;
     color: #6b7280;
     margin: 0;
     line-height: 1.4;
 }
 
-.event-date{
+.event-date{ /*fecha de la tarjeta*/
     font-size: clamp(8px,0.8vw,15px);
 }
-.event-title{
-    font-size: clamp(10px,1vw,20px);
-}
-.event-desc{
+
+.event-desc{ /*descripcion de la tarjeta*/
     font-size: clamp(8px,0.8vw,15px);
 }
 
     /*-------linea de tiempo fin---------*/
 
     /*-------------Carrusel para suyai INICIO--------*/
-.carrusel {
+.carrusel { /*contenedor del carrusel de imagenes*/
     position: relative;
     width: 100%;
     max-height: clamp(300px,40vw,500px);
@@ -1459,7 +1468,7 @@ h1{
     margin-bottom: 5vw;
 }
 
-.carrusel .slide {
+.carrusel .slide { /*para cada slide (imagen) dentro de carrusel*/
     position: absolute;
     inset: 0;
     width: 100%;
@@ -1469,11 +1478,11 @@ h1{
     transition: opacity 1s;
 }
 
-.carrusel .slide.active {
+.carrusel .slide.active { /*la imagen activa inicia primero*/
     opacity: 1;
 }
 
-.carrusel .btn {
+.carrusel .btn { /*botones dentro del carrusel*/
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
@@ -1490,10 +1499,10 @@ h1{
     transition: opacity 0.5s ease-out;
 }
 
-.carrusel .prev { left: 10px; }
-.carrusel .next { right: 10px; }
+.carrusel .prev { left: 10px; } /*el boton de imagen previa esta a 10px del borde*/
+.carrusel .next { right: 10px; }/*mismo para el boton de siguiente imagen*/
 
-.carrusel:hover .btn {
+.carrusel:hover .btn { /*pone visibles a los botones al hacerle hover al carrusel*/
     opacity: 1;
 }
 
