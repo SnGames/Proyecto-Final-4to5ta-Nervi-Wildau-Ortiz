@@ -597,14 +597,21 @@ footer a:hover {
 .autoridades_preguntas {
     margin-top: 50px;
     display: flex;
+    min-height: 620px;
+}
+
+.autor_curios {
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    gap: 30px;
+    border-right: 1px solid #ccc;
 }
 
 /*Sección de autoridades*/
 .autoridades {
-    width: 60%;
-    border-right: 1px solid #ccc;
-}
-.autoridades details {
     border: 2px solid #ccc;
     width: 80%;
     margin: 0 auto;
@@ -614,10 +621,13 @@ footer a:hover {
     padding: 16px 0;
     overflow: hidden;
 }
-.autoridades summary {
+
+summary {
     cursor: pointer;
     list-style: none;
+}
 
+.autoridades summary{
     display: flex;
     align-items: center;
     gap: 16px;
@@ -625,7 +635,7 @@ footer a:hover {
     border-color: white;
     transition: border-color 0.3s ease-out;
 }
-.autoridades details[open] summary {
+.autoridades[open] summary {
     border-bottom: 1px solid #ccc;
 }
 
@@ -642,7 +652,7 @@ footer a:hover {
     font-size: 20px;
 }
 
-.autoridades details.icono-animado {
+.autoridades.icono-animado {
     transition: border-color 0.5s ease-out, 
                 box-shadow 0.5s ease-out, 
                 background-position 0.5s ease-out; /*La transición suave del bg*/
@@ -651,20 +661,20 @@ footer a:hover {
     background-size: 300% 300%; /*Aumenta el tamaño del bg para que el fondo aparezca fuera del contenedor*/
     background-position: bottom right; /*Coloca el bg fuera del contenedor*/
 }
-.autoridades details:hover.icono-animado {
-    background-position: top left; /*Se mueve el bg del linear-gradient a arriba izquierda, afectando al icono y poniendolo de color rojo*/
+.autoridades:hover.icono-animado {
+    background-position: top left; /*Se mueve el bg del linear-gradient a arriba izquierda, afectando al contenedor y poniendolo de color naranja*/
 }
 
-.autoridades details:hover {
+.autoridades:hover {
     border-color: #c45500;
     box-shadow: 0 0 15px rgba(255, 132, 0, 0.5);
 }
-.autoridades details:hover summary {
+.autoridades:hover summary {
     border-color: #c45500;
 }
 
-.autoridades details:hover .icono-animado {
-    background-position: top left; /*Lo mismo del icono antes, pero ahora de todo el contenedor. El linear-gradient pone de color rojo a toda la sección*/
+.autoridades:hover .icono-animado {
+    background-position: top left; /*Lo mismo del icono antes, pero ahora del icono. El linear-gradient lo pone de color naranja*/
 }
 details::details-content {
     block-size: 0;
@@ -679,8 +689,10 @@ details[open]::details-content {
 }
 
 
-.preg_curios {
+.preguntas_div {
     width: 40%;
+    display: flex;
+    align-items: center;
 }
 /*Sección de preguntas frecuentes*/
 .preguntas {
@@ -688,6 +700,7 @@ details[open]::details-content {
     border: 1px solid #999;
     border-radius: 15px;
     margin: 0 auto;
+    
 }
 .preguntas_titulo {
     display: flex;
@@ -708,8 +721,6 @@ details[open]::details-content {
     box-sizing: border-box;
 }
 .preguntas summary {
-    cursor: pointer;
-    list-style: none;
     font-size: 20px;
     text-align: center;
     border-color: white;
@@ -727,6 +738,55 @@ details[open]::details-content {
     gap: 8px;
 }
 
+/*Sección de curiosidades curiosas*/
+.curiosidades {
+    border: 2px solid #ccc;
+    width: 80%;
+    margin: 0 auto;
+    border-radius: 15px;
+    padding: 20px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.26);
+    box-sizing: border-box;
+}
+.curiosidades h2 {
+    font-size: 30px;
+    margin-block: 0 0.5em;
+    border-bottom: 1px solid #ccc;
+}
+.curiosidades summary p {
+    margin-block: 0;
+}
+
+.curiosidades summary {
+    border-color: white;
+
+    transition: border-color 0.3s ease-out, padding 0.3s ease-out;
+}
+.curiosidades[open] summary {
+    padding-bottom: 8px;
+}
+
+.curiosidades.icono-animado {
+    transition: border-color 0.5s ease-out, 
+                box-shadow 0.5s ease-out, 
+                background-position 0.5s ease-out; /*La transición suave del bg*/
+
+    background: linear-gradient(135deg, rgba(0, 119, 255, 0.2) 35%, rgb(250, 250, 250) 65%); /*La base del efecto del hover*/
+    background-size: 300% 300%; /*Aumenta el tamaño del bg para que el fondo aparezca fuera del contenedor*/
+    background-position: bottom right; /*Coloca el bg fuera del contenedor*/
+}
+.curiosidades:hover.icono-animado {
+    background-position: top left; /*Se mueve el bg del linear-gradient a arriba izquierda, afectando al contenedor y poniendolo de color rojo*/
+}
+
+.curiosidades:hover {
+    border-color: #1100ff;
+    box-shadow: 0 0 15px rgba(0, 119, 255, 0.5);
+}
+.curiosidades:hover h2 {
+    border-color: #1100ff;
+}
+
 /* ----------------- Media queries (tamaños dependiendo del ancho de pantalla) ------------------ */
 
 /*Para tablets o menos*/
@@ -741,7 +801,7 @@ details[open]::details-content {
         width: 80%;
     }
 
-    .autoridades details, .preguntas {
+    .autoridades, .preguntas, .curiosidades {
         width: 90%;
     }
 }
@@ -781,7 +841,7 @@ details[open]::details-content {
         flex-direction: column;
         gap: 30px;
     }
-    .autoridades, .preg_curios {
+    .autor_curios, .preguntas_div {
         width: 100%;
         border: none;
     }
