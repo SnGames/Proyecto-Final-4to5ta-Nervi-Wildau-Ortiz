@@ -46,11 +46,11 @@
     --h-links-footer: 92px; /*La altura que tiene el 'ul' en el footer (cambia dependiendo el ancho de pantalla)*/
 }
 
-* {
-    font-family: 'Montserrat', Arial, sans-serif; /* Fuentes de la página */
+*, .button {
+    font-family: 'Montserrat', Calibri, Arial, sans-serif; /* Fuentes de la página */
 }
 p {
-    font-family: 'Lato', Arial, sans-serif; /* Fuentes para los párrafos */
+    font-family: 'Lato', Calibri, Arial, sans-serif; /* Fuentes para los párrafos */
 }
 
 .bold {
@@ -882,7 +882,7 @@ luego con una transicion se transparenta la superior y asi se ve la de abajo*/
     height: clamp(15px,1.5vw,30px);
 }
 
-.big_icon{ /*esto lo puso wildau a mi no me miren*/
+.big_icon{ /*esto lo puso wildau a mi no me miren. Nota de wildau: los iconos de antes pero mas grandes, xd*/
     width: clamp(70px,7vw,100px);
     height: clamp(70px,7vw,100px);
 }
@@ -927,7 +927,7 @@ luego con una transicion se transparenta la superior y asi se ve la de abajo*/
     background-position: top left;
 }
 /*editado por Wildau, para hacer algo con los botones del apartado de suyai en el index*/
-.tarjeta.icono-animado:hover, .tarjeta.icono-animado:focus {
+.tarjeta.icono-animado:hover, .tarjeta.icono-animado:focus { /*el efecto de arriba pero en la tarjeta en si*/
     background-position: top left;
     transform: scale(1.05);
 }
@@ -1566,6 +1566,33 @@ h1{ /*tamaño para titulos*/
   }
   
   .banner-contenedor.institu{
-    background: linear-gradient(45deg,#ff0000,#ff0000, #ff0000); 
+    background: linear-gradient(45deg,#ff0000,#ffa600, #ff0000); 
 }
+
+
+
+
+iframe {
+  width: 51%;
+  height: 60vh; /* */
+  border: none;
+}
+
+
+
+.tarjeta22 {
+  transition: transform 0.45s cubic-bezier(0.22, 1, 0.36, 1), 
+              box-shadow 0.45s ease, 
+              opacity 0.45s ease;
+  opacity: 0.7;
+}
+
+
+.tarjeta22.activa {
+  transform: scale(1.03);
+  opacity: 1;
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.18);
+}
+
+
 /*--------------------------------------cosas de Ortiz Fin----------------------------------------*/
