@@ -955,20 +955,18 @@ details[open]::details-content {
 }
 
 .boton{ /*para botones*/
-    width: 80%;
-    border: 2px solid #ff2f2f; 
-    border-radius: 25px;
+    width: auto;
+    border-radius: clamp(20px,3vw,60px);
     background-color: #b90000;
+    box-shadow: 0 0 15px #f218184d;
     transition: all 0.5s ease-out;
+    padding: clamp(5px,1vw,15px);
+    
 }
 
 .boton.facebook{ /*para el boton de facebook*/
-    width: auto;
-    padding: 1vw;
-    border-radius: clamp(20px,3vw,60px);
     background-color: #1877F2;
     box-shadow: 0 0 15px #1876f24d;
-    border: none;
     align-items: center;
 }
 
@@ -978,6 +976,7 @@ details[open]::details-content {
 
 .boton:hover{ /*hover base de un boton pa que se agrande*/
     transform: scale(1.05);
+    box-shadow: 0 0 15px rgba(255, 0, 0, 0.445);
 }
 
 .boton:active{ /*hace que al pulsarlo se achique*/
@@ -1216,7 +1215,10 @@ luego con una transicion se transparenta la superior y asi se ve la de abajo*/
     border-radius: 12px;
     border: 1px solid rgb(168, 168, 168);
     padding: clamp(8px,1vw,25px);
-    width: clamp(300px,35vw,450px);
+    max-width: clamp(350px,50vw,600px); 
+    min-width: clamp(250px,30vw,300px); 
+    margin: 0; 
+    flex: 1 1 100px; 
     height: clamp(150px,15vw,225px);
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
     display: flex;
@@ -1422,6 +1424,10 @@ h1{ /*tamaño para titulos*/
 
 .left_text{/*alinea textos a la izquierda*/
     text-align: left;
+}
+
+.center_text{/*alinea textos al centro*/
+    text-align: center;
 }
 
 .banner-contenedor {/*contenedor div para banners con texto y demas*/
