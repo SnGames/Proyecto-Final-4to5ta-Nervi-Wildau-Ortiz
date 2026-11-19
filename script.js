@@ -183,54 +183,6 @@ document.querySelectorAll('a').forEach(link => {
     });
 });
 
-//Función para elegir índice aleatorio en una lista
-function random_choice(array) {
-    //Si el array esta vacío no te va a devolver nada
-    if (!array.length) {
-        return undefined;
-    }
-
-    //Math.random() da un número con coma aleatorio desde el 0 al 1, al multiplicarlo por el tamaño del array te da un número entre 0 y el tamaño del array y luego se lo redondea para abajo para que se pueda usar como índice
-    let i = Math.floor(Math.random() * array.length);
-
-    return array[i]; //Te devuelve el elemento elegido
-}
-
-//Curiosidades xdxd
-const container = document.getElementById("div_curiosidades");
-
-const curiosidades = ["...la escuela cuenta con canchas de fútbol, voley y básquet?",
-    "...contamos con un curso de AutoCAD y otros programas similares?",
-    "...tenemos impresoras 3D?",
-    "...hay 4 diferentes laboratorios de computación dentro de la escuela",
-    "...se organizan torneos de dibujo técnico en la escuela, y competiciones con otras escuelas?",
-    "...hay torneos tanto internos como externos de ajedrez, pin-pon, fútbol, vóley, básquet, entre otros deportes?",
-    "...el año que viene se agregará una nueva especialidad a la escuela?",
-    "...ya entramos en el modelo de Secundaria Aprende?"
-]
-
-//Esto lo ejecuta una vez al iniciar la pagina
-document.addEventListener("DOMContentLoaded", () => {
-    const curios_id = document.getElementById("curiosidades");
-
-    setTimeout(() => {
-        let curiosidad = random_choice(curiosidades);
-        curios_id.textContent = curiosidad;
-    }, 350);
-});
-
-//Se ejecuta cuando el details cambia de estado
-container.addEventListener("toggle", () => {
-    const curios_id = document.getElementById("curiosidades");
-
-    if (!container.open) { //Se ejecuta solo si el details está cerrado, no cuando se abre
-        setTimeout(() => {
-            let curiosidad = random_choice(curiosidades); //Se elige una curiosidad random
-            curios_id.textContent = curiosidad; //Se la coloca en el html
-        }, 350); //El timeout es para que se cambie luego de que haga la transición de cerrarse
-    }
-});
-
 //---------------------------parte de nervi--------------------------
 
 

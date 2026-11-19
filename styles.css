@@ -597,21 +597,14 @@ footer a:hover {
 .autoridades_preguntas {
     margin-top: 50px;
     display: flex;
-    min-height: 620px;
-}
-
-.autor_curios {
-    width: 60%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    align-items: center;
-    gap: 30px;
-    border-right: 1px solid #ccc;
 }
 
 /*Sección de autoridades*/
 .autoridades {
+    width: 60%;
+    border-right: 1px solid #ccc;
+}
+.autoridades details {
     border: 2px solid #ccc;
     width: 80%;
     margin: 0 auto;
@@ -621,13 +614,10 @@ footer a:hover {
     padding: 16px 0;
     overflow: hidden;
 }
-
-summary {
+.autoridades summary {
     cursor: pointer;
     list-style: none;
-}
 
-.autoridades summary{
     display: flex;
     align-items: center;
     gap: 16px;
@@ -635,7 +625,7 @@ summary {
     border-color: white;
     transition: border-color 0.3s ease-out;
 }
-.autoridades[open] summary {
+.autoridades details[open] summary {
     border-bottom: 1px solid #ccc;
 }
 
@@ -652,7 +642,7 @@ summary {
     font-size: 20px;
 }
 
-.autoridades.icono-animado {
+.autoridades details.icono-animado {
     transition: border-color 0.5s ease-out, 
                 box-shadow 0.5s ease-out, 
                 background-position 0.5s ease-out; /*La transición suave del bg*/
@@ -661,20 +651,20 @@ summary {
     background-size: 300% 300%; /*Aumenta el tamaño del bg para que el fondo aparezca fuera del contenedor*/
     background-position: bottom right; /*Coloca el bg fuera del contenedor*/
 }
-.autoridades:hover.icono-animado {
-    background-position: top left; /*Se mueve el bg del linear-gradient a arriba izquierda, afectando al contenedor y poniendolo de color naranja*/
+.autoridades details:hover.icono-animado {
+    background-position: top left; /*Se mueve el bg del linear-gradient a arriba izquierda, afectando al icono y poniendolo de color rojo*/
 }
 
-.autoridades:hover {
+.autoridades details:hover {
     border-color: #c45500;
     box-shadow: 0 0 15px rgba(255, 132, 0, 0.5);
 }
-.autoridades:hover summary {
+.autoridades details:hover summary {
     border-color: #c45500;
 }
 
-.autoridades:hover .icono-animado {
-    background-position: top left; /*Lo mismo del icono antes, pero ahora del icono. El linear-gradient lo pone de color naranja*/
+.autoridades details:hover .icono-animado {
+    background-position: top left; /*Lo mismo del icono antes, pero ahora de todo el contenedor. El linear-gradient pone de color rojo a toda la sección*/
 }
 details::details-content {
     block-size: 0;
@@ -689,10 +679,8 @@ details[open]::details-content {
 }
 
 
-.preguntas_div {
+.preg_curios {
     width: 40%;
-    display: flex;
-    align-items: center;
 }
 /*Sección de preguntas frecuentes*/
 .preguntas {
@@ -700,7 +688,6 @@ details[open]::details-content {
     border: 1px solid #999;
     border-radius: 15px;
     margin: 0 auto;
-    
 }
 .preguntas_titulo {
     display: flex;
@@ -721,6 +708,8 @@ details[open]::details-content {
     box-sizing: border-box;
 }
 .preguntas summary {
+    cursor: pointer;
+    list-style: none;
     font-size: 20px;
     text-align: center;
     border-color: white;
@@ -738,55 +727,6 @@ details[open]::details-content {
     gap: 8px;
 }
 
-/*Sección de curiosidades curiosas*/
-.curiosidades {
-    border: 2px solid #ccc;
-    width: 80%;
-    margin: 0 auto;
-    border-radius: 15px;
-    padding: 20px;
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0.26);
-    box-sizing: border-box;
-}
-.curiosidades h2 {
-    font-size: 30px;
-    margin-block: 0 0.5em;
-    border-bottom: 1px solid #ccc;
-}
-.curiosidades summary p {
-    margin-block: 0;
-}
-
-.curiosidades summary {
-    border-color: white;
-
-    transition: border-color 0.3s ease-out, padding 0.3s ease-out;
-}
-.curiosidades[open] summary {
-    padding-bottom: 8px;
-}
-
-.curiosidades.icono-animado {
-    transition: border-color 0.5s ease-out, 
-                box-shadow 0.5s ease-out, 
-                background-position 0.5s ease-out; /*La transición suave del bg*/
-
-    background: linear-gradient(135deg, rgba(0, 119, 255, 0.2) 35%, rgb(250, 250, 250) 65%); /*La base del efecto del hover*/
-    background-size: 300% 300%; /*Aumenta el tamaño del bg para que el fondo aparezca fuera del contenedor*/
-    background-position: bottom right; /*Coloca el bg fuera del contenedor*/
-}
-.curiosidades:hover.icono-animado {
-    background-position: top left; /*Se mueve el bg del linear-gradient a arriba izquierda, afectando al contenedor y poniendolo de color rojo*/
-}
-
-.curiosidades:hover {
-    border-color: #1100ff;
-    box-shadow: 0 0 15px rgba(0, 119, 255, 0.5);
-}
-.curiosidades:hover h2 {
-    border-color: #1100ff;
-}
-
 /* ----------------- Media queries (tamaños dependiendo del ancho de pantalla) ------------------ */
 
 /*Para tablets o menos*/
@@ -801,7 +741,7 @@ details[open]::details-content {
         width: 80%;
     }
 
-    .autoridades, .preguntas, .curiosidades {
+    .autoridades details, .preguntas {
         width: 90%;
     }
 }
@@ -841,7 +781,7 @@ details[open]::details-content {
         flex-direction: column;
         gap: 30px;
     }
-    .autor_curios, .preguntas_div {
+    .autoridades, .preg_curios {
         width: 100%;
         border: none;
     }
@@ -1409,6 +1349,10 @@ luego con una transicion se transparenta la superior y asi se ve la de abajo*/
     font-size: clamp(10px,2vw,25px); 
 }
 
+h3{ /*tamaño para titulos terciarios*/
+    font-size: clamp(10px,4vw,30px);
+}
+
 h2{ /*tamaño para titulos secundarios*/
     font-size: clamp(15px,5vw,40px);
 }
@@ -1775,6 +1719,79 @@ h1{ /*tamaño para titulos*/
     .carrusel .btn { opacity: 1; }
 }
 /*-------------Carrusel para suyai FIN--------*/
+
+/*----------Ruleta inicio---------*/
+  #ruleta-seccion { /*contenedor de la ruleta*/
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 40px 0;
+  }
+
+  .ruleta-wrapper { /*subcontenedor de la ruleta*/
+    position: relative;
+    width: clamp(250px,25vw,400px);
+    height: clamp(250px,25vw,400px);
+    cursor: pointer;
+    transition: transform 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+  }
+
+  .ruleta-wrapper:hover { /*animacion de agrandamiento en hover*/
+    transform: scale(1.05);
+  }
+
+  .ruleta-wrapper:active { /*se achica al pulsarlo*/
+    transform: scale(0.95);
+  }
+
+  
+  .ruleta-aguja { /* Aguja triangular de arriba de la ruleta */
+    position: absolute;
+    top: -5px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 0;
+    border-left: clamp(12px,2vw,25px) solid transparent;
+    border-right: clamp(12px,2vw,25px) solid transparent;
+    border-top: clamp(22px,4vw,50px) solid #222;
+    z-index: 10;
+    pointer-events: none;
+  }
+
+  
+  #ruleta {/* el circulo que gira */
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    border: 4px solid #222;
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(90deg, #87ecfa 50%, #e63939 50%);
+    transition: transform 3.5s cubic-bezier(0.15, 0.85, 0.25, 1);
+    box-sizing: border-box;
+  }
+
+  .ruleta-texto { /*los textos de compu y auto*/
+    position: absolute;
+    top: 50%;
+    font-weight: bold;
+    font-size: clamp(15px,2vw,25px);
+    user-select: none;
+  }
+
+  .texto-computacion { /*cada texto tiene que estar a su rotacion*/
+    left: 25%;
+    transform: translate(-50%, -50%) rotate(-90deg);
+    color: #111;
+  }
+
+  .texto-automotor { /*cada texto tiene que estar a su rotacion*/
+    left: 75%;
+    transform: translate(-50%, -50%) rotate(90deg);
+    color: #fff;
+  }
+/*----------Ruleta Fin -----------*/
 
 /*--------------------------------------cosas de nervi FIN------------------------------------------*/ 
 /*--------------------------------------cosas de Ortiz inicio----------------------------------------*/

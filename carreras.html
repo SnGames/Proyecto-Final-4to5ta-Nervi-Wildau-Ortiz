@@ -54,6 +54,35 @@
         </div>
     </a>
 
+    <h2 class="left_text" style="margin-top: 5vw;"> Minijuego de elección de carrera</h2>
+    <h3 class="p_titulo" style="margin-top: 5vw;"> Ruleta decisiva</h3>
+    <p class="texto p_titulo">¡Pero no dejes todo a la suerte!</p>
+<div id="ruleta-seccion">
+  <div class="ruleta-wrapper" id="ruleta-btn">
+    <div class="ruleta-aguja"></div>
+    <div id="ruleta">
+      <span class="ruleta-texto texto-computacion">COMPUTACIÓN</span>
+      <span class="ruleta-texto texto-automotor">AUTOMOTOR</span>
+    </div>
+  </div>
+</div>
+
+<script>
+  (function girar() {
+    const btn = document.getElementById('ruleta-btn');
+    const ruleta = document.getElementById('ruleta');
+    let rotacionActual = 0;
+
+    btn.addEventListener('click', () => {
+      const vueltasExtra = (Math.floor(Math.random() * 5) + 8) * 360;
+      const anguloAleatorio = Math.floor(Math.random() * 360);
+      
+      rotacionActual += vueltasExtra + anguloAleatorio;
+      ruleta.style.transform = `rotate(${rotacionActual}deg)`;
+    });
+  })();
+</script>
+
     </div>
 
     <custom-footer></custom-footer>
