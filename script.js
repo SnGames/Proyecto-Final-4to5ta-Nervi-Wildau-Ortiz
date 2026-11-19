@@ -27,7 +27,15 @@ const ver_poster = "url(images/suyai_images/13.jpeg)";
 
 const ver_suyai = [ver_de_lado, ver_casa, ver_arboles, ver_playa, ver_lago, ver_lago_lejos, ver_poster];
 
-const carreras_img = [autos, taller_arriba, taller_autos, taller_gente, taller_panoramica];
+const compus_cerca = "url(images/lab_images/compus_cerca.jpeg)";
+const compus_cerca2 = "url(images/lab_images/compus_cerca2.jpeg)";
+const lab_lejos = "url(images/lab_images/lab_lejos.jpeg)";
+const lab_ventanas = "url(images/lab_images/lab_ventanas.jpeg)";
+const sillas_compus = "url(images/lab_images/sillas_compus.jpeg)";
+
+const patio_panoramica = "url(images/bg/patio_taller_panoramica.jpg)";
+
+const carreras_img = [lab_ventanas, taller_arriba, taller_autos, compus_cerca, taller_gente, sillas_compus, taller_panoramica, lab_lejos, patio_panoramica, compus_cerca2];
 
 let bg_index = [1]; //Index de las imágenes del header
 let bg_index_suyai = [1]; //Index de las imágenes de la sección del suyai inv

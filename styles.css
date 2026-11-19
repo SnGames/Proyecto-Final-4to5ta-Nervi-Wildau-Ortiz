@@ -7,18 +7,39 @@
 
 /*Fuente Montserrat*/
 @font-face {
-  font-family: 'Montserrat';
-  src: url('fonts/Montserrat-VariableFont_wght.ttf') format('truetype-variations');
-  font-weight: 100 900;
-  font-style: normal;
+    font-family: 'Montserrat';
+    src: url('fonts/Montserrat-VariableFont_wght.ttf') format('truetype-variations');
+    font-weight: 100 900;
+    font-style: normal;
 }
 
 /*Montserrat cursiva*/
 @font-face {
-  font-family: 'Montserrat';
-  src: url('fonts/Montserrat-Italic-VariableFont_wght.ttf') format('truetype-variations');
-  font-weight: 100 900;
-  font-style: italic;
+    font-family: 'Montserrat';
+    src: url('fonts/Montserrat-Italic-VariableFont_wght.ttf') format('truetype-variations');
+    font-weight: 100 900;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Lato';
+    src: url('fonts/Lato-Regular.ttf');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Lato';
+    src: url('fonts/Lato-Bold.ttf');
+    font-weight: 700;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Lato';
+    src: url('fonts/Lato-Italic.ttf');
+    font-weight: 400;
+    font-style: italic;
 }
 
 :root {
@@ -26,7 +47,10 @@
 }
 
 * {
-    font-family: Calibri, Arial, sans-serif; /* Fuentes de la página */
+    font-family: 'Montserrat', Arial, sans-serif; /* Fuentes de la página */
+}
+p {
+    font-family: 'Lato', Arial, sans-serif; /* Fuentes para los párrafos */
 }
 
 .bold {
@@ -96,7 +120,6 @@ nav ul {
 }
 nav ul li {
     padding: 0 15px;
-    margin: 0 5px;
     display: flex;
     align-items: center;
     height: 100%;
@@ -525,7 +548,7 @@ footer a:hover {
 /*Sección de carreras*/
 /*IDs usadas para el cambio de bg*/
 #img7 {
-    background-image: url(images/bg/taller_panoramica.jpg);
+    background-image: url(images/lab_images/lab_ventanas.jpeg);
     z-index: -1;
     opacity: 1;
 }
@@ -599,7 +622,7 @@ footer a:hover {
 
     /*Disminuye el tamaño de letra para que se vea bien*/
     .alpha.red_variation h2 {
-        font-size: 45px;
+        font-size: 35px;
     }
     /*Modifica como se ven los elementos de botones y pasan a ser en vertical*/
     .section_buttons.carreras_var {
@@ -639,11 +662,11 @@ footer a:hover {
     /*Márgen vertical entre los botones*/
     .section_buttons a {
         display: block;
-        margin-top: 45px;
+        margin-top: 10px;
     }
     .section_buttons a + a {
         display: block;
-        margin-top: 110px;
+        margin-top: 60px;
     }
 }
 
