@@ -47,10 +47,10 @@
     --h-links-footer: 92px; /*La altura que tiene el 'ul' en el footer (cambia dependiendo el ancho de pantalla)*/
 }
 
-*, .button {
+*, .button, .montserrat {
     font-family: 'Montserrat', Calibri, Arial, sans-serif; /* Fuentes de la página */
 }
-p {
+p, li {
     font-family: 'Lato', Calibri, Arial, sans-serif; /* Fuentes para los párrafos */
 }
 
@@ -595,7 +595,8 @@ footer a:hover {
 
 
 .autoridades_preguntas {
-    margin-top: 30px;
+    margin-top: 50px;
+    display: flex;
 }
 
 /*Sección de autoridades*/
@@ -604,7 +605,7 @@ footer a:hover {
     border-right: 1px solid #ccc;
 }
 .autoridades details {
-    border: 1px solid #ccc;
+    border: 2px solid #ccc;
     width: 80%;
     margin: 0 auto;
     border-radius: 15px;
@@ -621,6 +622,7 @@ footer a:hover {
     align-items: center;
     gap: 16px;
     justify-content: center;
+    border-color: white;
     transition: border-color 0.3s ease-out;
 }
 .autoridades details[open] summary {
@@ -649,7 +651,7 @@ footer a:hover {
     background-size: 300% 300%; /*Aumenta el tamaño del bg para que el fondo aparezca fuera del contenedor*/
     background-position: bottom right; /*Coloca el bg fuera del contenedor*/
 }
-.autoridades details[open].icono-animado {
+.autoridades details:hover.icono-animado {
     background-position: top left; /*Se mueve el bg del linear-gradient a arriba izquierda, afectando al icono y poniendolo de color rojo*/
 }
 
@@ -657,23 +659,72 @@ footer a:hover {
     border-color: #c45500;
     box-shadow: 0 0 15px rgba(255, 132, 0, 0.5);
 }
-.autoridades details[open] summary {
+.autoridades details:hover summary {
     border-color: #c45500;
 }
 
-.autoridades details[open] .icono-animado {
+.autoridades details:hover .icono-animado {
     background-position: top left; /*Lo mismo del icono antes, pero ahora de todo el contenedor. El linear-gradient pone de color rojo a toda la sección*/
 }
-.autoridades details::details-content {
+details::details-content {
     block-size: 0;
     opacity: 0;
     overflow: hidden;
     transition: block-size 0.35s ease, opacity 0.35s ease, content-visibility 0.35s allow-discrete;
 }
 
-.autoridades details[open]::details-content {
+details[open]::details-content {
     block-size: auto;
     opacity: 1;
+}
+
+
+.preg_curios {
+    width: 40%;
+}
+/*Sección de preguntas frecuentes*/
+.preguntas {
+    width: 80%;
+    border: 1px solid #999;
+    border-radius: 15px;
+    margin: 0 auto;
+}
+.preguntas_titulo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+}
+.preguntas h2 {
+    text-align: center;
+    font-size: 30px;
+}
+
+.preguntas details {
+    width: 100%;
+    border-top: 1px solid #999;
+    text-align: center;
+    padding: 8px;
+    box-sizing: border-box;
+}
+.preguntas summary {
+    cursor: pointer;
+    list-style: none;
+    font-size: 20px;
+    text-align: center;
+    border-color: white;
+
+    transition: border-color 0.3s ease-out, padding 0.3s ease-out;
+}
+.preguntas details[open] summary {
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 8px;
+}
+
+.preguntas ul {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
 }
 
 /* ----------------- Media queries (tamaños dependiendo del ancho de pantalla) ------------------ */
@@ -688,6 +739,10 @@ footer a:hover {
     /*Más espacio para los botones de la sección de especialidades*/
     .section_buttons.carreras_var {
         width: 80%;
+    }
+
+    .autoridades details, .preguntas {
+        width: 90%;
     }
 }
 
@@ -717,12 +772,18 @@ footer a:hover {
     }
     /*Modifica como se ven los elementos de botones y pasan a ser en vertical*/
     .section_buttons.carreras_var {
-        display: block;
-        width: 100%;
-        margin: 0 auto;
+        flex-direction: column;
+        gap: 50px;
     }
-    .carreras_button + .carreras_button{
-        margin-top: 50px;
+    
+
+    .autoridades_preguntas {
+        flex-direction: column;
+        gap: 30px;
+    }
+    .autoridades, .preg_curios {
+        width: 100%;
+        border: none;
     }
 }
 
@@ -742,7 +803,8 @@ footer a:hover {
     }
     /*Modifica como se ven los elementos de botones y pasan a ser en vertical*/
     .section_buttons._suyai {
-        display: block;
+        flex-direction: column;
+        gap: 60px;
     }
     /*Los botones se adaptan al contenido de dentro*/
     .suyai_b {
@@ -985,9 +1047,9 @@ luego con una transicion se transparenta la superior y asi se ve la de abajo*/
     height: clamp(15px,1.5vw,30px);
 }
 
-.medium_icon{ /*son los iconos con transicion, esto les regula el tamaño*/
+.medium_icon{ /*son los iconos con transicion, esto les regula el tamaño slowed + reverb*/
     width: clamp(30px,3vw,50px);
-    height: clamp(15px,3vw,50px);
+    height: clamp(30px,3vw,50px);
 }
 
 .big_icon{ /*esto lo puso wildau a mi no me miren. Nota de wildau: los iconos de antes pero mas grandes, xd*/
