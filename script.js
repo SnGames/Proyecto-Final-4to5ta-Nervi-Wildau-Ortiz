@@ -212,3 +212,77 @@ document.addEventListener("DOMContentLoaded", () => {
     programar(TIEMPO);
 });
 
+
+
+
+
+
+
+
+//----------------Ortiz--------------------------------------------------//
+const tarjetasTexto = document.querySelectorAll('.tarjeta22');
+let indiceActual = 0;
+let animando = false; // Evita que se trabe si mantienes apretada la tecla
+
+// Marca la primera tarjeta como activa al cargar
+if (tarjetasTexto.length > 0) {
+  tarjetasTexto[0].classList.add('activa');
+}
+
+// Función para mover el scroll con una curva de velocidad más elegante
+function desplazarSuave(elemento, duracion = 650) {
+  animando = true;
+  const inicio = window.scrollY;
+  // Calcula la posición para dejar la tarjeta centrada en la pantalla
+  const rect = elemento.getBoundingClientRect();
+  const destino = inicio + rect.top - (window.innerHeight / 2) + (rect.height / 2);
+  const distancia = destino - inicio;
+  let tiempoInicio = null;
+
+  function animacion(tiempoActual) {
+    if (!tiempoInicio) tiempoInicio = tiempoActual;
+    const progreso = Math.min((tiempoActual - tiempoInicio) / duracion, 1);
+
+    // Curva easeInOutCubic (arranca suave, acelera en el medio y frena despacio)
+    const curva = progreso < 0.5
+      ? 4 * progreso * progreso * progreso
+      : 1 - Math.pow(-2 * progreso + 2, 3) / 2;
+
+    window.scrollTo(0, inicio + distancia * curva);
+
+    if (progreso < 1) {
+      requestAnimationFrame(animacion);
+    } else {
+      animando = false;
+    }
+  }
+
+  requestAnimationFrame(animacion);
+}
+
+// Actualiza cuál tarjeta tiene el efecto visual
+function actualizarTarjetaActiva(nuevoIndice) {
+  tarjetasTexto.forEach((tarjeta, i) => {
+    tarjeta.classList.toggle('activa', i === nuevoIndice);
+  });
+  desplazarSuave(tarjetasTexto[nuevoIndice], 650); // 650ms es una velocidad muy natural
+}
+
+document.addEventListener('keydown', (evento) => {
+  if (evento.key === 'ArrowDown') {
+    evento.preventDefault();
+    if (!animando && indiceActual < tarjetasTexto.length - 1) {
+      indiceActual++;
+      actualizarTarjetaActiva(indiceActual);
+    }
+  } 
+  
+  else if (evento.key === 'ArrowUp') {
+    evento.preventDefault();
+    if (!animando && indiceActual > 0) {
+      indiceActual--;
+      actualizarTarjetaActiva(indiceActual);
+    }
+  }
+});
+//------------------------FIN ORTIZ-------------------------------------------//
