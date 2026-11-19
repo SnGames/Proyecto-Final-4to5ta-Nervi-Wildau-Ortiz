@@ -1566,6 +1566,15 @@ h1{ /*tamaño para titulos*/
   }
   
   .banner-contenedor.institu{
-    background: linear-gradient(45deg,#ff0000,#ff0000, #ff0000); 
+    background: linear-gradient(45deg,#ff0000,#ffa600, #ff0000); 
+}
+
+
+
+
+iframe {
+  width: 51%;
+  height: 60vh; /* */
+  border: none;
 }
 /*--------------------------------------cosas de Ortiz Fin----------------------------------------*/
