@@ -7,7 +7,19 @@ const taller_autos = "url(images/bg/taller_autos.webp)";
 const taller_gente = "url(images/bg/taller_gente_auto.webp)";
 const taller_panoramica = "url(images/bg/taller_panoramica.jpg)";
 
-const images = [taller_panoramica, escenario, taller_gente, taller_autos, autos, taller_arriba];
+const buffet = "url(images/bg/buffet.jpeg)";
+const canchas = "url(images/bg/cancha_futbol.jpeg)";
+const canchas2 = "url(images/bg/cancha_voley_basquet.jpeg)";
+const estatua = "url(images/bg/estatua_patio.jpeg)";
+const globo = "url(images/bg/globo_escenario.jpeg)";
+const patio = "url(images/bg/patio_interno.jpeg)";
+const patio_taller = "url(images/bg/patio_taller.jpeg)";
+const patio_taller2 = "url(images/bg/patio_taller2.jpeg)";
+
+
+const images = [escenario, patio_taller, canchas, globo, patio_taller2, canchas2, estatua, patio, buffet];
+//Este array sirve para determinar la posición de la imágen de fondo
+const pos_img = ["center", "center 25%", "center", "center 40%", "center", "center 25%", "center 20%", "center", "center"];
 
 //Imágenes del campamento de invierno Suyai
 const inv_cartel = "url(images/suyai_images/1.jpeg)";
@@ -33,9 +45,9 @@ const lab_lejos = "url(images/lab_images/lab_lejos.jpeg)";
 const lab_ventanas = "url(images/lab_images/lab_ventanas.jpeg)";
 const sillas_compus = "url(images/lab_images/sillas_compus.jpeg)";
 
-const patio_panoramica = "url(images/bg/patio_taller_panoramica.jpg)";
+const patio_panoramica = "url(images/bg/patio_taller_panoramica.jpg)"; //Al final sin usar
 
-const carreras_img = [lab_ventanas, taller_arriba, taller_autos, compus_cerca, taller_gente, sillas_compus, taller_panoramica, lab_lejos, patio_panoramica, compus_cerca2];
+const carreras_img = [lab_ventanas, taller_arriba, taller_autos, compus_cerca, taller_gente, sillas_compus, taller_panoramica, lab_lejos, patio_panoramica, compus_cerca2, autos];
 
 let bg_index = [1]; //Index de las imágenes del header
 let bg_index_suyai = [1]; //Index de las imágenes de la sección del suyai inv
@@ -49,7 +61,7 @@ let layer_suyai = [false]; //Suyai inv
 let layer_suyai2 = [false]; //Suyai ver
 let layer_carreras = [false]; //Carreras
 
-function bg_image(images, id_i1, id_i2, bg_index, layer) {
+function bg_image(images, id_i1, id_i2, bg_index, layer, pos=Array(images.length).fill("center")) {
     bg_index[0]++; //Se aumenta 1 en la posición del array de las imágenes
     layer[0] = !layer[0]; //Se invierte que capa se usa
 
@@ -74,8 +86,10 @@ function bg_image(images, id_i1, id_i2, bg_index, layer) {
     setTimeout(() => {
         if (layer[0]) {
             l1.style.backgroundImage = images[bg_index[0]];
+            l1.style.backgroundPosition = pos[bg_index[0]];
         } else {
             l2.style.backgroundImage = images[bg_index[0]];
+            l2.style.backgroundPosition = pos[bg_index[0]];
         }
         
     }, 1000);
@@ -83,7 +97,7 @@ function bg_image(images, id_i1, id_i2, bg_index, layer) {
 
 //Para el cambio de imagen del header
 const change_bg = setInterval(() => {
-    bg_image(images, "#img1", "#img2", bg_index, layer);
+    bg_image(images, "#img1", "#img2", bg_index, layer, pos_img);
 }, time);
 
 //Cambio de imagen de la sección del suyai: invierno
@@ -99,6 +113,7 @@ const change_bg_suyai2 = setTimeout(() => {setInterval(() => {
 const change_bg_carreras = setTimeout(() => {setInterval(() => {
     bg_image(carreras_img, "#img7", "#img8", bg_index_carreras, layer_carreras);
 }, time)}, offset_c); //Offset con respecto al header
+
 
 //Header y footer sincronizados
 
