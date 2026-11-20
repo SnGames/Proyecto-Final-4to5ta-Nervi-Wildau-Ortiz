@@ -1891,10 +1891,13 @@ h1{ /*tamaño para titulos*/
 
 
 
+
 .videoinstitucional {
-  width: 51%;
-  height: 50vh; 
+  width: 70%;
+  height: 60vh;
   border: none;
+  display: block;
+  margin: 0 auto;
 }
 
 .videocontacto {
