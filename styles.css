@@ -58,6 +58,10 @@ p, li {
     font-weight: bold;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     margin: 0;
 }
@@ -300,6 +304,9 @@ footer a:hover {
     width: 65%;
     margin: 48px auto;
     text-decoration: none;
+}
+.a_tarj_inst.variation {
+    width: 100%;
 }
 .a_tarj_inst:last-of-type { /*Tarjeta de instagram*/
     margin-top: 0;
@@ -785,6 +792,35 @@ details[open]::details-content {
 }
 .curiosidades:hover h2 {
     border-color: #1100ff;
+}
+
+#volver_arriba {
+    position: fixed;
+    bottom: 40px;
+    right: 40px;
+    z-index: 999;
+    border: none;
+    outline: none;
+    background-color: #ff0000;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+    color: white;
+    cursor: pointer;
+    padding: 8px;
+    transition: background-color 0.3s ease-out, opacity 0.3s ease-out, visibility 0.4s ease-out;
+    border-radius: 10px;
+    opacity: 0;
+    visibility: hidden;
+}
+#volver_arriba.visible {
+    opacity: 0.8;
+    visibility: visible;
+}
+#volver_arriba:hover {
+    background-color: #d10000;
+    opacity: 1;
+}
+#volver_arriba:active {
+    background-color: #c00000;
 }
 
 /* ----------------- Media queries (tamaños dependiendo del ancho de pantalla) ------------------ */

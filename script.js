@@ -146,7 +146,9 @@ customElements.define('custom-header', cHeader);
 //Footer custom
 class cFooter extends HTMLElement {
     connectedCallback() {
-        this.innerHTML = `<footer>
+        this.innerHTML = `<button id="volver_arriba" onclick="volver_al_inicio();">Volver arriba</button>
+        
+        <footer>
         <div>
             <ul>
                 
@@ -171,6 +173,26 @@ class cFooter extends HTMLElement {
         </div>
         
     </footer>`;
+
+    const volver_arriba = this.querySelector("#volver_arriba");
+    const bajar_px = 300;
+
+    window.addEventListener("scroll", function() {
+
+        if (document.body.scrollTop > bajar_px || document.documentElement.scrollTop > bajar_px) {
+            volver_arriba.classList.add("visible");
+        } else {
+            volver_arriba.classList.remove("visible");
+        }
+
+    });
+
+    function volver_al_inicio() {
+        window.scrollTo({
+            top: 0,
+            behavior: "smooth"
+        });
+    }
     }
 }
 
@@ -239,7 +261,6 @@ container.addEventListener("toggle", () => {
         }, 350); //El timeout es para que se cambie luego de que haga la transición de cerrarse
     }
 });
-
 
 //---------------------------parte de nervi--------------------------
 
