@@ -129,11 +129,11 @@ class cHeader extends HTMLElement {
         <nav>
             <ul>
                 <li><a href="index.html">Inicio</a></li>
-                <li><a href="institucional.html">Institucional</a></li>
-                <li><a href="carreras.html">Carreras</a></li>
-                <li><a href="suyai.html">Suyai</a></li>
-                <li><a href="comunidad.html">Comunidad Educativa</a></li>
-                <li><a href="contacto.html">Contacto</a></li>
+                <li><a href="institucional.html" title="Conocé la historia de la escuela">Institucional</a></li>
+                <li><a href="carreras.html" title="Descubre las carreras disponibles en la escuela">Carreras</a></li>
+                <li><a href="suyai.html" title="Campamento para alumnos">Suyai</a></li>
+                <li><a href="comunidad.html" title="Egresados, distribución laboral, etc.">Comunidad Educativa</a></li>
+                <li><a href="contacto.html" title="Contactar a la escuela">Contacto</a></li>
             </ul>
         </nav>
         <div class="nav_mask"></div>
@@ -171,7 +171,7 @@ class cFooter extends HTMLElement { /*modificado por nervi porque tampoco andaba
         </div>
         <div>
             <h2>Contacto de la escuela</h2>
-            <p>Email: det_35_de18@bue.edu.ar</p>
+            <p><a href="mailto:det_35_de18@bue.edu.ar">Email: det_35_de18@bue.edu.ar</a></p>
             <p>Teléfono/Fax: 4567-5838/1441</p>
         </div>
         
@@ -232,7 +232,7 @@ const container = document.getElementById("div_curiosidades");
 const curiosidades = ["...la escuela cuenta con canchas de fútbol, voley y básquet?",
     "...contamos con un curso de AutoCAD y otros programas similares?",
     "...tenemos impresoras 3D?",
-    "...hay 4 diferentes laboratorios de computación dentro de la escuela",
+    "...hay 4 diferentes laboratorios de computación dentro de la escuela?",
     "...se organizan torneos de dibujo técnico en la escuela, y competiciones con otras escuelas?",
     "...hay torneos tanto internos como externos de ajedrez, pin-pon, fútbol, vóley, básquet, entre otros deportes?",
     "...el año que viene se agregará una nueva especialidad a la escuela?",

@@ -2037,7 +2037,7 @@ h1{ /*tamaño para titulos*/
 
 
 
-.boton {
+.boton._var {
   display: inline-block;
   background-color: #ff0505;
   color: white;
@@ -2050,7 +2050,7 @@ h1{ /*tamaño para titulos*/
   cursor: pointer;
 }
 
-.boton:hover {
+.boton._var:hover {
   background-color: #f2b705;
   color: #000000;
 }
