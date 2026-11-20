@@ -236,7 +236,8 @@ const curiosidades = ["...la escuela cuenta con canchas de fútbol, voley y bás
     "...se organizan torneos de dibujo técnico en la escuela, y competiciones con otras escuelas?",
     "...hay torneos tanto internos como externos de ajedrez, pin-pon, fútbol, vóley, básquet, entre otros deportes?",
     "...el año que viene se agregará una nueva especialidad a la escuela?",
-    "...ya entramos en el modelo de Secundaria Aprende?"
+    "...ya entramos en el modelo de Secundaria Aprende?",
+    "...organizamos eventos lúdicos para todos los turnos por el aniversario de la escuela y el día del estudiante?"
 ]
 
 //Esto lo ejecuta una vez al iniciar la pagina
