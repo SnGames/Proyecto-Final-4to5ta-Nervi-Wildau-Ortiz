@@ -162,7 +162,7 @@ ul {
 
 nav.fixed {
     position: fixed;
-    top: -50px;
+    top: -100px;
     width: 100%;
     transition: transform 0.3s ease-out, opacity 0.2s ease-out;
     color: black;
@@ -178,7 +178,7 @@ nav.fixed {
 }
 
 nav.fixed:has(+ .nav_mask.fixed:hover), nav.fixed:hover {
-    transform: translateY(49px);
+    transform: translateY(99px);
 }
 
 nav.fixed ul li:hover {
@@ -862,6 +862,12 @@ details[open]::details-content {
 
 /* ----------------- Media queries (tamaños dependiendo del ancho de pantalla) ------------------ */
 
+@media (max-width: 1300px) {
+    nav.fixed {
+        height: 100px;
+    }
+}
+
 /*Para tablets o menos*/
 @media (max-width: 768px) {
     /*Aumento de altura del footer*/
@@ -876,6 +882,56 @@ details[open]::details-content {
 
     .autoridades, .preguntas, .curiosidades {
         width: 90%;
+    }
+
+    nav.fixed {
+        top: -200px;
+        height: 150px;
+    }
+    nav.fixed:has(+ .nav_mask.fixed:hover), nav.fixed:hover {
+        transform: translateY(199px);
+    } 
+}
+
+/*Para el caso específico este del coso del suyai xd*/
+@media (max-width: 563px) {
+    .img_div._suyai {
+        clip-path: none;
+    }
+    ._der {
+        top: 50%;
+    }
+    .img.variation._suyai {
+        height: 50%;
+    }
+    .section_img .suyai_h2 {
+        margin-top: 50px;
+    }
+    /*Modifica como se ven los elementos de botones y pasan a ser en vertical*/
+    .section_buttons._suyai {
+        flex-direction: column;
+        gap: 60px;
+    }
+    /*Los botones se adaptan al contenido de dentro*/
+    .suyai_b {
+        width: fit-content;
+        height: fit-content;
+        margin: 0 auto;
+    }
+    /*Márgen vertical entre los botones*/
+    .section_buttons a {
+        display: block;
+        margin-top: 10px;
+    }
+    .section_buttons a + a {
+        display: block;
+        margin-top: 60px;
+    }
+}
+
+@media (max-width: 600px) {
+    nav.fixed {
+        height: 200px;
     }
 }
 
@@ -918,42 +974,14 @@ details[open]::details-content {
         width: 100%;
         border: none;
     }
-}
 
-/*Para el caso específico este del coso del suyai xd*/
-@media (max-width: 563px) {
-    .img_div._suyai {
-        clip-path: none;
+    nav.fixed {
+        top: -250px;
+        height: 250px;
     }
-    ._der {
-        top: 50%;
-    }
-    .img.variation._suyai {
-        height: 50%;
-    }
-    .section_img .suyai_h2 {
-        margin-top: 50px;
-    }
-    /*Modifica como se ven los elementos de botones y pasan a ser en vertical*/
-    .section_buttons._suyai {
-        flex-direction: column;
-        gap: 60px;
-    }
-    /*Los botones se adaptan al contenido de dentro*/
-    .suyai_b {
-        width: fit-content;
-        height: fit-content;
-        margin: 0 auto;
-    }
-    /*Márgen vertical entre los botones*/
-    .section_buttons a {
-        display: block;
-        margin-top: 10px;
-    }
-    .section_buttons a + a {
-        display: block;
-        margin-top: 60px;
-    }
+    nav.fixed:has(+ .nav_mask.fixed:hover), nav.fixed:hover {
+        transform: translateY(249px);
+    } 
 }
 
 /*Otro caso del suyai xd*/
@@ -1977,7 +2005,7 @@ h1{ /*tamaño para titulos*/
   height: 60vh;
   border: none;
   display: block;
-  margin: 0 auto;
+  margin: 0 auto 100px auto;
 }
 
 .videocontacto {
