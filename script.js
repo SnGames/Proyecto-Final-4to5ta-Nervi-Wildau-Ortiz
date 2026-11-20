@@ -72,6 +72,9 @@ function bg_image(images, id_i1, id_i2, bg_index, layer, pos=Array(images.length
 
     const l1 = document.querySelector(id_i1);
     const l2 = document.querySelector(id_i2);
+    if (!l1 || !l2) {
+        return undefined;
+    }
 
     //Se intercambia la opacidad de las capas
     if (layer[0]) {
@@ -212,6 +215,9 @@ const curiosidades = ["...la escuela cuenta con canchas de fútbol, voley y bás
 //Esto lo ejecuta una vez al iniciar la pagina
 document.addEventListener("DOMContentLoaded", () => {
     const curios_id = document.getElementById("curiosidades");
+    if (!curios_id) {
+        return undefined;
+    }
 
     setTimeout(() => {
         let curiosidad = random_choice(curiosidades);
@@ -222,6 +228,9 @@ document.addEventListener("DOMContentLoaded", () => {
 //Se ejecuta cuando el details cambia de estado
 container.addEventListener("toggle", () => {
     const curios_id = document.getElementById("curiosidades");
+    if (!curios_id) {
+        return undefined;
+    }
 
     if (!container.open) { //Se ejecuta solo si el details está cerrado, no cuando se abre
         setTimeout(() => {
