@@ -347,7 +347,7 @@ function desplazarSuave(elemento, duracion = 650) {
       ? 4 * progreso * progreso * progreso
       : 1 - Math.pow(-2 * progreso + 2, 3) / 2;
 
-    window.scrollTo(0, inicio + distancia * curva);
+    window.scrollTo(0, destino/*inicio + distancia * curva*/); //modificado por wildau, gracias a la propiedad css scroll-behavior: smooth no se necesita calcular manualmente la curva de velocidad
 
     if (progreso < 1) {
       requestAnimationFrame(animacion);
