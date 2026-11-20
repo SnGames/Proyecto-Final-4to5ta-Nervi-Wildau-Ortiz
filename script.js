@@ -144,9 +144,9 @@ class cHeader extends HTMLElement {
 customElements.define('custom-header', cHeader);
 
 //Footer custom
-class cFooter extends HTMLElement {
+class cFooter extends HTMLElement { /*modificado por nervi porque tampoco andaba tu boton*/
     connectedCallback() {
-        this.innerHTML = `<button id="volver_arriba" onclick="volver_al_inicio();">Volver arriba</button>
+        this.innerHTML = `<button id="volver_arriba">Volver arriba</button> 
         
         <footer>
         <div>
@@ -173,9 +173,12 @@ class cFooter extends HTMLElement {
         </div>
         
     </footer>`;
+    
 
     const volver_arriba = this.querySelector("#volver_arriba");
     const bajar_px = 300;
+
+    volver_arriba.addEventListener("click", volver_al_inicio); /*añadido por nervi, conecta el click a la funcion*/
 
     window.addEventListener("scroll", function() {
 

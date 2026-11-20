@@ -944,6 +944,13 @@ details[open]::details-content {
     transition: border-color 0.5s ease-out, box-shadow 0.5s ease-out;   
 }
 
+.tarjeta.actividades{/*para la parte de suyai*/
+    max-width: clamp(350px,50vw,600px); 
+    min-width: clamp(250px,30vw,300px); 
+    margin: 5vw; 
+    flex: 1 1 100px; 
+}
+
 .tarjeta.v{ /*lo mismo pero guarda los elementos internos en vertical para la parte de carreras*/
     flex-direction: column;
     width: clamp(200px,25vw,450px);
