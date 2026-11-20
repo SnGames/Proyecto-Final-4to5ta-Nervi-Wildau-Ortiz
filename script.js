@@ -136,12 +136,15 @@ class cHeader extends HTMLElement {
                 <li><a href="contacto.html">Contacto</a></li>
             </ul>
         </nav>
+        <div class="nav_mask"></div>
     </div><div id="img1" class="img"></div><div id="img2" class="img"></div></header>`;
     }
 }
 
 //Se asigna a una etiqueta custom
 customElements.define('custom-header', cHeader);
+
+const bajar_px = 300;
 
 //Footer custom
 class cFooter extends HTMLElement { /*modificado por nervi porque tampoco andaba tu boton*/
@@ -176,7 +179,6 @@ class cFooter extends HTMLElement { /*modificado por nervi porque tampoco andaba
     
 
     const volver_arriba = this.querySelector("#volver_arriba");
-    const bajar_px = 300;
 
     volver_arriba.addEventListener("click", volver_al_inicio); /*añadido por nervi, conecta el click a la funcion*/
 
@@ -266,6 +268,26 @@ if (container) { //modificada por nervi, antes asumia que existia el container, 
         }
     });
 }
+
+//Nav que te siga
+const nav = document.querySelector("nav");
+const nav_mask = document.querySelector(".nav_mask");
+
+window.addEventListener("scroll", function() {
+
+        if (document.body.scrollTop > bajar_px + 100 || document.documentElement.scrollTop > bajar_px + 100) {
+            nav.classList.add("fixed");
+            nav_mask.classList.add("fixed");
+            nav.style.opacity = 1;
+        } else if (document.body.scrollTop > bajar_px || document.documentElement.scrollTop > bajar_px) {
+            nav.style.opacity = 0;
+        } else {
+            nav.classList.remove("fixed");
+            nav_mask.classList.remove("fixed");
+            nav.style.opacity = 1;
+        }
+
+    });
 
 //---------------------------parte de nervi--------------------------
 

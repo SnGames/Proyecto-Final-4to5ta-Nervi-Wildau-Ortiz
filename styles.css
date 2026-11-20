@@ -110,6 +110,9 @@ header {
 }
 
 /*Barra de navegación*/
+nav {
+    transition: opacity 0.2s ease-out;
+}
 nav ul {
     list-style: none;
     margin: 0 auto;
@@ -149,6 +152,40 @@ ul {
     margin-block-end: 1em;
     padding-inline-start: 40px;
     unicode-bidi: isolate;
+}
+
+.nav_mask {
+    width: 100%;
+    height: 40px;
+    display: none;
+}
+
+nav.fixed {
+    position: fixed;
+    top: -50px;
+    width: 100%;
+    transition: transform 0.3s ease-out, opacity 0.2s ease-out;
+    color: black;
+    z-index: 100;
+    background-color: rgba(200, 200, 200, 0.8);
+}
+.nav_mask.fixed {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    display: block;
+    z-index: 99;
+}
+
+nav.fixed:has(+ .nav_mask.fixed:hover), nav.fixed:hover {
+    transform: translateY(49px);
+}
+
+nav.fixed ul li:hover {
+    background-color: rgba(180, 180, 180, 0.8);
+}
+nav.fixed ul li:active {
+    background-color: rgba(210, 210, 210, 0.8);
 }
 
 /*Footer*/
@@ -604,7 +641,7 @@ footer a:hover {
 .autoridades_preguntas {
     margin-top: 50px;
     display: flex;
-    min-height: 620px;
+    padding: 20px 0;
 }
 
 .autor_curios {
