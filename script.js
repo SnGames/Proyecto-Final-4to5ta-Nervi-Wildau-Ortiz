@@ -284,7 +284,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 //----------------Ortiz--------------------------------------------------//
-const tarjetasTexto = document.querySelectorAll('.tarjeta22');
+const tarjetasTexto = document.querySelectorAll('.tarjetablanca');
 let indiceActual = 0;
 let animando = false; // Evita que se trabe si mantienes apretada la tecla
 
@@ -329,7 +329,7 @@ function actualizarTarjetaActiva(nuevoIndice) {
   tarjetasTexto.forEach((tarjeta, i) => {
     tarjeta.classList.toggle('activa', i === nuevoIndice);
   });
-  desplazarSuave(tarjetasTexto[nuevoIndice], 650); // 650ms es una velocidad muy natural
+  desplazarSuave(tarjetasTexto[nuevoIndice], 650); // 650ms
 }
 
 document.addEventListener('keydown', (evento) => {
@@ -350,3 +350,4 @@ document.addEventListener('keydown', (evento) => {
   }
 });
 //------------------------FIN ORTIZ-------------------------------------------//
+
