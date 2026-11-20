@@ -247,20 +247,22 @@ document.addEventListener("DOMContentLoaded", () => {
     }, 350);
 });
 
-//Se ejecuta cuando el details cambia de estado
-container.addEventListener("toggle", () => {
-    const curios_id = document.getElementById("curiosidades");
-    if (!curios_id) {
-        return undefined;
-    }
 
-    if (!container.open) { //Se ejecuta solo si el details está cerrado, no cuando se abre
-        setTimeout(() => {
-            let curiosidad = random_choice(curiosidades); //Se elige una curiosidad random
-            curios_id.textContent = curiosidad; //Se la coloca en el html
-        }, 350); //El timeout es para que se cambie luego de que haga la transición de cerrarse
-    }
-});
+if (container) { //modificada por nervi, antes asumia que existia el container, dando por resultado que se crashe y detenga el java en el resto de paginas
+    container.addEventListener("toggle", () => {
+        const curios_id = document.getElementById("curiosidades");
+        if (!curios_id) {
+            return undefined;
+        }
+
+        if (!container.open) { 
+            setTimeout(() => {
+                let curiosidad = random_choice(curiosidades); //Se elige una curiosidad random
+                curios_id.textContent = curiosidad; //Se la coloca en el html
+            }, 350); //El timeout es para que se cambie luego de que haga la transición de cerrarse
+        }
+    });
+}
 
 //---------------------------parte de nervi--------------------------
 
